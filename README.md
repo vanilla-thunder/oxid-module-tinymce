@@ -1,5 +1,9 @@
-Tiny MCE for OXID eShop CE  4.6 - 4.7
+TinyMCE for OXID eShop CE  4.6 - 4.7
 ====================
+TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor control released as Open Source under LGPL.
+More information here :http://www.tinymce.com/
+and here: https://github.com/tinymce
+
 
 INSTALLATION
 ------------
@@ -7,7 +11,7 @@ copy the content of the "copy_this" folder into the shop root directory
 if you are uploading files via ftp, switch to the binary transfer mode
 
 
-LICENSE AGREEMENT
+LICENSE AGREEMENT 
 ------------
  *  HDI Tiny MCE
  *  Copyright (C) 2012  HEINER DIRECT GmbH & Co. KG
