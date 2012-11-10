@@ -13,7 +13,7 @@ if you are uploading files via ftp, switch to the binary transfer mode
 
 LICENSE AGREEMENT 
 ------------
- *  HDI Tiny MCE
+ *  HDI TinyMCE
  *  Copyright (C) 2012  HEINER DIRECT GmbH & Co. KG
  *  info:  info@heiner-direct.com
  * 
