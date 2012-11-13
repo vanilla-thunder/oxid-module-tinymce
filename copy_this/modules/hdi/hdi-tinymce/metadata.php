@@ -1,5 +1,4 @@
 <?php
-
 /**
  * HDI TinyMCE
  * Copyright (C) 2012  HEINER DIRECT GmbH & Co. KG
@@ -28,6 +27,7 @@ $aModule = array(
 		  'category_text' => 'hdi/hdi-tinymce/tinymce',
 		  'content_main' => 'hdi/hdi-tinymce/tinymce',
 		  'newsletter_main' => 'hdi/hdi-tinymce/tinymce',
+		  'news_text' => 'hdi/hdi-tinymce/tinymce'
 	 ),
 	 'templates' => array(
 		  'tinymce.tpl' => 'hdi/hdi-tinymce/out/tpl/tinymce.tpl',
@@ -41,6 +41,7 @@ $aModule = array(
 		  array('group' => 'tinyMceMain', 'name' => 'bTinyMCE_category_text', 'type' => 'bool', 'value' => true, 'position' => 2),
 		  array('group' => 'tinyMceMain', 'name' => 'bTinyMCE_content_main', 'type' => 'bool', 'value' => true, 'position' => 3),
 		  array('group' => 'tinyMceMain', 'name' => 'bTinyMCE_newsletter_main', 'type' => 'bool', 'value' => true, 'position' => 4),
+		  array('group' => 'tinyMceMain', 'name' => 'bTinyMCE_news_text', 'type' => 'bool', 'value' => true, 'position' => 5),
 		  /* plugins */
 		  array('group' => 'tinyMcePlugins', 'name' => 'bTinyMCE_autolink', 'type' => 'bool', 'value' => true, 'position' => 1),
 		  array('group' => 'tinyMcePlugins', 'name' => 'bTinyMCE_ists', 'type' => 'bool', 'value' => true, 'position' => 2),

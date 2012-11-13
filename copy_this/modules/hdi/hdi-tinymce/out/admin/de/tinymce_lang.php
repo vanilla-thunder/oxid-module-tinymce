@@ -21,6 +21,7 @@ $aLang = array(
 	 'SHOP_MODULE_bTinyMCE_category_text' => 'TinyMCE für die Kategorienbeschreibung benutzen',
 	 'SHOP_MODULE_bTinyMCE_content_main' => 'TinyMCE für die CMS Seiten benutzen',
 	 'SHOP_MODULE_bTinyMCE_newsletter_main' => 'TinyMCE für die Newsletter benutzen',
+	 'SHOP_MODULE_bTinyMCE_news_text' => 'TinyMCE für die News benutzen',
 	 'SHOP_MODULE_GROUP_tinyMcePlugins' => 'TinyMCE Plugins</b></a>&nbsp;&nbsp;&nbsp;<a href="http://www.tinymce.com/wiki.php/Plugins" target="_blank" title="mehr Infos"><b>( ? )',
 	 'SHOP_MODULE_bTinyMCE_autolink' => 'autolink',
 	 'SHOP_MODULE_bTinyMCE_ists' => 'ists',
