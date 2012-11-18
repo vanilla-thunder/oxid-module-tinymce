@@ -1,5 +1,4 @@
 <?php
-
 /**
  * HDI TinyMCE
  * Copyright (C) 2012  HEINER DIRECT GmbH & Co. KG
