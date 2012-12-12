@@ -77,3 +77,7 @@ $aModule = array(
 		  array('group' => 'tinyMcePlugins', 'name' => 'sTinyMCE_customplugins', 'type' => 'str', 'value' => "", 'position' => 32)
 	 )
 );
+/* to do
+ * - implement relative_url setting into module settings
+ * 
+ */
