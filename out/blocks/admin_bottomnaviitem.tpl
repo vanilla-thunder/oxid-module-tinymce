@@ -15,6 +15,5 @@
 [{* toggle TinyMCE Editor *}]
 
 [{if $tinyMCE }]
-	<li style="margin-left: 50px;"><a style="border: 1px solid black; background: #ffc4a4;padding: 3px 10px;" href="javascript:;" onclick="tinyMCE.get('editor_[{$sField}]').hide();return false;">TinyMCE ausschalten</a></li>
-	<li><a style="border: 1px solid black; background: #d5ffa4;padding: 3px 10px;" href="javascript:;" onclick="tinyMCE.get('editor_[{$sField}]').show();return false;">TinyMCE anzeigen</a></li>
+	<li style="margin-left: 50px;"><a style="border: 1px solid #0089EE; color: #0089EE;padding: 3px 10px;" href="javascript:;" onclick="tinymce.execCommand('mceToggleEditor',false,'editor_[{$sField}]');"><span>TinyMCE zeigen/verstecken</span></a></li>
 [{/if}]

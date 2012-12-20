@@ -2,10 +2,9 @@
 <script type="text/javascript">
 	var tinyMCE = null;
 	function copyLongDescFromTinyMCE(sIdent) {
-		var editor = tinyMCE.get('editor_' + sIdent);
-		if (tinyMCE && editor) {
-			editor.show();
-			content = editor.getContent();
+		var editor = tinyMCE.activeEditor;
+		if (editor && editor.isHidden() !== true) {
+			content = editor.getContent({format : 'raw'});
 			if (content !== null) {
 				// restore smarty code that has been masked by htmlentities:
 				var aSmartyParts = content.split("[" + "{");
@@ -63,6 +62,6 @@
 		//media_external_list_url : "lists/media_list.js",
 	});
 </script>
-<textarea id='editor_[{$sField}]' style='width:[{$iWidth}]; height:[{$iHeight}];'>[{$sContent}]</textarea>
+<textarea id='editor_[{$sField}]' name="content" style='width:[{$iWidth}]; height:[{$iHeight}];'>[{$sContent}]</textarea>
 [{assign var=tinyMCE value=1 }]
 <!-- /TinyMCE -->
