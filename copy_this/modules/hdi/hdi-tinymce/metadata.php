@@ -19,7 +19,7 @@ $aModule = array(
 		'title' => '<strong style="color:#006a8c;border: 1px solid #e30061;padding: 0 2px;background:white;">HDI</strong> <strong>TinyMCE 3.5.8</strong>',
 		'description' => 'backend implementation of TinyMCE Editor<br/>visit <a href="http://www.tinymce.com/" target="_blank">http://www.tinymce.com/</a> for more details',
 		'thumbnail' => 'hdi.png',
-		'version' => '1.0.1 (2012-12-19)</dd><dt>newest version</dt><dd><img src="https://raw.github.com/vanilla-thunder/hdi-tinymce/module/version.jpg" /><br/>
+		'version' => '1.0.2 (2012-12-20)</dd><dt>newest version</dt><dd><img src="https://raw.github.com/vanilla-thunder/hdi-tinymce/module/version.jpg" /><br/>
 		 <a style="display: inline-block; padding: 1px 15px; background: #f0f0f0; border: 1px solid gray" href="https://github.com/vanilla-thunder/hdi-tinymce/" target="_blank">info</a> <a style="display: inline-block; padding: 1px 15px; background: #f0f0f0; border: 1px solid gray" href="https://github.com/vanilla-thunder/hdi-tinymce/archive/master.zip">download</a>',
 		'author' => 'Marat Bedoev, HEINER DIRECT GmbH & Co. KG',
 		'email' => 'info@heiner-direct.com',

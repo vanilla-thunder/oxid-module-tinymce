@@ -3,11 +3,9 @@ TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor contr
 More information here: http://www.tinymce.com/
 and here: https://github.com/tinymce
 
-## module version 1.0.1 from 2012-12-19
+## module version 1.0.2 from 2012-12-20
 ### changelog  
-* destroying smarty tags fixed  
-* tinyMCE 3.5.8 update  
-* module settings for relative urls and editor height added  
+* bugfix: changed text haven't been saved without toggling editor
 
 ## INSTALLATION
 ### upload over ftp/ssh:

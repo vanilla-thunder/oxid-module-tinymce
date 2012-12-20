@@ -2,10 +2,9 @@
 <script type="text/javascript">
 	var tinyMCE = null;
 	function copyLongDescFromTinyMCE(sIdent) {
-		var editor = tinyMCE.get('editor_' + sIdent);
-		if (tinyMCE && editor) {
-			editor.show();
-			content = editor.getContent();
+		var editor = tinyMCE.activeEditor;
+		if (editor && editor.isHidden() !== true) {
+			content = editor.getContent({format : 'raw'});
 			if (content !== null) {
 				// restore smarty code that has been masked by htmlentities:
 				var aSmartyParts = content.split("[" + "{");
@@ -43,6 +42,7 @@
 		mode: "textareas",
 		theme: "advanced",
 		plugins: "[{if $cfg->getConfigParam("bTinyMCE_autolink")}]autolink,[{/if}][{if $cfg->getConfigParam("bTinyMCE_lists")}]lists,[{/if}][{if $cfg->getConfigParam("bTinyMCE_pagebreak")}]pagebreak,[{/if}][{if $cfg->getConfigParam("bTinyMCE_style")}]style,[{/if}][{if $cfg->getConfigParam("bTinyMCE_layer")}]layer,[{/if}][{if $cfg->getConfigParam("bTinyMCE_table")}]table,[{/if}][{if $cfg->getConfigParam("bTinyMCE_save")}]save,[{/if}][{if $cfg->getConfigParam("bTinyMCE_advhr")}]advhr,[{/if}][{if $cfg->getConfigParam("bTinyMCE_advimage")}]advimage,[{/if}][{if $cfg->getConfigParam("bTinyMCE_advlink")}]advlink,[{/if}][{if $cfg->getConfigParam("bTinyMCE_emotions")}]emotions,[{/if}][{if $cfg->getConfigParam("bTinyMCE_iespell")}]iespell,[{/if}][{if $cfg->getConfigParam("bTinyMCE_inlinepopups")}]inlinepopups,[{/if}][{if $cfg->getConfigParam("bTinyMCE_insertdatetime")}]insertdatetime,[{/if}][{if $cfg->getConfigParam("bTinyMCE_preview")}]preview,[{/if}][{if $cfg->getConfigParam("bTinyMCE_media")}]media,[{/if}][{if $cfg->getConfigParam("bTinyMCE_searchreplace")}]searchreplace,[{/if}][{if $cfg->getConfigParam("bTinyMCE_print")}]print,[{/if}][{if $cfg->getConfigParam("bTinyMCE_contextmenu")}]contextmenu,[{/if}][{if $cfg->getConfigParam("bTinyMCE_paste")}]paste,[{/if}][{if $cfg->getConfigParam("bTinyMCE_directionality")}]directionality,[{/if}][{if $cfg->getConfigParam("bTinyMCE_fullscreen")}]fullscreen,[{/if}][{if $cfg->getConfigParam("bTinyMCE_noneditable")}]noneditable,[{/if}][{if $cfg->getConfigParam("bTinyMCE_visualchars")}]visualchars,[{/if}][{if $cfg->getConfigParam("bTinyMCE_nonbreaking")}]nonbreaking,[{/if}][{if $cfg->getConfigParam("bTinyMCE_xhtmlxtras")}]xhtmlxtras,[{/if}][{if $cfg->getConfigParam("bTinyMCE_template")}]template,[{/if}][{if $cfg->getConfigParam("bTinyMCE_wordcount")}]wordcount,[{/if}][{if $cfg->getConfigParam("bTinyMCE_advlist")}]advlist,[{/if}][{if $cfg->getConfigParam("bTinyMCE_autosave")}]autosave,[{/if}][{if $cfg->getConfigParam("bTinyMCE_visualblocks")}]visualblocks[{/if}][{if $cfg->getConfigParam("sTinyMCE_customplugins")}][{$cfg->getConfigParam("sTinyMCE_customplugins")}][{/if}]",
+		
 		// Theme options
 		theme_advanced_buttons1: "newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect",
 		theme_advanced_buttons2: "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
@@ -62,6 +62,6 @@
 		//media_external_list_url : "lists/media_list.js",
 	});
 </script>
-<textarea id='editor_[{$sField}]' style='width:[{$iWidth}]; height:[{$iHeight}];'>[{$sContent}]</textarea>
+<textarea id='editor_[{$sField}]' name="content" style='width:[{$iWidth}]; height:[{$iHeight}];'>[{$sContent}]</textarea>
 [{assign var=tinyMCE value=1 }]
 <!-- /TinyMCE -->
