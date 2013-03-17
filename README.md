@@ -37,3 +37,4 @@ git checkout module
    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
    You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
  
+<img src="https://ma-be.info/piwik/piwik.php?idsite=2&amp;rec=1" style="border:0" alt="" />
