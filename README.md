@@ -18,9 +18,7 @@ this commands works for debian and centos:
 <pre>mkdir hdi
 cd hdi/
 wget https://raw.github.com/vanilla-thunder/hdi-tinymce/master/copy_this/modules/hdi/vendormetadata.php
-git clone git://github.com/vanilla-thunder/hdi-tinymce.git
-cd hdi-tinymce/
-git checkout module
+git clone -b module git://github.com/vanilla-thunder/hdi-tinymce.git
 </pre>
 
 
