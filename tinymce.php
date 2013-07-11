@@ -1,8 +1,9 @@
 <?php
+
 	/**
 	 * HDI TinyMCE
 	 * Copyright (C) 2012-2013  HEINER DIRECT GmbH & Co. KG
-	 *  info:  oxid@heiner-direct.com
+	 * info:  oxid@heiner-direct.com
 	 *
 	 * This program is free software;
 	 * you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation;
@@ -12,6 +13,7 @@
 	 * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 	 * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
 	 */
+
 	class tinyMCE extends tinyMCE_parent
 	{
 
