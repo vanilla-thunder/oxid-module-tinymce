@@ -46,6 +46,11 @@
 					$smarty->assign( "iHeight", (strpos($iHeight, '%') === false) ? $iHeight . 'px' : $iHeight);
 					$smarty->assign("sContent", $this->_getEditValue($oObject, $sField));
 
+					//external plugins & controls
+					$smarty->assign("extPlugins", $myConfig->getConfigParam("aTinyMCE_external_plugins"));
+					$smarty->assign("extControls", $myConfig->getConfigParam("sTinyMCE_external_controls"));
+
+
 					//var_dump($myConfig->getModulesDir()."hdi/hdi-tinymce/test.tpl");
 					$smarty->assign("cfg", $myConfig);
 					$smarty->assign("oViewConf", $this->_aViewData["oViewConf"]);

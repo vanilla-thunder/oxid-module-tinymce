@@ -16,7 +16,7 @@
 	$sLangName = 'Deutsch';
 	$aLang = array(
 		'charset'                                 => 'UTF-8',
-		'SHOP_MODULE_GROUP_tinyMceMain'           => '<style type="text/css">.groupExp a.rc b {font-size: medium; color: #ff3600; }.groupExp dt input.txt { width: 200px !important} .groupExp dl { display: block !important; } input.confinput {position: fixed; top: 20px; right: 70px; background: #008B2D; padding: 5px 20px; color: white; border: 1px solid black; cursor:pointer; font-size: 125%; } input.confinput:hover {outline: 3px solid #ff3600;} .groupExp dt textarea.txtfield {height: 135px;}</style>Moduleinstellungen',
+		'SHOP_MODULE_GROUP_tinyMceMain'           => '<style type="text/css">.groupExp a.rc b {font-size: medium; color: #ff3600; }.groupExp dt input.txt { width: 400px !important} .groupExp dl { display: block !important; } input.confinput {position: fixed; top: 20px; right: 70px; background: #008B2D; padding: 5px 20px; color: white; border: 1px solid black; cursor:pointer; font-size: 125%; } input.confinput:hover {outline: 3px solid #ff3600;} .groupExp dt textarea.txtfield {height: 135px;}</style>Moduleinstellungen',
 		'SHOP_MODULE_aTinyMCE_classes'            => '<ul style="list-style:none;"><li><strong style="font-size:125%;">Liste der Backend-Klassen, wo TinyMCE angezeigt werden soll:</strong></li><li>article_main (Artikelbeschreibung)</li><li>content_main (CMS Seiten)</li><li>category_text (Kategorienbeschreibung)</li><li>newsletter_main (Newsletter)</li><li>news_text (Nachrichten-Text)</li></ul>',
 		'SHOP_MODULE_sTinyMCE_height'             => 'Höhe des Editors (eine reine Zahl ohne Einheiten)',
 		'SHOP_MODULE_sTinyMCE_cssfile'            => 'Pfad zu der CSS Datei mit den Stylesheets für Texte',

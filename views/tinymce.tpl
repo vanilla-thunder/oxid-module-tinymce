@@ -97,7 +97,7 @@
 
 			external_plugins: {
 				[{foreach from=$extPlugins key="plugin" item="file" }]
-					"[{$plugin}]}": "[{$file}]}",
+					"[{$plugin}]": "[{$file}]",
 				[{/foreach}]
 			},
 
