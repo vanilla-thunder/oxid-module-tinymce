@@ -19,7 +19,6 @@
 		{
 			$myConfig = oxRegistry::getConfig();
 			$aClasses = $myConfig->getConfigParam("aTinyMCE_classes");
-			oxRegistry::getUtils()->writeToLog("$iHeight <br/>","text.log");
 
 			//check if tinyMCE is active for this calss
 			if (in_array($this->getClassName(),$aClasses))
