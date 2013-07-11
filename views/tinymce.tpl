@@ -48,7 +48,7 @@
 		[{/if}]
 
 		//some weird stuff
-		entity_encoding : "raw",
+		//entity_encoding : "raw",
 
 		[{if $cfg->getConfigParam("bTinyMCE_browser_spellcheck")}]browser_spellcheck : true,[{/if}]
 
