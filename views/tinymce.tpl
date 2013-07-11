@@ -49,6 +49,7 @@
 
 		//some weird stuff
 		//entity_encoding : "raw",
+		moxiemanager_fullscreen: true,
 
 		[{if $cfg->getConfigParam("bTinyMCE_browser_spellcheck")}]browser_spellcheck : true,[{/if}]
 
