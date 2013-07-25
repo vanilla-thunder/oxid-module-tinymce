@@ -3,14 +3,13 @@ TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor contr
 More information here: http://www.tinymce.com/
 and here: https://github.com/tinymce
 
-## module version 1.1.0 from 2013-07-11
-### changelog  
+### module version 1.1.0 changelog:
 * updated to TinyMCE version 4.0.1
 * popup size applied to backend frameset
 
 
 ## INSTALLATION
-### upload over ftp/ssh:
+### upload over ftp:
 copy the content of the "copy_this" folder into the shop root directory  
 **if you are uploading files via ftp, switch to the binary transfer mode**  
 
