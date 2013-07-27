@@ -35,7 +35,7 @@
 <script type="text/javascript" src="[{$oViewConf->getModuleUrl('hdi-tinymce','tinymce/tinymce.js') }]"></script>
 <script type="text/javascript">
 	tinyMCE.init({
-		language: 'de',
+		language: '[{if $oViewConf->getActLanguageAbbr() == "de" }]de[{else}]en}[{/if}]',
 		selector: "textarea",
 		height: [{ $cfg->getConfigParam("sTinyMCE_height")}],
 		// url stuff
