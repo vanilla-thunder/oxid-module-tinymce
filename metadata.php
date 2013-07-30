@@ -17,10 +17,10 @@
 	$sMetadataVersion = '1.1';
 	$aModule = array(
 		'id'          => 'hdi-tinymce',
-		'title'       => '<strong style="color:#006a8c;border: 1px solid #e30061;padding: 0 2px;background:white;">HDI</strong> <strong>TinyMCE 4.0.1</strong>',
+		'title'       => '<strong style="color:#006a8c;border: 1px solid #e30061;padding: 0 2px;background:white;">HDI</strong> <strong>TinyMCE 4.0.2</strong>',
 		'description' => 'backend implementation of TinyMCE Editor<br/>visit <a href="http://www.tinymce.com/" target="_blank">http://www.tinymce.com/</a> for demo and more details',
 		'thumbnail'   => 'hdi.png',
-		'version'     => '1.1.0 (2013-07-10) / newest version: <img src="https://raw.github.com/vanilla-thunder/hdi-tinymce/master/copy_this/modules/hdi/hdi-tinymce/version.jpg" style="float:right;"/><br/>
+		'version'     => '1.1.1 (2013-07-30) / newest version: <img src="https://raw.github.com/vanilla-thunder/hdi-tinymce/master/copy_this/modules/hdi/hdi-tinymce/version.jpg" style="float:right;"/><br/>
 							<a style="display: inline-block; padding: 1px 25px; background: dodgerblue; border: 1px solid #585858; color: white;" href="https://github.com/vanilla-thunder/hdi-tinymce/" target="_blank">info</a>&nbsp;
 							<a style="display: inline-block; padding: 1px 25px; background: forestgreen; border: 1px solid #585858; color: white;" href="https://github.com/vanilla-thunder/hdi-tinymce/archive/master.zip">download</a>',
 		'author'      => 'Marat Bedoev, HEINER DIRECT GmbH & Co. KG',
