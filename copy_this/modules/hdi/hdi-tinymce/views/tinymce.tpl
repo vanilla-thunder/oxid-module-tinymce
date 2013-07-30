@@ -34,6 +34,7 @@
 
 <script type="text/javascript" src="[{$oViewConf->getModuleUrl('hdi-tinymce','tinymce/tinymce.js') }]"></script>
 <script type="text/javascript">
+    console.log();
 	tinyMCE.init({
 		language: '[{if $oViewConf->getActLanguageAbbr() == "de" }]de[{else}]en}[{/if}]',
 		selector: "textarea",
@@ -49,6 +50,10 @@
 
 		//some weird stuff
 		//entity_encoding : "raw",
+        plugin_preview_width: window.innerWidth,
+        plugin_preview_height: window.innerHeight-90,
+        plugin_code_width: window.innerWidth,
+        plugin_code_height: window.innerHeight-90,
 		moxiemanager_fullscreen: true,
 
 		[{if $cfg->getConfigParam("bTinyMCE_browser_spellcheck")}]browser_spellcheck : true,[{/if}]
