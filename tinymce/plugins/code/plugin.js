@@ -19,7 +19,7 @@ tinymce.PluginManager.add('code', function(editor) {
 				name: 'code',
 				multiline: true,
 				minWidth: 600,
-				minHeight: 300,
+				minHeight: 500,
 				value: editor.getContent({source_view: true}),
 				spellcheck: false
 			},
