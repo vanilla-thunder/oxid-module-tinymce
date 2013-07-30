@@ -1,3 +1,0 @@
-[submodule "tinymce"]
-	path = tinymce
-	url = git@github.com:vanilla-thunder/hdi-tinymce.git
