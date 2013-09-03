@@ -6,12 +6,12 @@ and here: https://github.com/tinymce
 
 ### module version 1.1.2 changelog:
 * updated to TinyMCE version 4.0.5
-* fixed size of the code popup
+* edit lang fixed
+* smaller button style
 
 ### module version 1.1.1 changelog:
 * updated to TinyMCE version 4.0.2
 * fixed size of the code popup
-
 
 ### module version 1.1.0 changelog:
 * updated to TinyMCE version 4.0.1

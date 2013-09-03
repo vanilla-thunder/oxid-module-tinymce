@@ -40,6 +40,10 @@
 					{
 						$sInitialValue = $oObject->$sField->value;
 					}
+                    $sLang = oxRegistry::getLang()->getLanguageAbbr(oxRegistry::getLang()->getTplLanguage ());
+
+                    $smarty->assign("sEditorLang",($sLang == "de" ? $sLang : "en"));
+
 					//$oObject->$sField = new oxField(str_replace('[{$shop->currenthomedir}]', $myConfig->getCurrentShopURL(), $sInitialValue), oxField::T_RAW);
 					$smarty->assign("sField", $sField);
 					$smarty->assign("iWidth", (strpos($iWidth, '%') === false) ? $iWidth . 'px' : $iWidth);
