@@ -1,17 +1,38 @@
-# TinyMCE 4.0.2 for OXID eShop CE  4.7+
+# TinyMCE 4.0.5 for OXID eShop CE  4.7+
 TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor control released as Open Source under LGPL.  
 More information here: http://www.tinymce.com/  
 and here: https://github.com/tinymce
+
+
+### module version 1.1.2 changelog:
+* updated to TinyMCE version 4.0.5
+* fixed size of the code popup
 
 ### module version 1.1.1 changelog:
 * updated to TinyMCE version 4.0.2
 * fixed size of the code popup
 
 
+### module version 1.1.0 changelog:
+* updated to TinyMCE version 4.0.1
+
+
 ## INSTALLATION
-### upload over ftp:
+### upload over ftp / sft / ssh:
 copy the content of the "copy_this" folder into the shop root directory  
-**if you are uploading files via ftp, switch to the binary transfer mode**  
+**if you are uploading files via ftp, set transfer mode to binary mode**
+### ssh console + git client
+naviagte to the modules directory in your shop and create the "hdi" folder if you don't have it yet:
+<pre>
+mkdir hdi
+cd hdi
+wget https://raw.github.com/vanilla-thunder/hdi-tinymce/master/copy_this/modules/hdi/vendormetadata.php
+</pre>
+isinde the "hdi" directory:
+<pre>
+git clone -b module https://github.com/vanilla-thunder/hdi-tinymce.git
+</pre>
+
 
 
 ## LICENSE AGREEMENT 
