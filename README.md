@@ -1,18 +1,19 @@
 # TinyMCE 4.0.5 for OXID eShop CE  4.7+
+## module version 1.1.3 from 2013-09-04
 TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor control released as Open Source under LGPL.  
 More information here: http://www.tinymce.com/  
 and here: https://github.com/tinymce
 
-
+### module version 1.1.2 changelog:
+* new editor languages: cs, fr, da, nl, ru, it
+* feature: exclude TinyMCE from plain cms pages
 ### module version 1.1.2 changelog:
 * updated to TinyMCE version 4.0.5
 * edit lang fixed
 * smaller button style
-
 ### module version 1.1.1 changelog:
 * updated to TinyMCE version 4.0.2
 * fixed size of the code popup
-
 ### module version 1.1.0 changelog:
 * updated to TinyMCE version 4.0.1
 

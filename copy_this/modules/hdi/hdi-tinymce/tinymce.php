@@ -19,11 +19,11 @@
 
 		protected function _generateTextEditor($iWidth, $iHeight, $oObject, $sField, $sStylesheet = NULL)
 		{
-			$myConfig = oxRegistry::getConfig();
-			$aClasses = $myConfig->getConfigParam("aTinyMCE_classes");
+			$myConfig  = oxRegistry::getConfig();
+            $aClasses  = $myConfig->getConfigParam("aTinyMCE_classes");
+            $aPlainCms = $myConfig->getConfigParam("aTinyMCE_plaincms");
 
-			//check if tinyMCE is active for this calss
-			if (in_array($this->getClassName(),$aClasses))
+			if (in_array($this->getClassName(),$aClasses) && !in_array($oObject->oxcontents__oxloadid->value,$aPlainCms))
 			{
 				$oViewConf = $this->_aViewData["oViewConf"];
 				$smarty = oxRegistry::get("oxUtilsView")->getSmarty();
@@ -41,8 +41,9 @@
 						$sInitialValue = $oObject->$sField->value;
 					}
                     $sLang = oxRegistry::getLang()->getLanguageAbbr(oxRegistry::getLang()->getTplLanguage ());
+                    $aLang = array("cs","da","de","fr","it","nl","ru");
 
-                    $smarty->assign("sEditorLang",($sLang == "de" ? $sLang : "en"));
+                    $smarty->assign("sEditorLang",(in_array($sLang,$aLang) ? $sLang : "en"));
 
 					//$oObject->$sField = new oxField(str_replace('[{$shop->currenthomedir}]', $myConfig->getCurrentShopURL(), $sInitialValue), oxField::T_RAW);
 					$smarty->assign("sField", $sField);
@@ -63,10 +64,16 @@
 				}
 
 				return $sEditor;
-			} else
+			}
+            else
 			{
 				//returning default textarea or whatever
-				return parent::_generateTextEditor($iWidth, $iHeight, $oObject, $sField, $sStylesheet);
+				$sEditor = parent::_generateTextEditor($iWidth, $iHeight, $oObject, $sField, $sStylesheet);
+                if(in_array($oObject->oxcontents__oxloadid->value,$aPlainCms))
+                {
+                    $sEditor .= oxRegistry::getLang()->translateString("hdi_tinymce_plaincms");
+                }
+                return $sEditor;
 			}
 		}
 
