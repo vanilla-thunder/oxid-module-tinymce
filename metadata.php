@@ -44,7 +44,7 @@
 			/* enabling tinyMCE for this classes */
 			array('group' => 'tinyMceMain', 'name' => 'aTinyMCE_classes', 'type' => 'arr', 'value' => array("article_main", "category_text","content_main","newsletter_main","news_text"), 'position' => 0),
             array('group' => 'tinyMceMain', 'name' => 'aTinyMCE_plaincms','type' => 'arr', 'value' => array("oxadminordernpplainemail", "oxadminorderplainemail", "oxemailfooterplain", "oxnewsletterplainemail", "oxordersendplainemail", "oxregisterplainemail", "oxuserorderemailendplain", "oxuserordernpplainemail", "oxuserorderplainemail", "oxupdatepassinfoplainemail", "oxregisterplainaltemail", "oxrighttocancellegend", "oxrighttocancellegend2","oxstartmetadescription",
-"oxstartmetakeywords"), 'position' => 1),
+"oxstartmetakeywords","oxstartmetadescription", "oxstartmetakeywords"), 'position' => 1),
 			array('group' => 'tinyMceMain', 'name' => 'sTinyMCE_height',  'type' => 'str', 'value' => '300', 'position' => 2),
 			array('group' => 'tinyMceMain', 'name' => 'sTinyMCE_cssfile', 'type' => 'str', 'value' => '/weiss/ich/noch/nicht.css', 'position' => 3),
 
