@@ -21,6 +21,8 @@ $aLang     = array(
     'SHOP_MODULE_aTinyMCE_classes'            => '<ul style="list-style:none;"><li><strong style="font-size:125%;">Liste der Backend-Klassen, wo TinyMCE angezeigt werden soll:</strong></li><li>article_main (Artikelbeschreibung)</li><li>content_main (CMS Seiten)</li><li>category_text (Kategorienbeschreibung)</li><li>newsletter_main (Newsletter)</li><li>news_text (Nachrichten-Text)</li></ul>',
     'SHOP_MODULE_aTinyMCE_plaincms'           => 'Idents der CMS Seiten, wo TinyMCE nicht geladen werden soll (plain Emails etc)',
     'SHOP_MODULE_sTinyMCE_height'             => 'Höhe des Editors (eine reine Zahl ohne Einheiten)',
+    'SHOP_MODULE_bTinyMCE_smallui'            => 'kleine Menü-Knöpfe verwenden',
+    'SHOP_MODULE_bTinyMCE_legacyoutput'       => 'HTML4 Standard im Newsletter-Inhalt verwenden',
     'SHOP_MODULE_sTinyMCE_cssfile'            => 'Pfad zu der CSS Datei mit den Stylesheets für Texte',
 
     'SHOP_MODULE_GROUP_tinyMceSettings'       => 'TinyMCE Einstellungen &amp; Plugins</b></a>&nbsp;&nbsp;&nbsp;<a href="http://www.tinymce.com/wiki.php/Configuration" target="_blank" title="mehr Infos"><b>( ? )',
@@ -47,7 +49,6 @@ $aLang     = array(
     'SHOP_MODULE_bTinyMCE_image'              => 'image',
     'SHOP_MODULE_bTinyMCE_insertdatetime'     => 'insertdatetime',
     'SHOP_MODULE_bTinyMCE_layer'              => 'layer',
-    'SHOP_MODULE_bTinyMCE_legacyoutput'       => 'legacyoutput',
     'SHOP_MODULE_bTinyMCE_link'               => 'link',
     'SHOP_MODULE_bTinyMCE_lists'              => 'lists',
     'SHOP_MODULE_bTinyMCE_media'              => 'media',

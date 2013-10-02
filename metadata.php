@@ -54,8 +54,10 @@
                 "oxrighttocancellegend", "oxrighttocancellegend2", // widerrufsrecht
                 "oxstartmetadescription", "oxstartmetakeywords" // META Tags
                 ), 'position' => 1),
-			array('group' => 'tinyMceMain', 'name' => 'sTinyMCE_height',  'type' => 'str', 'value' => '300', 'position' => 2),
-			array('group' => 'tinyMceMain', 'name' => 'sTinyMCE_cssfile', 'type' => 'str', 'value' => '/weiss/ich/noch/nicht.css', 'position' => 3),
+            array('group' => 'tinyMceMain', 'name' => 'sTinyMCE_height',  'type' => 'str', 'value' => '300', 'position' => 2),
+            array('group' => 'tinyMceMain', 'name' => 'bTinyMCE_smallui', 'type' => 'bool', 'value' => true, 'position' => 3),
+            array('group' => 'tinyMceMain', 'name' => 'bTinyMCE_legacyoutput', 'type' => 'bool', 'value' => true, 'position' => 4),
+			array('group' => 'tinyMceMain', 'name' => 'sTinyMCE_cssfile', 'type' => 'str', 'value' => '/weiss/ich/noch/nicht.css', 'position' => 5),
 
 			/* TinyMCE Settings */
 
@@ -82,7 +84,6 @@
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_image', 'type' => 'bool', 'value' => true, 'position' => 19),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_insertdatetime', 'type' => 'bool', 'value' => true, 'position' => 20),
 			//array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_layer', 'type' => 'bool', 'value' => true, 'position' => 21),   // doenst really works, gonna be removed in the future
-			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_legacyoutput', 'type' => 'bool', 'value' => true, 'position' => 22),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_link', 'type' => 'bool', 'value' => true, 'position' => 23),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_lists', 'type' => 'bool', 'value' => true, 'position' => 24),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_media', 'type' => 'bool', 'value' => true, 'position' => 25),
