@@ -21,7 +21,7 @@
 		'description' => 'backend implementation of TinyMCE Editor<br/>visit <a href="http://www.tinymce.com/" target="_blank">http://www.tinymce.com/</a> for demo and more details',
 		'thumbnail'   => 'hdi.png',
 		'version'     => '1.1.4 (2013-10-01) / newest version: <img src="https://raw.github.com/vanilla-thunder/hdi-tinymce/master/copy_this/modules/hdi/hdi-tinymce/version.jpg" style="float:right;"/><br/>
-							<a style="display: inline-block; padding: 1px 25px; background: dodgerblue; border: 1px solid #585858; color: white;" href="https://github.com/vanilla-thunder/hdi-tinymce/" target="_blank">info</a>&nbsp;
+							<a style="display: inline-block; padding: 1px 25px; background: dodgerblue; border: 1px solid #585858; color: white;" href="http://bit.ly/hdi-tinymce" target="_blank">info</a>&nbsp;
 							<a style="display: inline-block; padding: 1px 25px; background: forestgreen; border: 1px solid #585858; color: white;" href="https://github.com/vanilla-thunder/hdi-tinymce/archive/master.zip">download</a>',
 		'author'      => 'Marat Bedoev, HEINER DIRECT GmbH & Co. KG',
 		'email'       => 'oxid@heiner-direct.com',
@@ -54,8 +54,10 @@
                 "oxrighttocancellegend", "oxrighttocancellegend2", // widerrufsrecht
                 "oxstartmetadescription", "oxstartmetakeywords" // META Tags
                 ), 'position' => 1),
-			array('group' => 'tinyMceMain', 'name' => 'sTinyMCE_height',  'type' => 'str', 'value' => '300', 'position' => 2),
-			array('group' => 'tinyMceMain', 'name' => 'sTinyMCE_cssfile', 'type' => 'str', 'value' => '/weiss/ich/noch/nicht.css', 'position' => 3),
+            array('group' => 'tinyMceMain', 'name' => 'sTinyMCE_height',  'type' => 'str', 'value' => '300', 'position' => 2),
+            array('group' => 'tinyMceMain', 'name' => 'bTinyMCE_smallui', 'type' => 'bool', 'value' => true, 'position' => 3),
+            array('group' => 'tinyMceMain', 'name' => 'bTinyMCE_legacyoutput', 'type' => 'bool', 'value' => true, 'position' => 4),
+			array('group' => 'tinyMceMain', 'name' => 'sTinyMCE_cssfile', 'type' => 'str', 'value' => '/weiss/ich/noch/nicht.css', 'position' => 5),
 
 			/* TinyMCE Settings */
 
@@ -82,7 +84,6 @@
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_image', 'type' => 'bool', 'value' => true, 'position' => 19),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_insertdatetime', 'type' => 'bool', 'value' => true, 'position' => 20),
 			//array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_layer', 'type' => 'bool', 'value' => true, 'position' => 21),   // doenst really works, gonna be removed in the future
-			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_legacyoutput', 'type' => 'bool', 'value' => true, 'position' => 22),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_link', 'type' => 'bool', 'value' => true, 'position' => 23),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_lists', 'type' => 'bool', 'value' => true, 'position' => 24),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_media', 'type' => 'bool', 'value' => true, 'position' => 25),
