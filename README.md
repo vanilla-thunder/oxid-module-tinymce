@@ -5,7 +5,7 @@ More information here: http://www.tinymce.com/
 and here: https://github.com/tinymce
 
 # more info here:
-http://vanilla-thunder.github.io/hdi-tinymce/
+## http://vanilla-thunder.github.io/hdi-tinymce/
 
 ## LICENSE AGREEMENT 
    HDI TinyMCE  
