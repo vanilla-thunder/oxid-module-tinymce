@@ -4,7 +4,7 @@ TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor contr
 More information here: http://www.tinymce.com/  
 and here: https://github.com/tinymce
 
-# more info here: http://bit.ly/hdi-TinyMCE
+## more info here: http://bit.ly/hdi-TinyMCE
 
 ### LICENSE AGREEMENT 
    HDI TinyMCE  
