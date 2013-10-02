@@ -36,11 +36,10 @@
     }
 
 </script>
-[{* <script type="text/javascript" src="[{$oViewConf->getModuleUrl('hdi-tinymce','tinymce/tinymce.min.js') }]"></script> *}]
-<script src="http://tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+<script type="text/javascript" src="[{$oViewConf->getModuleUrl('hdi-tinymce','tinymce/tinymce.min.js') }]"></script>
 <script type="text/javascript">
     tinyMCE.init({
-        //language: "[{$sEditorLang}]",
+        language: "[{$sEditorLang}]",
         selector: "textarea",
         height: [{ $cfg->getConfigParam("sTinyMCE_height")}],
         document_base_url: "[{$oViewConf->getBaseDir()}]",
