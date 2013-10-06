@@ -54,6 +54,7 @@
         moxiemanager_fullscreen: true,
 
         [{if $cfg->getConfigParam("bTinyMCE_browser_spellcheck")}]browser_spellcheck : true,[{/if}]
+        [{strip}]
         plugins: ["
                 [{if $cfg->getConfigParam("bTinyMCE_advlist")}]advlist, [{/if}]
                 [{if $cfg->getConfigParam("bTinyMCE_anchor")}]anchor, [{/if}]
@@ -66,7 +67,6 @@
                 [{if $cfg->getConfigParam("bTinyMCE_contextmenu")}]contextmenu, [{/if}]
                 [{* [{if $cfg->getConfigParam("bTinyMCE_directionality")}]directionality, [{/if}] *}]
                 [{if $cfg->getConfigParam("bTinyMCE_emoticons")}]emoticons, [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_example_dependency")}]example_dependency, [{/if}] *}]
                 [{* [{if $cfg->getConfigParam("bTinyMCE_fullpage")}]fullpage, [{/if}] *}]
                 [{if $cfg->getConfigParam("bTinyMCE_fullscreen")}]fullscreen, [{/if}]
                 [{if $cfg->getConfigParam("bTinyMCE_hr")}]hr, [{/if}]
@@ -91,9 +91,9 @@
                 [{if $cfg->getConfigParam("bTinyMCE_visualblocks")}]visualblocks [{/if}]
                 [{if $cfg->getConfigParam("bTinyMCE_visualchars")}]visualchars [{/if}]
                 [{if $cfg->getConfigParam("bTinyMCE_wordcount")}]wordcount [{/if}]
-                [{if $oViewConf->getActiveClassName() == "newsletter_main" && $cfg->getConfigParam("bTinyMCE_legacyoutput")}]legacyoutput, /* use legacy html tags for newsletter */[{/if}]
+                [{if $oViewConf->getActiveClassName() == "newsletter_main" && $cfg->getConfigParam("bTinyMCE_legacyoutput")}]legacyoutput, // use legacy html tags for newsletter [{/if}]
                 "],
-
+        [{/strip}]
         [{if $extPlugins}]
         external_plugins: {
             [{strip}]
