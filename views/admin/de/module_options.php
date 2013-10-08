@@ -17,7 +17,7 @@
 $sLangName = 'Deutsch';
 $aLang     = array(
     'charset'                                 => 'UTF-8',
-    'SHOP_MODULE_GROUP_tinyMceMain'           => '<style type="text/css">.groupExp a.rc b {font-size: medium; color: #ff3600; }.groupExp dt input.txt { width: 400px !important} .groupExp dl { display: block !important; } input.confinput {position: fixed; top: 20px; right: 70px; background: #008B2D; padding: 5px 20px; color: white; border: 1px solid black; cursor:pointer; font-size: 125%; } input.confinput:hover {outline: 3px solid #ff3600;} .groupExp dt textarea.txtfield {height: 135px;}</style>Moduleinstellungen',
+    'SHOP_MODULE_GROUP_tinyMceMain'           => '<style type="text/css">.groupExp a.rc b {font-size: medium; color: #ff3600; }.groupExp dt input.txt { width: 400px !important} .groupExp dl { display: block !important; } input.confinput {position: fixed; top: 20px; right: 70px; background: #008B2D; padding: 5px 20px; color: white; border: 1px solid black; cursor:pointer; font-size: 125%; } input.confinput:hover {outline: 3px solid #ff3600;} .groupExp dt textarea.txtfield {width: 400px; height: 135px;}</style>Moduleinstellungen',
     'SHOP_MODULE_aTinyMCE_classes'            => '<ul style="list-style:none;"><li><strong style="font-size:125%;">Liste der Backend-Klassen, wo TinyMCE angezeigt werden soll:</strong></li><li>article_main (Artikelbeschreibung)</li><li>content_main (CMS Seiten)</li><li>category_text (Kategorienbeschreibung)</li><li>newsletter_main (Newsletter)</li><li>news_text (Nachrichten-Text)</li></ul>',
     'SHOP_MODULE_aTinyMCE_plaincms'           => 'Idents der CMS Seiten, wo TinyMCE nicht geladen werden soll (plain Emails etc)',
     'SHOP_MODULE_sTinyMCE_height'             => 'Höhe des Editors (eine reine Zahl ohne Einheiten)',
@@ -71,7 +71,8 @@ $aLang     = array(
 
     'SHOP_MODULE_GROUP_tinyMceExtPlugins'     => 'TinyMCE externe Plugins',
     'SHOP_MODULE_aTinyMCE_external_plugins'   => '<strong>externe Plugins</strong><br/>Eingabeformat:<br/>Pluginname => Pfad_zu_der_Datei.js',
-    'SHOP_MODULE_sTinyMCE_external_controls'  => 'Buttons der externen Plugins',
+    'SHOP_MODULE_sTinyMCE_external_controls'  => 'Buttons für externe Plugins',
+    'SHOP_MODULE_aTinyMCE_external_config'    => 'Konfigurationsparameter für externe Plugins',
 
     'hdi_tinymce_plaincms' => '<h4 class="errorbox">TinyMCE ist für diese Seite deaktiviert, weil sie keine HTML Formatierung enthalten darf </h4>'
 

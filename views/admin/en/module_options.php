@@ -17,7 +17,7 @@
 $sLangName = 'English';
 $aLang     = array(
     'charset'                                 => 'UTF-8',
-    'SHOP_MODULE_GROUP_tinyMceMain'           => '<style type="text/css">.groupExp a.rc b {font-size: medium; color: #ff3600; }.groupExp dt input.txt { width: 400px !important} .groupExp dl { display: block !important; } input.confinput {position: fixed; top: 20px; right: 70px; background: #008B2D; padding: 5px 20px; color: white; border: 1px solid black; cursor:pointer; font-size: 125%; } input.confinput:hover {outline: 3px solid #ff3600;} .groupExp dt textarea.txtfield {height: 135px;}</style>settings',
+    'SHOP_MODULE_GROUP_tinyMceMain'           => '<style type="text/css">.groupExp a.rc b {font-size: medium; color: #ff3600; }.groupExp dt input.txt { width: 400px !important} .groupExp dl { display: block !important; } input.confinput {position: fixed; top: 20px; right: 70px; background: #008B2D; padding: 5px 20px; color: white; border: 1px solid black; cursor:pointer; font-size: 125%; } input.confinput:hover {outline: 3px solid #ff3600;} .groupExp dt textarea.txtfield { width: 400px; height: 135px;}</style>settings',
     'SHOP_MODULE_aTinyMCE_classes'            => '<ul style="list-style:none;"><li><strong style="font-size:125%;">list of backend classes, TinyMCE will be active for:</strong></li><li>article_main (product description)</li><li>content_main (CMS pages)</li><li>category_text (category description)</li><li>newsletter_main (newsletter)</li><li>news_text (news text)</li></ul>',
     'SHOP_MODULE_aTinyMCE_plaincms'           => 'Idents of CMS pages TinyMCE will be excluded for ( e.g. plain Emails etc)',
     'SHOP_MODULE_sTinyMCE_height'             => 'editor height in px (without units)',
@@ -69,9 +69,10 @@ $aLang     = array(
     'SHOP_MODULE_bTinyMCE_visualchars'        => 'visualchars',
     'SHOP_MODULE_bTinyMCE_wordcount'          => 'wordcount',
 
-    'SHOP_MODULE_GROUP_tinyMceExtPlugins'     => 'TinyMCE extern Plugins',
+    'SHOP_MODULE_GROUP_tinyMceExtPlugins'     => 'TinyMCE external Plugins',
     'SHOP_MODULE_aTinyMCE_external_plugins'   => '<strong>extern plugins</strong><br/>format:<br/>pluginname => path_to_the_plugin.js',
-    'SHOP_MODULE_sTinyMCE_external_controls'  => 'extern plugins controls',
+    'SHOP_MODULE_sTinyMCE_external_controls'  => 'external plugins controls',
+    'SHOP_MODULE_aTinyMCE_external_config'    => 'custom config params (e.g. for external plugins)',
 
     'hdi_tinymce_plaincms'                    => '<h4 class="errorbox">TinyMCE is excluded from this page because it may not contain HTML code</h4>'
 

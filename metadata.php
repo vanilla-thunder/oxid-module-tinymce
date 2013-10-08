@@ -106,5 +106,6 @@
 			/* external plugins */
 			array('group' => 'tinyMceExtPlugins', 'name' => 'aTinyMCE_external_plugins', 'type' => 'aarr', 'value' => null, 'position' => 0),
 			array('group' => 'tinyMceExtPlugins', 'name' => 'sTinyMCE_external_controls', 'type' => 'str', 'value' => '', 'position' => 1),
+			array('group' => 'tinyMceExtPlugins', 'name' => 'aTinyMCE_external_config','type' => 'arr', 'value' => null, 'position' => 2),
 		)
 	);

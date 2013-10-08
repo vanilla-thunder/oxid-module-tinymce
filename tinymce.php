@@ -55,6 +55,7 @@
 					//external plugins & controls
 					$smarty->assign("extPlugins", $myConfig->getConfigParam("aTinyMCE_external_plugins"));
 					$smarty->assign("extControls", $myConfig->getConfigParam("sTinyMCE_external_controls"));
+					$smarty->assign("extConfig", implode($myConfig->getConfigParam("aTinyMCE_external_config"),"\n"));
 
 
 					//var_dump($myConfig->getModulesDir()."hdi/hdi-tinymce/test.tpl");
