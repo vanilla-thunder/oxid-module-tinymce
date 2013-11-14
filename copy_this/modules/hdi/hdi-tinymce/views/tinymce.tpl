@@ -53,9 +53,12 @@
         code_dialog_height: window.innerHeight-130,
         moxiemanager_fullscreen: true,
 
+        [{if $extConfig}]
+            [{oxeval var=$extConfig }]
+        [{/if}]
+
         [{if $cfg->getConfigParam("bTinyMCE_browser_spellcheck")}]browser_spellcheck : true,[{/if}]
-        [{strip}]
-        plugins: ["
+        plugins: ["[{strip}]
                 [{if $cfg->getConfigParam("bTinyMCE_advlist")}]advlist, [{/if}]
                 [{if $cfg->getConfigParam("bTinyMCE_anchor")}]anchor, [{/if}]
                 [{if $cfg->getConfigParam("bTinyMCE_autolink")}]autolink, [{/if}]
@@ -91,9 +94,9 @@
                 [{if $cfg->getConfigParam("bTinyMCE_visualblocks")}]visualblocks [{/if}]
                 [{if $cfg->getConfigParam("bTinyMCE_visualchars")}]visualchars [{/if}]
                 [{if $cfg->getConfigParam("bTinyMCE_wordcount")}]wordcount [{/if}]
-                [{if $oViewConf->getActiveClassName() == "newsletter_main" && $cfg->getConfigParam("bTinyMCE_legacyoutput")}]legacyoutput, // use legacy html tags for newsletter [{/if}]
-                "],
-        [{/strip}]
+                [{if $oViewConf->getActiveClassName() == "newsletter_main" && $cfg->getConfigParam("bTinyMCE_legacyoutput")}]legacyoutput // use legacy html tags for newsletter [{/if}]
+                [{/strip}]"],
+    
         [{if $extPlugins}]
         external_plugins: {
             [{strip}]
