@@ -41,9 +41,9 @@
 						$sInitialValue = $oObject->$sField->value;
 					}
                     $sLang = oxRegistry::getLang()->getLanguageAbbr(oxRegistry::getLang()->getTplLanguage ());
-                    $aLang = array("cs","da","de","fr","it","nl","ru");
-
-                    $smarty->assign("sEditorLang",(in_array($sLang,$aLang) ? $sLang : "en"));
+                    // array to assign shops lang abbreviations to lang file names of tinymce: shopLangAbbreviation => fileName (without .js )
+                    $aLang = array("cs" => "cs","da" => "da","de" => "de","fr" => "fr_FR","it" => "it","nl" => "nl","ru" => "ru");
+                    $smarty->assign("sEditorLang",(in_array($sLang,$aLang) ? $aLang[$sLang] : "en"));
 
 					//$oObject->$sField = new oxField(str_replace('[{$shop->currenthomedir}]', $myConfig->getCurrentShopURL(), $sInitialValue), oxField::T_RAW);
 					$smarty->assign("sField", $sField);
