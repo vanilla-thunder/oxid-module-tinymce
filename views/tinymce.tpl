@@ -101,7 +101,7 @@
         external_plugins: {
             [{strip}]
             [{foreach from=$extPlugins key="plugin" item="file" }]
-                "[{$plugin}]": "[{$file}]",
+                "[{$plugin}]": "[{oxeval var=$file}]",
             [{/foreach}]
             [{/strip}]
         },
