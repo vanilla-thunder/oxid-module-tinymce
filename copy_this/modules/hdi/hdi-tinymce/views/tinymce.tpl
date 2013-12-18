@@ -3,7 +3,7 @@
     var tinyMCE = null;
     function copyLongDescFromTinyMCE(sIdent)
     {
-        var editor = tinyMCE.activeEditor;
+        var editor = tinyMCE.get("editor_" + sIdent);
         if (editor && editor.isHidden() !== true)
         {
             var content = editor.getContent({format : 'raw'});
