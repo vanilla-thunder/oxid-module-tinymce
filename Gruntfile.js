@@ -13,30 +13,29 @@ module.exports = function(grunt) {
             }
         },
         curl: {
-            custom: {
-                src: {
-                    url: 'http://www.tinymce.com/i18n/download.php',
-                    method: 'POST',
-                    body: 'download[]=cs&download[]=da&download[]=de&download[]=fr_FR&download[]=it&download[]=nl&download[]=ru'
-                },
-                dest: './file.zip'
-            }
+            'language-files.zip' : 'http://www.tinymce.com/i18n/download.php?download[]=cs&download[]=da&download[]=de&download[]=fr_FR&download[]=it&download[]=nl&download[]=ru'
+        },
+        unzip: {
+            tinymce: 'language-files.zip'
         }
     });
 
     grunt.loadNpmTasks('grunt-curl');
+    grunt.loadNpmTasks('grunt-zip');
 
-    grunt.registerTask('default', 'download latest TinyMCE Editor', function() {
-        grunt.log.write('yippi ya yeah schweinebacke!').ok();
+    grunt.registerTask('default', ['curl','unzip', 'cleanup']);
+
+    grunt.registerTask('cleanup', 'removing temp files', function() {
+        grunt.file.delete('language-files.zip');
+        grunt.log.writeln('languages zip archive removed!');
     });
 
-    grunt.registerTask('update', 'download latest TinyMCE Editor', function() {
-        grunt.tasks('curl');
-        grunt.log.write('update task, yo!').ok();
-    });
+    grunt.registerTask('update-metadata', 'updating metadata with new module version', function() {
+        grunt.helper('curl', 'http://dev.ma-be.info/git/version.php?raw=1&v=<%= pkg.version %>', function handleData (err, content) {
+            grunt.log.error(err);
+            grunt.file.write('test.jpg',content);
 
-    grunt.registerTask('languages', 'updating language files for TinyMCE', function() {
-        grunt.log.write('get teh partey started, bro!').ok();
+        });
     });
 
 };
