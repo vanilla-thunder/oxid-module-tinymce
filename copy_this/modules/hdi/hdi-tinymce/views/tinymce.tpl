@@ -3,7 +3,7 @@
     var tinyMCE = null;
     function copyLongDescFromTinyMCE(sIdent)
     {
-        var editor = tinyMCE.get("editor_" + sIdent);
+        var editor = tinyMCE.activeEditor;
         if (editor && editor.isHidden() !== true)
         {
             var content = editor.getContent({format : 'raw'});
@@ -101,7 +101,7 @@
         external_plugins: {
             [{strip}]
             [{foreach from=$extPlugins key="plugin" item="file" }]
-                "[{$plugin}]": "[{$file}]",
+                "[{$plugin}]": "[{oxeval var=$file}]",
             [{/foreach}]
             [{/strip}]
         },

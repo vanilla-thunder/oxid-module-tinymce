@@ -1,0 +1,27 @@
+{
+  "name": "hdi-tinymce",
+  "version": "1.1.7",
+  "description": "TinyMCE integration for OXID eShop CE Backend",
+  "author": "Marat Bedoev, HEINER DIRECT GmbH & Co. KG <oxid@heiner-direct.com>",
+  "license": "GPLv3",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vanilla-thunder/hdi-tinymce.git"
+  },
+  "keywords": [
+    "tinymce",
+    "oxid",
+    "oxid",
+    "eshop",
+    "editor"
+  ],
+  "bugs": {
+    "url": "https://github.com/vanilla-thunder/hdi-tinymce/issues"
+  },
+  "devDependencies": {
+    "request": "*",
+    "grunt-cli":  "*",
+    "grunt":      "*",
+    "cheerio":    "*"
+  }
+}
