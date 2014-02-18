@@ -19,10 +19,9 @@
     "url": "https://github.com/vanilla-thunder/hdi-tinymce/issues"
   },
   "devDependencies": {
+    "request": "*",
+    "grunt-cli":  "*",
     "grunt":      "*",
-    "http":       "*",
-    "grunt-zip":  "*",
-    "grunt-curl": "*",
     "cheerio":    "*"
   }
 }
