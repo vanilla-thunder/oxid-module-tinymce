@@ -8,6 +8,9 @@
     "type": "git",
     "url": "git://github.com/vanilla-thunder/hdi-tinymce.git"
   },
+  "bugs": {
+    "url": "https://github.com/vanilla-thunder/hdi-tinymce/issues"
+  },
   "keywords": [
     "tinymce",
     "oxid",
@@ -15,13 +18,10 @@
     "eshop",
     "editor"
   ],
-  "bugs": {
-    "url": "https://github.com/vanilla-thunder/hdi-tinymce/issues"
-  },
   "devDependencies": {
+    "jake": "*",
     "request": "*",
-    "grunt-cli":  "*",
-    "grunt":      "*",
-    "cheerio":    "*"
+    "cheerio": "*",
+    "adm-zip": "*"
   }
 }
