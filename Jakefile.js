@@ -53,7 +53,7 @@ task("default", [], function() {
                 var tinymce = new AdmZip('tmp_tinymce.zip');
                 tinymce.getEntries().forEach(function(e) {
                     if (e.entryName.indexOf("tinymce/js/tinymce/") === 0) {
-                        tinymce.extractEntryTo(e.entryName, "tinymce", false, true);
+                        tinymce.extractEntryTo(e.entryName, e.entryName.replace("tinymce/js/tinymce","tinymce").replace(e.name,""), false, true);
                     }
                 });
                 fs.unlink('tmp_tinymce.zip');
