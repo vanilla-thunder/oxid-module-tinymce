@@ -2,7 +2,7 @@
 
 	/**
 	 * HDI TinyMCE
-	 * Copyright (C) 2012-2013  HEINER DIRECT GmbH & Co. KG
+	 * Copyright (C) 2012-2014  HEINER DIRECT GmbH & Co. KG
 	 * info:  oxid@heiner-direct.com
 	 *
 	 * This program is free software;
@@ -17,7 +17,7 @@
 	$sMetadataVersion = '1.1';
 	$aModule = array(
 		'id'          => 'hdi-tinymce',
-		'title'       => '<strong style="color:#006a8c;border: 1px solid #e30061;padding: 0 2px;background:white;">HDI</strong> <strong>TinyMCE 4.0.16</strong>',
+		'title'       => '<strong style="color:#006a8c;border: 1px solid #e30061;padding: 0 2px;background:white;">HDI</strong> <strong>TinyMCE 4.0.20</strong>',
 		'description' => 'backend implementation of TinyMCE Editor<br/>visit <a href="http://www.tinymce.com/" target="_blank">http://www.tinymce.com/</a> for demo and more details',
 		'thumbnail'   => 'hdi.png',
 		'version'     => '1.1.8 (2014-03-26) / newest version: <img src="https://raw.github.com/vanilla-thunder/hdi-tinymce/master/copy_this/modules/hdi/hdi-tinymce/version.jpg" style="float:right;"/><br/>
