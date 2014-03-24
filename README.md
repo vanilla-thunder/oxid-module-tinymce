@@ -1,5 +1,5 @@
-# TinyMCE 4.0.16 for OXID eShop CE  4.7+
-### hdi-tinymce module version 1.1.7 from 2014-02-17
+# TinyMCE 4.0.20 for OXID eShop CE  4.7+
+### hdi-tinymce module version 1.1.8 from 2014-03-26
 TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor control released as Open Source under LGPL.  
 More information here: http://www.tinymce.com/  
 and here: https://github.com/tinymce
@@ -8,7 +8,7 @@ and here: https://github.com/tinymce
 
 ### LICENSE AGREEMENT 
    HDI TinyMCE  
-   Copyright (C) 2012-2013  HEINER DIRECT GmbH & Co. KG  
+   Copyright (C) 2012-2014  HEINER DIRECT GmbH & Co. KG  
    info:  oxid@heiner-direct.com  
   
    This program is free software;  
