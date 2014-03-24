@@ -53,7 +53,7 @@ task("default", [], function() {
                 var tinymce = new AdmZip('tmp_tinymce.zip');
                 tinymce.getEntries().forEach(function(e) {
                     if (e.entryName.indexOf("tinymce/js/tinymce/") === 0) {
-                        tinymce.extractEntryTo(e.entryName, e.entryName.replace("tinymce/js/tinymce","tinymce").replace(e.name,""), false, true);
+                        tinymce.extractEntryTo(e.entryName, e.entryName.replace("tinymce/js/tinymce", "tinymce").replace(e.name, ""), false, true);
                     }
                 });
                 fs.unlink('tmp_tinymce.zip');
@@ -185,19 +185,19 @@ task("cleanup", [], function() {
 
 desc("updating module version");
 task("version", [], function() {
+    // update version.jpg
     var runner = require('child_process');
     runner.exec('php -r \'include("metadata.php"); print $aModule["version"];\'',
         function(err, stdout, stderr) {
             //console.log(stdout);
             var version = stdout.split(" ")[0];
             /*
-            var aVersion = oldVersion.split(".");
-            var patch = aVersion.pop();
-            var newVersion = aVersion.join(".") + "." + (Math.abs(patch) + 1);
-            */
+                var aVersion = oldVersion.split(".");
+                var patch = aVersion.pop();
+                var newVersion = aVersion.join(".") + "." + (Math.abs(patch) + 1);
+                */
             var url = "http://dev.marat.ws/v/?raw=1&v=" + version;
             r(url).pipe(fs.createWriteStream('version.jpg', true));
-            complete();
         }
     );
 
