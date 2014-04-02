@@ -40,7 +40,7 @@
 <script type="text/javascript">
     tinyMCE.init({
         language: "[{$sEditorLang}]",
-        selector: "textarea",
+        selector: "textarea#editor_[{$sField}]",
         height: [{ $cfg->getConfigParam("sTinyMCE_height")}],
         document_base_url: "[{$oViewConf->getBaseDir()}]",
         relative_urls: [{if $cfg->getConfigParam("bTinyMCE_relative_urls") == 1}]true[{else}]false[{/if}],

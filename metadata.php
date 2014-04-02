@@ -31,7 +31,8 @@
 			'category_text'   => 'hdi/hdi-tinymce/tinymce',
 			'content_main'    => 'hdi/hdi-tinymce/tinymce',
 			'newsletter_main' => 'hdi/hdi-tinymce/tinymce',
-			'news_text'       => 'hdi/hdi-tinymce/tinymce'
+			'news_text'       => 'hdi/hdi-tinymce/tinymce',
+            'oxviewconfig'    => 'hdi/hdi-tinymce/extend/oxviewconfig_hditinymce'
 			//'your_class'    => 'hdi/hdi-tinymce/tinymce' // <= insert here your own class
 		),
 		'templates'   => array(
@@ -61,7 +62,7 @@
 
 			/* TinyMCE Settings */
 
-			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_relative_urls', 'type' => 'bool', 'value' => true, 'position' => 0),
+			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_relative_urls', 'type' => 'bool', 'value' => false, 'position' => 0),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_browser_spellcheck', 'type' => 'bool', 'value' => true, 'position' => 1),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_autolink', 'type' => 'bool', 'value' => true, 'position' => 1),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_advlist', 'type' => 'bool', 'value' => true, 'position' => 2),
