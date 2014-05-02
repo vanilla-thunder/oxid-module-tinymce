@@ -21,7 +21,7 @@
 	$sMetadataVersion = '1.1';
 	$aModule = array(
 		'id'          => 'hdi-tinymce',
-		'title'       => '<strong style="color:#006a8c;border: 1px solid #e30061;padding: 0 2px;background:white;">HDI</strong> <strong>TinyMCE 4.0.23</strong>',
+		'title'       => '<strong style="color:#006a8c;border: 1px solid #e30061;padding: 0 2px;background:white;">HDI</strong> <strong>TinyMCE 4.0.25</strong>',
 		'description' => 'backend implementation of TinyMCE Editor<br/>visit <a href="http://www.tinymce.com/" target="_blank">http://www.tinymce.com/</a> for demo and more details'.
                         ( md5_file($v) != md5_file(dirname(__FILE__).DIRECTORY_SEPARATOR."version.jpg") ?
                             '<hr/><h2>New Version available:</h2>
