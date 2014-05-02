@@ -14,24 +14,34 @@
 	 * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
 	 */
 
+
+    $v = "https://raw.githubusercontent.com/vanilla-thunder/hdi-tinymce/master/copy_this/modules/hdi/hdi-tinymce/version.jpg";
+    $vm = "https://raw.githubusercontent.com/vanilla-thunder/hdi-tinymce/module/version.jpg";
+
 	$sMetadataVersion = '1.1';
 	$aModule = array(
 		'id'          => 'hdi-tinymce',
-		'title'       => '<strong style="color:#006a8c;border: 1px solid #e30061;padding: 0 2px;background:white;">HDI</strong> <strong>TinyMCE 4.0.20</strong>',
-		'description' => 'backend implementation of TinyMCE Editor<br/>visit <a href="http://www.tinymce.com/" target="_blank">http://www.tinymce.com/</a> for demo and more details',
+		'title'       => '<strong style="color:#006a8c;border: 1px solid #e30061;padding: 0 2px;background:white;">HDI</strong> <strong>TinyMCE 4.0.25</strong>',
+		'description' => 'backend implementation of TinyMCE Editor<br/>visit <a href="http://www.tinymce.com/" target="_blank">http://www.tinymce.com/</a> for demo and more details'.
+                        ( md5_file($v) != md5_file(dirname(__FILE__).DIRECTORY_SEPARATOR."version.jpg") ?
+                            '<hr/><h2>New Version available:</h2>
+                            <img src="'.$v.'" style="float:left;"/>
+                            <a style="display: inline-block; padding: 1px 25px; background: dodgerblue; border: 1px solid #585858; color: white;" href="http://bit.ly/hdi-TinyMCE" target="_blank">info</a>&nbsp;
+                            <a style="display: inline-block; padding: 1px 25px; background: forestgreen; border: 1px solid #585858; color: white;" href="https://github.com/vanilla-thunder/hdi-tinymce/archive/master.zip">download</a>' : '')
+            ,
+
 		'thumbnail'   => 'hdi.png',
-		'version'     => '1.1.8 (2014-03-26) / newest version: <img src="https://raw.github.com/vanilla-thunder/hdi-tinymce/master/copy_this/modules/hdi/hdi-tinymce/version.jpg" style="float:right;"/><br/>
-							<a style="display: inline-block; padding: 1px 25px; background: dodgerblue; border: 1px solid #585858; color: white;" href="http://bit.ly/hdi-TinyMCE" target="_blank">info</a>&nbsp;
-							<a style="display: inline-block; padding: 1px 25px; background: forestgreen; border: 1px solid #585858; color: white;" href="https://github.com/vanilla-thunder/hdi-tinymce/archive/master.zip">download</a>',
+		'version'     => '1.2.0 (2014-05-02)', //'<img src="'.$v.'"/>',
 		'author'      => 'Marat Bedoev, HEINER DIRECT GmbH & Co. KG',
 		'email'       => 'oxid@heiner-direct.com',
 		'url'         => 'http://www.heiner-direct.com',
 		'extend'      => array(
-			'article_main'    => 'hdi/hdi-tinymce/tinymce',
-			'category_text'   => 'hdi/hdi-tinymce/tinymce',
-			'content_main'    => 'hdi/hdi-tinymce/tinymce',
-			'newsletter_main' => 'hdi/hdi-tinymce/tinymce',
-			'news_text'       => 'hdi/hdi-tinymce/tinymce'
+			'article_main'    => 'hdi/hdi-tinymce/extend/tinymce',
+			'category_text'   => 'hdi/hdi-tinymce/extend/tinymce',
+			'content_main'    => 'hdi/hdi-tinymce/extend/tinymce',
+			'newsletter_main' => 'hdi/hdi-tinymce/extend/tinymce',
+			'news_text'       => 'hdi/hdi-tinymce/extend/tinymce',
+            'oxviewconfig'    => 'hdi/hdi-tinymce/extend/oxviewconfig_hditinymce'
 			//'your_class'    => 'hdi/hdi-tinymce/tinymce' // <= insert here your own class
 		),
 		'templates'   => array(
@@ -61,7 +71,7 @@
 
 			/* TinyMCE Settings */
 
-			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_relative_urls', 'type' => 'bool', 'value' => true, 'position' => 0),
+			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_relative_urls', 'type' => 'bool', 'value' => false, 'position' => 0),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_browser_spellcheck', 'type' => 'bool', 'value' => true, 'position' => 1),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_autolink', 'type' => 'bool', 'value' => true, 'position' => 1),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_advlist', 'type' => 'bool', 'value' => true, 'position' => 2),
@@ -74,7 +84,7 @@
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_code', 'type' => 'bool', 'value' => true, 'position' => 9),
 			//array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_compat3x', 'type' => 'bool', 'value' => true, 'position' => 10), //bug
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_contextmenu', 'type' => 'bool', 'value' => true, 'position' => 11),
-			//array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_directionality', 'type' => 'bool', 'value' => true, 'position' => 12), // rtl support
+			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_directionality', 'type' => 'bool', 'value' => true, 'position' => 12), // rtl support
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_emoticons', 'type' => 'bool', 'value' => false, 'position' => 13),
 			//array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_example', 'type' => 'bool', 'value' => true, 'position' => 14),  // example plugin
 			//array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_example_dependency', 'type' => 'bool', 'value' => true, 'position' => 15), // example plugin
@@ -82,7 +92,9 @@
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_fullscreen', 'type' => 'bool', 'value' => true, 'position' => 17),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_hr', 'type' => 'bool', 'value' => true, 'position' => 18),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_image', 'type' => 'bool', 'value' => true, 'position' => 19),
+
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_insertdatetime', 'type' => 'bool', 'value' => true, 'position' => 20),
+            //array('group' => 'tinyMceSettings', 'name' => 'sTinyMCE_datetimeformat', 'type' => 'select', 'value' => '0', 'constrains' => '0|1|2|3', 'position' => 3 ) // weiß noch nicht, wie ich das parsen soll...
 			//array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_layer', 'type' => 'bool', 'value' => true, 'position' => 21),   // doenst really works, gonna be removed in the future
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_link', 'type' => 'bool', 'value' => true, 'position' => 23),
 			array('group' => 'tinyMceSettings', 'name' => 'bTinyMCE_lists', 'type' => 'bool', 'value' => true, 'position' => 24),
