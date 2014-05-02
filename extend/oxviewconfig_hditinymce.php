@@ -16,24 +16,47 @@
 
 class oxviewconfig_hditinymce extends oxviewconfig_hditinymce_parent
 {
-    public function getExtPlugins()
+    public function getTinyPlugins()
+    {
+        $cfg = oxRegistry::getConfig();
+
+        $aAvailablePlugins = array("advlist","anchor","autolink",/*"autoresize", // bad for oxid frameset*/
+            "autosave","bbcode","charmap","code", /* "compat3x", // we dont use old v3.x modules */
+            "contextmenu","directionality","emoticons",/*"example","example_dependency","fullpage",*/
+            "fullscreen","hr","image","insertdatetime",/*"layer", // nobody knows what exactly it does, will be removed soon */
+            "link","lists",/*"importcss",*/"media","nonbreaking","noneditable","pagebreak",
+            "paste","preview","print",/*"save", // will add custom save button. will not work in oxid*/
+            "searchreplace","spellchecker","tabfocus",
+            "table","template","textcolor","visualblocks","visualchars","wordcount");
+        if($this->getActiveClassName() == "newsletter_main") $aPlugins[] = "legacyoutput";
+
+        $aPlugins = array();
+
+        foreach($aAvailablePlugins as $plugin)
+        {
+            if($cfg->getConfigParam("bTinyMCE_".$plugin)) $aPlugins[] = $plugin;
+        }
+
+        return (count($aPlugins)) ? $aPlugins : false;
+    }
+    public function getTinyExtPlugins()
     {
         $aPlugins = oxRegistry::getConfig()->getConfigParam("aTinyMCE_external_plugins");
         if(function_exists("getExtPlugins")) $aPlugins = array_merge(parent::getExtPlugins(), $aPlugins);
         return $aPlugins;
     }
 
-    public function getExtControls()
+    public function getTinyExtControls()
     {
         $sExtControls = oxRegistry::getConfig()->getConfigParam("sTinyMCE_external_controls");
         if(function_exists("getExtPlugins")) $sExtControls = parent::getExtControls()." ". $sExtControls;
         return $sExtControls;
     }
 
-    public function getExtConfig()
+    public function getTinyExtConfig()
     {
-        $sExtConfig = implode(oxRegistry::getConfig()->getConfigParam("aTinyMCE_external_config"), "\n");
-        if(function_exists("getExtConfig")) $sExtConfig = parent::getExtConfig()."\n". $sExtConfig;
-        return $sExtConfig;
+        $aExtConfig = oxRegistry::getConfig()->getConfigParam("aTinyMCE_external_config");
+        if(function_exists("getExtConfig")) $aExtConfig = array_merge(parent::getExtConfig(), $aExtConfig);
+        return $aExtConfig;
     }
 }

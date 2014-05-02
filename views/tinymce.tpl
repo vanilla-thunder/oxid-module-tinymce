@@ -53,64 +53,25 @@
         code_dialog_height: window.innerHeight-130,
         moxiemanager_fullscreen: true,
 
-        [{if $extConfig}]
-            [{oxeval var=$extConfig }]
+        [{if $oViewConf->getTinyExtConfig()}]
+            [{foreach from=$oViewConf->getTinyExtConfig() item="param"}][{oxeval var=$param }],[{/foreach}]
         [{/if}]
-
         [{if $cfg->getConfigParam("bTinyMCE_browser_spellcheck")}]browser_spellcheck : true,[{/if}]
-        plugins: ["[{strip}]
-                [{if $cfg->getConfigParam("bTinyMCE_advlist")}]advlist [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_anchor")}]anchor [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_autolink")}]autolink [{/if}]
-                [{* [{if $cfg->getConfigParam("bTinyMCE_autoresize")}]autoresize [{/if}] *}]
-                [{if $cfg->getConfigParam("bTinyMCE_autosave")}]autosave [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_bbcode")}]bbcode [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_charmap")}]charmap [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_code")}]code [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_contextmenu")}]contextmenu [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_directionality")}]directionality [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_emoticons")}]emoticons [{/if}]
-                [{* [{if $cfg->getConfigParam("bTinyMCE_fullpage")}]fullpage [{/if}] *}]
-                [{if $cfg->getConfigParam("bTinyMCE_fullscreen")}]fullscreen [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_hr")}]hr [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_image")}]image [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_insertdatetime")}]insertdatetime [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_link")}]link [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_lists")}]lists [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_media")}]media [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_nonbreaking")}]nonbreaking [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_noneditable")}]noneditable [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_pagebreak")}]pagebreak [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_paste")}]paste [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_preview")}]preview [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_print")}]print [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_save")}]save [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_searchreplace")}]searchreplace [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_spellchecker")}]spellchecker [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_tabfocus")}]tabfocus [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_table")}]table [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_template")}]template [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_textcolor")}]textcolor [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_visualblocks")}]visualblocks [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_visualchars")}]visualchars [{/if}]
-                [{if $cfg->getConfigParam("bTinyMCE_wordcount")}]wordcount [{/if}]
-                [{if $oViewConf->getActiveClassName() == "newsletter_main" && $cfg->getConfigParam("bTinyMCE_legacyoutput")}]legacyoutput // use legacy html tags for newsletter [{/if}]
-                [{/strip}]"],
+
+        plugins: ["[{foreach from=$oViewConf->getTinyPlugins() item="plugin" }][{$plugin}] [{/foreach}]"],
     
-        [{if $extPlugins}]
-        external_plugins: {
-            [{strip}]
-            [{foreach from=$extPlugins key="plugin" item="file" }]
+        external_plugins: {[{strip}]
+            [{foreach from=$oViewConf->getTinyExtPlugins() key="plugin" item="file" }]
                 "[{$plugin}]": "[{oxeval var=$file}]",
             [{/foreach}]
-            [{/strip}]
-        },
-        [{/if}]
+            [{/strip}] },
 
-        toolbar1: "undo redo searchreplace preview fullscreen code | image media emoticons table bullist numlist outdent indent blockquote subscript superscript [{if $cfg->getConfigParam("bTinyMCE_charmap")}]charmap[{/if}] hr anchor link unlink [{if $extControls}] | [{$extControls}][{/if}]",
-        toolbar2: "bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | fontselect fontsizeselect formatselect | removeformat | spellchecker",
+        toolbar1: "undo redo searchreplace preview print fullscreen code paste | image media emoticons table inserttable bullist numlist outdent indent | ltr rtl | blockquote subscript superscript [{if $cfg->getConfigParam("bTinyMCE_charmap")}]charmap[{/if}] hr nonbreaking anchor link unlink [{$oViewConf->getTinyExtControls()}]",
+        toolbar2: "bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | fontselect fontsizeselect formatselect | removeformat | spellchecker visualchars | insertdatetime",
         image_advtab: true,
         menubar: false,
+        insertdatetime_formats: ["%d.%m.%Y", "%H:%M"],
+        nonbreaking_force_tab: true,
         [{if $cfg->getConfigParam("bTinyMCE_smallui")}]toolbar_items_size: "small"[{/if}]
     });
 </script>
