@@ -1,8 +1,8 @@
 {
   "name": "hdi-tinymce",
-  "version": "1.1.7",
-  "description": "TinyMCE integration for OXID eShop CE Backend",
-  "author": "Marat Bedoev, HEINER DIRECT GmbH & Co. KG <oxid@heiner-direct.com>",
+  "version": "1.2.1",
+  "description": "TinyMCE integration for OXID eShop CE",
+  "author": "Marat Bedoev, bestlife AG <oxid@bestlife.ag>",
   "license": "GPLv3",
   "repository": {
     "type": "git",
@@ -16,10 +16,10 @@
     "oxid",
     "oxid",
     "eshop",
-    "editor"
+    "editor",
+    "wysiwyg"
   ],
   "devDependencies": {
-    "jake": "*",
     "request": "*",
     "cheerio": "*",
     "adm-zip": "*"
