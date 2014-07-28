@@ -20,16 +20,13 @@
     $sMetadataVersion = '1.1';
     $aModule          = array(
         'id'          => 'hdi-tinymce',
-        'title'       => '<strong style="color:#006a8c;border: 1px solid #e30061;padding: 0 2px;background:white;">HDI</strong> <strong>TinyMCE</strong>',
-        'description' => 'backend implementation of TinyMCE Editor<br/>visit <a href="http://www.tinymce.com/" target="_blank">http://www.tinymce.com/</a> for demo and more details<hr/>'.
-                         '<b style="display: inline-block; float:left;">newest version:</b><img src="' . $v . '" style=" float:left;"/>'.
-                         '<a style="display: inline-block; padding: 1px 25px; background: dodgerblue;  border: 1px solid #585858; color: white;" href="http://bit.ly/hdi-TinyMCE" target="_blank">info</a>&nbsp;'.
-                         '<a style="display: inline-block; padding: 1px 25px; background: forestgreen; border: 1px solid #585858; color: white;" href="https://github.com/vanilla-thunder/hdi-tinymce/archive/master.zip">download</a>',
-        'thumbnail'   => 'hdi.png',
-        'version'     => '1.2.0 (2014-05-02)', //'<img src="'.$v.'"/>',
-        'author'      => 'Marat Bedoev, HEINER DIRECT GmbH & Co. KG',
-        'email'       => 'oxid@heiner-direct.com',
-        'url'         => 'http://www.heiner-direct.com',
+        'title'       => '<strong style="color:#95b900;font-size:125%;">best</strong><strong style="color:#c4ca77;font-size:125%;">life</strong> <strong>TinyMCE</strong>',
+        'description' => 'TinyMCE 4.1.2 WYSIWYG Editor for OXID eShop backend 4.7 & 4.8<br/>visit <a href="http://www.tinymce.com/" target="_blank">http://www.tinymce.com/</a> for demo and more details<hr/><b style="display: inline-block; float:left;">newest version:</b><img src="' . $v . '" style=" float:left;"/><a style="display: inline-block; padding: 1px 25px; background: dodgerblue;  border: 1px solid #585858; color: white;" href="http://bit.ly/hdi-TinyMCE" target="_blank">info</a>&nbsp;<a style="display: inline-block; padding: 1px 25px; background: forestgreen; border: 1px solid #585858; color: white;" href="https://github.com/vanilla-thunder/hdi-tinymce/archive/master.zip">download</a>',
+        'thumbnail'   => 'tinymce.png',
+        'version'     => '1.2.1 (2014-07-28)',
+        'author'      => 'Marat Bedoev, bestlife AG',
+        'email'       => 'oxid@bestlife.ag',
+        'url'         => 'http://www.bestlife.ag',
         'extend'      => array(
             'article_main'    => 'hdi/hdi-tinymce/extend/tinymce',
             'category_text'   => 'hdi/hdi-tinymce/extend/tinymce',
