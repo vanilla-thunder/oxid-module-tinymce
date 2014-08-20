@@ -3,8 +3,8 @@
 
 ### installation
 * navigate into modules/ directory of your shop
-* mkdir bla & cd bla
-* echo "<?php \$sVendorMetadataVersion = '1.0';" > vendormetadata.php
+* git clone https://github.com/vanilla-thunder/bla.git
+* cd bla
 * git clone -b module https://github.com/vanilla-thunder/bla-tinymce.git
 
 
