@@ -3,9 +3,9 @@
 
 ### installation
 * navigate into modules/ directory of your shop
-* git clone https://github.com/vanilla-thunder/bla.git
-* cd bla
-* git clone -b module https://github.com/vanilla-thunder/bla-tinymce.git
+* $ git clone https://github.com/vanilla-thunder/bla.git
+* $ cd bla
+* $ git clone -b module https://github.com/vanilla-thunder/bla-tinymce.git
 
 
 ### development / updating (node.js required)
