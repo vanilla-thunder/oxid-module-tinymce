@@ -10,6 +10,6 @@
 
 ### development / updating (node.js required)
 * nagivate into bla-tinymce/ directory
-* npm install
-* "node update.js" will update tinymce and language files
-* "node update.js version x.y" will get new update.jpg for version x.y
+* $ npm install
+* $ node update.js- will update tinymce and language files
+* $ node update.js version 1.5 - will get new update.jpg for version 1.5
