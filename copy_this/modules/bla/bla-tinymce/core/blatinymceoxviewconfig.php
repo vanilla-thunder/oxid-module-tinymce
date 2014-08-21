@@ -45,7 +45,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
             'language'                => '"'.( in_array( $sLang, $aLang ) ? $aLang[$sLang] : 'en' ).'"',
             'height'                  => $cfg->getConfigParam( "sTinyMCE_height" ),
             'nowrap'                  => 'true',
-            'selector'                => '"textarea"',
+            'selector'                => '"textarea:not(.mceNoEditor)"',
             'relative_urls'           => 'false',
             'document_base_url'       => '"'.$this->getBaseDir().'"',
             'menubar'                 => 'false',
