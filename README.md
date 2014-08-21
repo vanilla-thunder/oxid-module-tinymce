@@ -7,7 +7,7 @@ and here: https://github.com/tinymce
 ## more info here: http://bit.ly/bla-TinyMCE
 
 ### LICENSE AGREEMENT 
-   bestlife AG - TinyMCE for OXID eShop
+   bestlife AG - TinyMCE for OXID eShop  
    Copyright (C) 2014  bestlife AG  
    info:  oxid@bestlife.ag  
   
