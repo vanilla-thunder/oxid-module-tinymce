@@ -110,7 +110,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
             "fullscreen" => "fullscreen",
             "preview" => "preview"
         );
-        if ($this->getActiveClassName()=="newsletter_main") $aPlugins[] = "legacyoutput";
+        if ($this->getActiveClassName()=="newsletter_main") $aPlugins["legacyoutput"] = false;
 
         // plugin override
         if($aOverride = $cfg->getConfigParam("aTinyMCE_plugins_override"))
