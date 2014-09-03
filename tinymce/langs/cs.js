@@ -135,6 +135,7 @@ tinymce.addI18n('cs',{
 "Height": "V\u00fd\u0161ka",
 "Paste row after": "Vlo\u017eit \u0159\u00e1dek pod",
 "Alignment": "Zarovn\u00e1n\u00ed",
+"Border color": "Barva r\u00e1me\u010dku",
 "Column group": "Skupina sloupc\u016f",
 "Row": "\u0158\u00e1dek",
 "Insert column before": "Vlo\u017eit sloupec vlevo",
