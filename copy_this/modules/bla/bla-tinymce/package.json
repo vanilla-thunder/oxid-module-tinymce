@@ -1,0 +1,27 @@
+{
+  "name": "bla-tinymce",
+  "version": "1.4.0",
+  "description": "TinyMCE integration for OXID eShop CE",
+  "author": "Marat Bedoev, bestlife AG <oxid@bestlife.ag>",
+  "license": "GPLv3",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vanilla-thunder/bla-tinymce.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vanilla-thunder/bla-tinymce/issues"
+  },
+  "keywords": [
+    "tinymce",
+    "oxid",
+    "oxid",
+    "eshop",
+    "editor",
+    "wysiwyg"
+  ],
+  "devDependencies": {
+    "request": "*",
+    "cheerio": "*",
+    "adm-zip": "*"
+  }
+}
