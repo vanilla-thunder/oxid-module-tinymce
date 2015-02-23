@@ -71,7 +71,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
             "anchor" => "anchor",
             "autolink" => false,
             "autoresize" => false,
-            "autosave" => false , // http://www.tinymce.com/wiki.php/Plugin:autosave
+            //"autosave" => false , // http://www.tinymce.com/wiki.php/Plugin:autosave // really bad stuff!
             //"bbcode" => ,
             "charmap" => "charmap",
             "colorpicker" => false,
