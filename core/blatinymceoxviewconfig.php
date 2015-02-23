@@ -2,7 +2,7 @@
 
 /*
  * bestlife AG - TinyMCE for OXID eShop
- * Copyright (C) 2014  bestlife AG
+ * Copyright (C) 2015  bestlife AG
  * info:  oxid@bestlife.ag
  *
  * This program is free software;
@@ -140,23 +140,27 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
         }
 
         // default tollbar buttons
-        $aButtons = array(
-            //"newdocument",
-            "undo redo",
-            "bold italic underline strikethrough",
-            "alignleft aligncenter alignright alignjustify",
-            //"styleselect",
-            //"cut copy paste",
-            "bullist numlist",
-            "outdent indent",
-            "blockquote",
-            "removeformat",
-            "subscript",
-            "superscript",
-            "formatselect",
-            "fontselect",
-            "fontsizeselect"
-        );
+        $aButtons = $cfg->getConfigParam("aTinyMCE_buttons");
+        if(!is_array($aButtons) || empty($aButtons))
+        {
+            // fallback
+            $aButtons = array(
+                "undo redo",
+                "bold italic underline strikethrough",
+                "alignleft aligncenter alignright alignjustify",
+                "bullist numlist",
+                "outdent indent",
+                "blockquote",
+                "removeformat",
+                "subscript",
+                "superscript",
+                "formatselect",
+                "fontselect",
+                "fontsizeselect"
+            );    
+        }
+        
+        
         // buttons for plugins, enable only if plugin is active
         $aButtons = array_merge($aButtons, array_filter(array_values($aPlugins)));
 
