@@ -192,7 +192,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
     if (editor && editor.isHidden() !== true)
     {
         console.log("copy content from tinymce");
-        var content = editor.getContent({format: "raw"}).replace(/\[{([^\]]*?)}\]/g, function(m) { return m.replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&amp;/g, "&") });
+        var content = editor.getContent().replace(/\[{([^\]]*?)}\]/g, function(m) { return m.replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&amp;/g, "&") });
         document.getElementsByName("editval[" + sIdent + "]").item(0).value = content;
         return true;
     }
