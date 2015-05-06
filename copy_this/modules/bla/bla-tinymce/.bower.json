@@ -1,0 +1,13 @@
+{
+  "name": "bla-tinymce",
+  "homepage": "https://github.com/vanilla-thunder/bla-tinymce",
+  "_release": "4bb4ba86a6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "module",
+    "commit": "4bb4ba86a6284fe9dc951880aeb98510eb1a9041"
+  },
+  "_source": "https://github.com/vanilla-thunder/bla-tinymce.git",
+  "_target": "module",
+  "_originalSource": "https://github.com/vanilla-thunder/bla-tinymce.git"
+}
