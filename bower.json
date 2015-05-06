@@ -1,0 +1,11 @@
+{
+  "name": "bla-tinymce OXID Module",
+  "version": "1.4.0",
+  "homepage": "http://marat.ws/bla-tinymce/",
+  "private": true,
+  "main": "copy_this/modules/bla/",
+  "ignore":"",
+  "dependencies": {
+    "bla-tinymce": "https://github.com/vanilla-thunder/bla-tinymce.git#module"
+  }
+}
