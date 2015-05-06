@@ -4,7 +4,7 @@
   "homepage": "http://marat.ws/bla-tinymce/",
   "private": true,
   "main": "metadata.php",
-  "ignore":"node_modules",
+  "ignore":"",
   "dependencies": {
     "tinymce": "*"
   }
