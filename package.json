@@ -1,6 +1,6 @@
 {
   "name": "bla-tinymce",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "TinyMCE integration for OXID eShop CE",
   "author": "Marat Bedoev, bestlife AG <oxid@bestlife.ag>",
   "license": "GPLv3",
@@ -19,7 +19,7 @@
     "editor",
     "wysiwyg"
   ],
-  "devDependencies": {
+  "dependencies": {
     "request": "*",
     "cheerio": "*",
     "adm-zip": "*"
