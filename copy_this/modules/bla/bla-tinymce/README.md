@@ -1,15 +1,29 @@
-## [bla] TinyMCE for OXID eShop 4.7 & 4.8
-#### raw module branch, also contains development files
+## bestlife AG - TinyMCE WYSIWYG Editor for OXID eShop 1.5.0
+TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor control released as Open Source under LGPL.
+More information here: http://www.tinymce.com/  
+and here: https://github.com/tinymce
 
-### installation
-* navigate into modules/ directory of your shop
-* $ git clone https://github.com/vanilla-thunder/bla.git
-* $ cd bla
-* $ git clone -b module https://github.com/vanilla-thunder/bla-tinymce.git
+#  bitte entfernen Sie vollständig das alte bla-TinyMCE Modul, bevor Sie das neue hochladen!
+  * Modul im Backend deaktivieren
+  * modules/bla/bla-tinymce löschen
+  * tmp/ leeren
+  
+#  please completely remove the older module version before update!
+  * deactivate module in backend
+  * remove modules/bla/bla-tinymce
+  * clear tmp/
 
+## more info here: [http:/marat.ws/bla-tinymce/](http:/marat.ws/bla-tinymce/)
 
-### development / updating (node.js required)
-* nagivate into bla-tinymce/ directory
-* $ npm install
-* $ node update.js- will update tinymce and language files
-* $ node update.js version 1.5 - will get new update.jpg for version 1.5
+### LICENSE AGREEMENT
+   bestlife AG - TinyMCE WYSIWYG Editor for OXID eShop  
+   Copyright (C) 2015  bestlife AG  
+   info:  oxid@bestlife.ag  
+  
+   This program is free software;  
+   you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation;
+   either version 3 of the License, or (at your option) any later version.
+  
+   This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;  
+   without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+   You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
