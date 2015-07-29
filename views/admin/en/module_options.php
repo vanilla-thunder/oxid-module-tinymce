@@ -18,18 +18,19 @@ $sLangName = 'English';
 $aLang     = array(
     'charset'                               => 'UTF-8',
     'SHOP_MODULE_GROUP_tinyMceMain'         => '<style type="text/css">.groupExp a.rc b {font-size: medium; color: #ff3600; }.groupExp dt input.txt { width: 430px !important} .groupExp dl { display: block !important; } input.confinput {position: fixed; top: 20px; right: 70px; background: #008B2D; padding: 10px 25px; color: white; border: 1px solid black; cursor:pointer; font-size: 125%; } input.confinput:hover {outline: 3px solid #ff3600;} .groupExp dt textarea.txtfield {width: 430px; height: 150px;}</style>module settings',
-    'SHOP_MODULE_aTinyMCE_classes'          => '<h3>enable TinyMCE for this backend classes</h3><ul><li>article_main (product description)</li><li>content_main (CMS pages)</li><li>category_text (category description)</li><li>newsletter_main (Newsletter)</li><li>news_text (news text)</li></ul>',
+    'SHOP_MODULE_aTinyMCE_classes'          => '<h3>Enable TinyMCE For This Backend Views</h3><ul><li>article_main (product description)</li><li>content_main (CMS pages)</li><li>category_text (category description)</li><li>newsletter_main (Newsletter)</li><li>news_text (news text)</li></ul>',
     'HELP_SHOP_MODULE_aTinyMCE_classes'     => 'if you want to use TinyMCE for your custom views, add here the view\'s class name, then textareas should become editor instances',
-    'SHOP_MODULE_aTinyMCE_plaincms'         => '<h3>plaintext CMS pages</h3>TinyMCE will not apper for this cms pages. e.g: Plaintext Emails, Email subjects, etc',
+    'SHOP_MODULE_aTinyMCE_plaincms'         => '<h3>Plain Text CMS pages</h3>TinyMCE will not apper for this cms pages. e.g: Plaintext Emails, Email subjects, etc',
 
-    'SHOP_MODULE_GROUP_tinyMceSettings'     => 'TinyMCE settings &amp; plugins',
-    'SHOP_MODULE_aTinyMCE_config_override'  => '<h3>custom Editor configuration <a href="http://www.tinymce.com/wiki.php/Configuration" target="_blank" title="mehr Infos">(?)</a></h3>z.B. für externe Plugins oder um standard Parameter zu überschreiben<br/><b>parameter => "wert"</b> (mit Anführungszeichen, falls erforderlich!)',
-    'SHOP_MODULE_aTinyMCE_buttons'          => '<h3>Toolbar Buttons <a href="http://www.tinymce.com/wiki.php/Controls" target="_blank">(?)</a></h3><b style="color:#ff3600;">es betrifft nur die Buttons (Toolbar controls) unter dem ersten Punkt: "core"</b> und buttons für eigene / externe plugins.<br/>Buttons von standard Plugins werden über Plugins-Konfiguration automatisch hinzugefügt bzw. entfernt.<br/>Standardwerte finden Sie in dem Hilfe-Popup',
+    'SHOP_MODULE_GROUP_tinyMceSettings'     => 'TinyMCE Settings &amp; Plugins',
+    'SHOP_MODULE_aTinyMCE_config_override'  => '<h3>Custom Editor Configuration <a href="http://www.tinymce.com/wiki.php/Configuration" target="_blank" title="mehr Infos">(?)</a></h3>e.g. for external plugins or to overwrite default configuration<br/><b>parameter => "value"</b> (with quotes, if required!)',
+    'SHOP_MODULE_aTinyMCE_buttons'          => '<h3>Toolbar Buttons <a href="http://www.tinymce.com/wiki.php/Controls" target="_blank">(?)</a></h3>'.
+        '<b style="color:#ff3600;">only for core toolbar controls and buttons for custom and external plugins!</b><br/>Buttons for standard plugins will be displayd if the plugin is active.<br/>See the help popup for the default value of this setting',
     'HELP_SHOP_MODULE_aTinyMCE_buttons'     => "<textarea rows='7' cols='55'>undo redo\nbold italic underline strikethrough\nalignleft aligncenter alignright alignjustify\nbullist numlist\noutdent indent\nblockquote\nremoveformat\nsubscript\nsuperscript\nformatselect\nfontselect\nfontsizeselect\nsubscript superscript</textarea>",
-    'SHOP_MODULE_aTinyMCE_plugins'          => '<h3>aktive Editor Plugins <a href="http://www.tinymce.com/wiki.php/Plugins" target="_blank">(?)</a></h3>jeweils ein Plugin pro Zeile.<br/>Standardwerte finden Sie in dem Hilfe-Popup',
+    'SHOP_MODULE_aTinyMCE_plugins'          => '<h3>Active Editor Plugins <a href="http://www.tinymce.com/wiki.php/Plugins" target="_blank">(?)</a></h3>enter here the default plugins you want to be enabled<br/>See the help popup for the default value of this setting',
     'HELP_SHOP_MODULE_aTinyMCE_plugins'     => "<textarea rows='7' cols='55'>advlist\nanchor\nautolink\nautoresize\ncharmap\ncode\ncolorpicker\nfullscreen\nhr\nimage\nimagetools\ninsertdatetime\nlink\nlists\nmedia\nnonbreaking\npagebreak\npaste\npreview\nsearchreplace\nspellchecker\ntable\ntextcolor\nvisualblocks\nwordcount</textarea>",
 
-    'SHOP_MODULE_aTinyMCE_external_plugins' => '<h3>externe Plugins <a href="http://www.tinymce.com/wiki.php/Configuration:external_plugins" target="_blank">(?)</a></h3><br/>Eingabeformat:<br/>Pluginname => Pfad/zur/Datei.js',
+    'SHOP_MODULE_aTinyMCE_external_plugins' => '<h3>External Plugins <a href="http://www.tinymce.com/wiki.php/Configuration:external_plugins" target="_blank">(?)</a></h3>pluginname => plugin_path/or/url/plugin.js',
 
     'hdi_tinymce_plaincms'                  => '<b class="errorbox">TinyMCE was deactivated from this page because it may not contain HTML code</b>'
 );
