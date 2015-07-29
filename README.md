@@ -1,4 +1,5 @@
-## ###_COMPANY_### - ###_MODULE_### ###_VERSION_###
+## ###_COMPANY_### - ###_MODULE_###
+### module version ###_VERSION_###
 TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor control released as Open Source under LGPL.
 More information here: http://www.tinymce.com/  
 and here: https://github.com/tinymce
