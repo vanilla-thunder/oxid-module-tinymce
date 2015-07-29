@@ -33,6 +33,7 @@ shell("cp -r core _module/core");
 shell("cp -r tinymce _module/tinymce");
 shell("cp -r views _module/views");
 shell("cp metadata.php _module/metadata.php");
+shell("cp README.md _module/README.md");
 console.log("     new files copied");
 
 // compile some files
@@ -81,6 +82,7 @@ process.on('exit', function (code) {
     console.log("     replacing complete");
     // copy module to master
     shell("cp -r _module _master/copy_this/modules/bla/bla-tinymce");
+    shell("cp _module/README.md _master/README.md");
     console.log("");
     console.log("     build complete! made my day!");
     console.log("");
