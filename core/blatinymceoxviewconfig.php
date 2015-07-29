@@ -1,7 +1,7 @@
 <?php
 
 /*
- * bestlife AG - TinyMCE for OXID eShop
+ * bestlife AG - TinyMCE WYSIWYG Editor for OXID eShop
  * Copyright (C) 2015  bestlife AG
  * info:  oxid@bestlife.ag
  *
@@ -51,7 +51,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
         $aDefaultConfig = array(
             'selector'                => '"textarea:not(.mceNoEditor)"',
             'language'                => '"' . (in_array($sLang, $aLang) ? $aLang[$sLang] : 'en') . '"',
-            'spellchecker_language'   => '"' . (in_array($sLang, $aLang) ? $aLang[$sLang] : 'en') . '"',
+            //'spellchecker_language'   => '"' . (in_array($sLang, $aLang) ? $aLang[$sLang] : 'en') . '"',
             'nowrap'                  => 'true',
             'entity_encoding'         => '"raw"',
             // http://www.tinymce.com/wiki.php/Configuration:entity_encoding
@@ -102,7 +102,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
             'paste'          => 'pastetext',
             'preview'        => 'preview',
             'searchreplace'  => 'searchreplace',
-            'spellchecker'   => 'spellchecker',
+            //'spellchecker'   => 'spellchecker',
             'table'          => 'table',
             'textcolor'      => 'forecolor backcolor',
             'visualblocks'   => false,

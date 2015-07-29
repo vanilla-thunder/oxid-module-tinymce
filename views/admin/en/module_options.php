@@ -1,7 +1,7 @@
 <?php
 
-/**
- * bestlife AG - TinyMCE for OXID eShop
+/*
+ * bestlife AG - TinyMCE WYSIWYG Editor for OXID eShop
  * Copyright (C) 2015  bestlife AG
  * info:  oxid@bestlife.ag
  *

@@ -1,8 +1,8 @@
 <?php
 
-/**
- * bestlife AG - TinyMCE for OXID eShop
- * Copyright (C) 2014  bestlife AG
+/*
+ * bestlife AG - TinyMCE WYSIWYG Editor for OXID eShop
+ * Copyright (C) 2015  bestlife AG
  * info:  oxid@bestlife.ag
  *
  * This program is free software;

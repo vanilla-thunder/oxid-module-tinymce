@@ -1,7 +1,7 @@
 <?php
 
-/**
- * bestlife AG - TinyMCE for OXID eShop
+/*
+ * bestlife AG - TinyMCE WYSIWYG Editor for OXID eShop
  * Copyright (C) 2015  bestlife AG
  * info:  oxid@bestlife.ag
  *
@@ -10,7 +10,7 @@
  * either version 3 of the License, or (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
- * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
  */
 
@@ -20,9 +20,9 @@ $sMetadataVersion = '1.1';
 $aModule          = array(
     'id'          => 'bla-tinymce',
     'title'       => '<strong style="color:#95b900;font-size:125%;">best</strong><strong style="color:#c4ca77;font-size:125%;">life</strong> <strong>TinyMCE</strong>',
-    'description' => 'TinyMCE 4.2.2 WYSIWYG Editor for OXID eShop 4.7 - 4.9<br/><b style="display:inline-block;float:left;line-height:18px;">newest version:</b><img src="' . $v . '"/><br/>(no need to update if you already have this version)',
+    'description' => 'TinyMCE WYSIWYG Editor for OXID eShop 4.7 - 4.9<br/><b style="display:inline-block;float:left;line-height:18px;">newest version:</b><img src="' . $v . '"/><br/>(no need to update if you already have this version)',
     'thumbnail'   => 'tinymce.png',
-    'version'     => '1.5.0 (2015-07-22)',
+    'version'     => '1.5.0',
     'author'      => 'Marat Bedoev, bestlife AG',
     'email'       => 'oxid@bestlife.ag',
     'url'         => 'https://github.com/vanilla-thunder/bla-tinymce',
