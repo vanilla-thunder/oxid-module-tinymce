@@ -3,9 +3,9 @@ TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor contr
 More information here: http://www.tinymce.com/  
 and here: https://github.com/tinymce
 
-#  bitte entfernen Sie vollst�ndig das alte bla-TinyMCE Modul, bevor Sie das neue hochladen!
+#  bitte entfernen Sie vollständig das alte bla-TinyMCE Modul, bevor Sie das neue hochladen!
   * Modul im Backend deaktivieren
-  * modules/bla/bla-tinymce l�schen
+  * modules/bla/bla-tinymce löschen
   * tmp/ leeren
   
 #  please completely remove the older module version before update!
@@ -16,9 +16,9 @@ and here: https://github.com/tinymce
 ## more info here: [http:/marat.ws/bla-tinymce/](http:/marat.ws/bla-tinymce/)
 
 ### LICENSE AGREEMENT
-   bestlife AG - TinyMCE WYSIWYG Editor for OXID eShop
-   Copyright (C) 2015  bestlife AG
-   info:  oxid@bestlife.ag
+   bestlife AG - TinyMCE WYSIWYG Editor for OXID eShop  
+   Copyright (C) 2015  bestlife AG  
+   info:  oxid@bestlife.ag  
   
    This program is free software;  
    you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation;
