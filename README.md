@@ -13,7 +13,7 @@ and here: https://github.com/tinymce
   * remove modules/bla/bla-tinymce
   * clear tmp/
 
-## more info here: [http:/marat.ws/bla-tinymce/](http:/marat.ws/bla-tinymce/)
+## more info here: [http://marat.ws/bla-tinymce/](http://marat.ws/bla-tinymce/)
 
 ### LICENSE AGREEMENT
    bestlife AG - TinyMCE WYSIWYG Editor for OXID eShop  
