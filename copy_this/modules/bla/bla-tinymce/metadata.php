@@ -1,9 +1,9 @@
 <?php
 
 /*
- * bestlife AG - TinyMCE WYSIWYG Editor for OXID eShop
- * Copyright (C) 2015  bestlife AG
- * info:  oxid@bestlife.ag
+ * ###_MODULE_###
+ * Copyright (C) ###_YEAR_###  ###_COMPANY_###
+ * info:  ###_EMAIL_###
  *
  * This program is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation;
@@ -12,6 +12,8 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
+ *
+ * ###_AUTHOR_###
  */
 
 $v = "https://raw.githubusercontent.com/vanilla-thunder/bla-tinymce/master/copy_this/modules/bla/bla-tinymce/version.jpg";
@@ -20,20 +22,20 @@ $sMetadataVersion = '1.1';
 $aModule          = array(
     'id'          => 'bla-tinymce',
     'title'       => '<strong style="color:#95b900;font-size:125%;">best</strong><strong style="color:#c4ca77;font-size:125%;">life</strong> <strong>TinyMCE</strong>',
-    'description' => 'TinyMCE WYSIWYG Editor for OXID eShop 4.7 - 4.9<br/><b style="display:inline-block;float:left;line-height:18px;">newest version:</b><img src="' . $v . '"/><br/>(no need to update if you already have this version)',
+    'description' => '###_MODULE_### 4.7 - 4.9<br/><b style="display:inline-block;float:left;line-height:18px;">newest version:</b><img src="' . $v . '"/><br/>(no need to update if you already have this version)',
     'thumbnail'   => 'tinymce.png',
-    'version'     => '1.5.0',
-    'author'      => 'Marat Bedoev, bestlife AG',
-    'email'       => 'oxid@bestlife.ag',
-    'url'         => 'https://github.com/vanilla-thunder/bla-tinymce',
+    'version'     => '###_VERSION_###',
+    'author'      => '###_AUTHOR_###, ###_COMPANY_###',
+    'email'       => '###_EMAIL_###',
+    'url'         => '###_URL_###',
     'extend'      => array(
-        'oxviewconfig' => 'bla/bla-tinymce/core/blatinymceoxviewconfig'
+        'oxviewconfig' => 'bla/bla-tinymce/extend/blatinymceoxviewconfig'
     ),
     'blocks'      => array(
         array(
             'template' => 'bottomnaviitem.tpl',
             'block'    => 'admin_bottomnaviitem',
-            'file'     => '/views/blocks/admin/bottomnaviitem_admin_bottomnaviitem.tpl'
+            'file'     => '/application/views/blocks/admin/bottomnaviitem_admin_bottomnaviitem.tpl'
         )
     ),
     'settings'    => array(
