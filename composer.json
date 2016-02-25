@@ -1,0 +1,7 @@
+{
+    "name": "bla/bla-tinymce",
+    "type": "oxid-module",
+    "require": {
+        "composer/installers": "^1.0"
+    }
+}
