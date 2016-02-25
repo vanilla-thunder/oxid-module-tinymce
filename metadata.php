@@ -35,7 +35,7 @@ $aModule          = array(
         array(
             'template' => 'bottomnaviitem.tpl',
             'block'    => 'admin_bottomnaviitem',
-            'file'     => '/aplication/views/blocks/admin/bottomnaviitem_admin_bottomnaviitem.tpl'
+            'file'     => '/application/views/blocks/admin/bottomnaviitem_admin_bottomnaviitem.tpl'
         )
     ),
     'settings'    => array(

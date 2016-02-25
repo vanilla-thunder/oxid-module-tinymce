@@ -38,7 +38,7 @@ console.log("");
 console.log("   ___________________________ updating TinyMCE started ___________________________");
 log("");
 
-    r("http://www.tinymce.com/download/download.php", function (err, res, body) {
+    r("http://www.tinymce.com/download/", function (err, res, body) {
 
         if (err || res.statusCode != 200) error(err);
 
@@ -50,7 +50,7 @@ log("");
             log("");
         }
 
-        var tinymceurl = c.load(body)('#twocolumns a.track-tinymce').eq(0).attr('href');
+        var tinymceurl = c.load(body)('section.prod-package a.download-track').first().attr('href');
         log("->  downloading newest TinyMCE");
         log("    "+tinymceurl);
         log("");
@@ -75,7 +75,7 @@ log("");
         log("->  downloading latest language files:");
         log("    CS, DA, DE, FR, IT, NL, RU");
         log("");
-        r("http://www.tinymce.com/i18n/download.php?download[]=cs&download[]=da&download[]=de&download[]=fr_FR&download[]=it&download[]=nl&download[]=ru").pipe(
+        r("https://www.tinymce.com/download/build_language_package?download[]=cs&download[]=da&download[]=de&download[]=fr_FR&download[]=it&download[]=nl&download[]=ru").pipe(
             fs.createWriteStream('tmp_languages.zip')
                 .on('close', function () {
                     //console.log("language files download finished");
