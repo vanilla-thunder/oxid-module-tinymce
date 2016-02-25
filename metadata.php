@@ -1,7 +1,7 @@
 <?php
 
 /*
- * ###_COMPANY_### - ###_MODULE_###
+ * ###_MODULE_###
  * Copyright (C) ###_YEAR_###  ###_COMPANY_###
  * info:  ###_EMAIL_###
  *
@@ -12,6 +12,8 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
+ *
+ * ###_AUTHOR_###
  */
 
 $v = "https://raw.githubusercontent.com/vanilla-thunder/bla-tinymce/master/copy_this/modules/bla/bla-tinymce/version.jpg";
@@ -23,17 +25,17 @@ $aModule          = array(
     'description' => '###_MODULE_### 4.7 - 4.9<br/><b style="display:inline-block;float:left;line-height:18px;">newest version:</b><img src="' . $v . '"/><br/>(no need to update if you already have this version)',
     'thumbnail'   => 'tinymce.png',
     'version'     => '###_VERSION_###',
-    'author'      => 'Marat Bedoev, ###_COMPANY_###',
+    'author'      => '###_AUTHOR_###, ###_COMPANY_###',
     'email'       => '###_EMAIL_###',
-    'url'         => 'https://github.com/vanilla-thunder/bla-tinymce',
+    'url'         => '###_URL_###',
     'extend'      => array(
-        'oxviewconfig' => 'bla/bla-tinymce/core/blatinymceoxviewconfig'
+        'oxviewconfig' => 'bla/bla-tinymce/extend/blatinymceoxviewconfig'
     ),
     'blocks'      => array(
         array(
             'template' => 'bottomnaviitem.tpl',
             'block'    => 'admin_bottomnaviitem',
-            'file'     => '/views/blocks/admin/bottomnaviitem_admin_bottomnaviitem.tpl'
+            'file'     => '/aplication/views/blocks/admin/bottomnaviitem_admin_bottomnaviitem.tpl'
         )
     ),
     'settings'    => array(
