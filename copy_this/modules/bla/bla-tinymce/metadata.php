@@ -1,9 +1,9 @@
 <?php
 
 /*
- * ###_MODULE_###
- * Copyright (C) ###_YEAR_###  ###_COMPANY_###
- * info:  ###_EMAIL_###
+ * TinyMCE Editor for OXID eShop CE
+ * Copyright (C) 2016  bestlife AG
+ * info:  oxid@bestlife.ag
  *
  * This program is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation;
@@ -13,7 +13,7 @@
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
  *
- * ###_AUTHOR_###
+ * Marat Bedoev
  */
 
 $v = "https://raw.githubusercontent.com/vanilla-thunder/bla-tinymce/master/copy_this/modules/bla/bla-tinymce/version.jpg";
@@ -22,12 +22,12 @@ $sMetadataVersion = '1.1';
 $aModule          = array(
     'id'          => 'bla-tinymce',
     'title'       => '<strong style="color:#95b900;font-size:125%;">best</strong><strong style="color:#c4ca77;font-size:125%;">life</strong> <strong>TinyMCE</strong>',
-    'description' => '###_MODULE_### 4.7 - 4.9<br/><b style="display:inline-block;float:left;line-height:18px;">newest version:</b><img src="' . $v . '"/><br/>(no need to update if you already have this version)',
+    'description' => 'TinyMCE Editor for OXID eShop CE 4.7 - 4.9<br/><b style="display:inline-block;float:left;line-height:18px;">newest version:</b><img src="' . $v . '"/><br/>(no need to update if you already have this version)',
     'thumbnail'   => 'tinymce.png',
     'version'     => '###_VERSION_###',
-    'author'      => '###_AUTHOR_###, ###_COMPANY_###',
-    'email'       => '###_EMAIL_###',
-    'url'         => '###_URL_###',
+    'author'      => 'Marat Bedoev, bestlife AG',
+    'email'       => 'oxid@bestlife.ag',
+    'url'         => 'https://github.com/vanilla-thunder/bla-tinymce',
     'extend'      => array(
         'oxviewconfig' => 'bla/bla-tinymce/extend/blatinymceoxviewconfig'
     ),
