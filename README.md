@@ -1,7 +1,7 @@
 ## TinyMCE Editor for OXID eShop CE
-by Marat Bedoev, oxid@bestlife.ag <oxid@bestlife.ag>
+by Marat Bedoev, bestlife AG <oxid@bestlife.ag>  
 https://github.com/vanilla-thunder/bla-tinymce
-### module version ###_VERSION_###
+### module version 1.6.0
 
 TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor control released as Open Source under LGPL.
 More information here: http://www.tinymce.com/  
@@ -21,7 +21,7 @@ and here: https://github.com/tinymce
 
 ### LICENSE AGREEMENT
    TinyMCE Editor for OXID eShop CE  
-   Copyright (C) 2016 oxid@bestlife.ag  
+   Copyright (C) 2016 bestlife AG  
    info:  oxid@bestlife.ag  
   
    This program is free software;  
