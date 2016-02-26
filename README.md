@@ -1,5 +1,5 @@
 ## ###_MODULE_###
-by ###_AUTHOR_###, ###_EMAIL_### <###_EMAIL_###>
+by ###_AUTHOR_###, ###_COMPANY_### <###_EMAIL_###>  
 ###_URL_###
 ### module version ###_VERSION_###
 
@@ -21,7 +21,7 @@ and here: https://github.com/tinymce
 
 ### LICENSE AGREEMENT
    ###_MODULE_###  
-   Copyright (C) ###_YEAR_### ###_EMAIL_###  
+   Copyright (C) ###_YEAR_### ###_COMPANY_###  
    info:  ###_EMAIL_###  
   
    This program is free software;  

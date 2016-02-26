@@ -14,12 +14,6 @@ var shell = function (command) {
     );
 };
 
-var version = process.argv[2];
-if (!version) {
-    console.log('hallo bitte!!! Version???')
-    process.exit(9);
-}
-
 // cleanup
 shell("rm -rf _module/application");
 shell("rm -rf _module/extend");
@@ -28,7 +22,7 @@ console.log("");
 console.log("     cleanup finished");
 
 // oxversion
-r('http://mb-dev.de/v/?raw=1&v=' + version).pipe(fs.createWriteStream('_module/version.jpg'));
+r('http://mb-dev.de/v/?raw=1&v=' + p.version).pipe(fs.createWriteStream('_module/version.jpg'));
 
 // copy files
 shell("cp -r application _module/application");
@@ -41,6 +35,7 @@ console.log("     new files copied");
 // compile some files
 var replaces = {
     'MODULE': p.description,
+    'VERSION': p.version,
     'AUTHOR': p.author,
     'COMPANY': p.company,
     'EMAIL': p.email,
@@ -52,7 +47,7 @@ for(var x in replaces)
 {
     replace({
         regex: "###_"+x+"_###",
-        replacement: replace[x],
+        replacement: replaces[x],
         paths: ['./_module'],
         recursive: true,
         silent: true
