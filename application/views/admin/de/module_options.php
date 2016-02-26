@@ -1,9 +1,9 @@
 <?php
 
 /*
- * ###_MODULE_###
- * Copyright (C) ###_YEAR_###  ###_COMPANY_###
- * info:  ###_EMAIL_###
+ * TinyMCE Editor for OXID eShop CE
+ * Copyright (C) 2016  bestlife AG
+ * info:  oxid@bestlife.ag
  *
  * This program is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation;
@@ -13,7 +13,7 @@
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
  *
- * ###_AUTHOR_###
+ * Marat Bedoev
  */
 
 $sLangName = 'Deutsch';
