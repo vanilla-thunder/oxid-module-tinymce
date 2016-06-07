@@ -1,7 +1,7 @@
 <?php
 
 /*
- * TinyMCE Editor for OXID eShop CE
+ * TinyMCE Editor for OXID eShop CE 4.5
  * Copyright (C) 2016  bestlife AG
  * info:  oxid@bestlife.ag
  *
@@ -18,12 +18,83 @@
 
 class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
 {
+    
+    protected $_aTinyMCE_classes = array(
+        "article_main",
+        "category_text",
+        "content_main",
+        "newsletter_main",
+        "news_text"
+        );
+        
+    protected $_aTinyMCE_plaincms = array(
+        "oxadminorderplainemail",
+        "oxadminordernpplainemail", // bestellbenachrichtigung admin + fremdländer
+        "oxuserorderplainemail",
+        "oxuserordernpplainemail",
+        "oxuserorderemailendplain", // bestellbenachrichtigung user + fremdländer + abschluss
+        "oxordersendplainemail", // versandbestätigung
+        "oxregisterplainemail",
+        "oxregisterplainaltemail", // registrierung
+        "oxupdatepassinfoplainemail", // passwort update
+        "oxnewsletterplainemail", // newsletter
+        "oxemailfooterplain", // email fußtext
+        "oxrighttocancellegend",
+        "oxrighttocancellegend2", // widerrufsrecht
+        "oxstartmetadescription",
+        "oxstartmetakeywords" // META Tags
+        );
+
+    protected $_aTinyMCE_buttons = array(
+        "undo redo",
+        "bold italic underline strikethrough",
+        "alignleft aligncenter alignright alignjustify",
+        "bullist numlist",
+        "outdent indent",
+        "blockquote",
+        "removeformat",
+        "subscript",
+        "superscript",
+        "formatselect",
+        "fontselect",
+        "fontsizeselect",
+        "subscript superscript"
+        );
+        
+    protected $_aTinyMCE_plugins = array(
+            'advlist',
+            'anchor',
+            'autolink',
+            'autoresize',
+            'charmap',
+            'code',
+            'colorpicker',
+            'fullscreen',
+            'hr',
+            'image',
+            'imagetools',
+            'insertdatetime',
+            'link',
+            'lists',
+            'media',
+            'nonbreaking',
+            'pagebreak',
+            'paste',
+            'preview',
+            'searchreplace',
+            'spellchecker',
+            'table',
+            'textcolor',
+            'visualblocks',
+            'wordcount'
+        );
+
     public function loadTinyMce()
     {
-        $cfg        = oxRegistry::getConfig();
-        $blEnabled  = in_array($this->getActiveClassName(), $cfg->getConfigParam("aTinyMCE_classes"));
-        $blPlainCms = in_array($cfg->getActiveView()->getViewDataElement("edit")->oxcontents__oxloadid->value,
-                               $cfg->getConfigParam("aTinyMCE_plaincms"));
+        $cfg        = $this->getConfig();
+        $oLang      = oxLang::getInstance();
+        $blEnabled  = in_array($this->getActiveClassName(), $this->_aTinyMCE_classes);
+        $blPlainCms = in_array($cfg->getActiveView()->getViewDataElement("edit")->oxcontents__oxloadid->value, $this->_aTinyMCE_plaincms);
 
         if (!$blEnabled)
         {
@@ -31,11 +102,11 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
         }
         if ($blPlainCms)
         {
-            return oxRegistry::getLang()->translateString("hdi_tinymce_plaincms");
+            return oxLang::translateString("hdi_tinymce_plaincms");
         }
 
         // processind editor config & other stuff
-        $sLang = oxRegistry::getLang()->getLanguageAbbr(oxRegistry::getLang()->getTplLanguage());
+        $sLang = $oLang->getLanguageAbbr($oLang->getTplLanguage());
         // array to assign shops lang abbreviations to lang file names of tinymce: shopLangAbbreviation => fileName (without .js )
         $aLang = array(
             "cs" => "cs",
@@ -76,8 +147,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
             'autoresize_max_height'   => '400'
         );
         //merging with custom config
-        $aConfig = ($aCustomCfg = $this->_getTinyCustConfig()) ? array_merge($aDefaultConfig,
-                                                                             $aCustomCfg) : $aDefaultConfig;
+        $aConfig = ($aCustomCfg = $this->_getTinyCustConfig()) ? array_merge($aDefaultConfig,$aCustomCfg) : $aDefaultConfig;
 
 
         // default plugins and their buttons
@@ -191,7 +261,8 @@ copyLongDesc = function(sIdent)
 }';
 
         // adding scripts to template
-        $smarty = oxRegistry::get("oxUtilsView")->getSmarty();
+        /*
+        $smarty = oxUtilsView::getSmarty();
         $sSufix = ($smarty->_tpl_vars["__oxid_include_dynamic"]) ? '_dynamic' : '';
 
         $aScript   = (array)$cfg->getGlobalParameter('scripts' . $sSufix);
@@ -202,42 +273,35 @@ copyLongDesc = function(sIdent)
         $aInclude      = (array)$cfg->getGlobalParameter('includes' . $sSufix);
         $aInclude[3][] = $this->getModuleUrl('bla-tinymce', 'tinymce/tinymce.min.js');
         $cfg->setGlobalParameter('includes' . $sSufix, $aInclude);
+        */
 
         return '<li style="margin-left: 50px;">
-                        <button style="border: 1px solid #0089EE; color: #0089EE;padding: 3px 10px; margin-top: -10px; background: white;" onclick="tinymce.each(tinymce.editors, function(editor) { if(editor.isHidden()) { editor.show(); } else { editor.hide(); } });">
-                            <span>TinyMCE zeigen/verstecken</span>
-                        </button>
-                    </li>';
+                    <script type="text/javascript" src="'.$this->getModuleUrl('bla-tinymce', 'tinymce/tinymce.min.js').'"></script>
+                    <script type="text/javascript">
+                    '.$sCopyLongDescFromTinyMCE.'
+                    '.$sInit.'
+                    </script>
+                    <button style="border: 1px solid #0089EE; color: #0089EE;padding: 3px 10px; margin-top: -10px; background: white;" onclick="tinymce.each(tinymce.editors, function(editor) { if(editor.isHidden()) { editor.show(); } else { editor.hide(); } });">
+                        <span>TinyMCE zeigen/verstecken</span>
+                    </button>
+                </li>';
         // javascript:tinymce.execCommand(\'mceToggleEditor\',false,\'editor1\');
     }
 
     protected function _getTinyToolbarControls()
     {
-        $aControls = oxRegistry::getConfig()->getConfigParam("aTinyMCE_buttons");
-        if (method_exists(get_parent_class(__CLASS__), __FUNCTION__))
-        {
-            $aControls = array_merge($aControls, parent::_getTinyToolbarControls());
-        }
+        $aControls = $this->_aTinyMCE_buttons;
         return $aControls;
     }
 
     protected function _getTinyExtPlugins()
     {
-        $aPlugins = oxRegistry::getConfig()->getConfigParam("aTinyMCE_external_plugins");
-        if (method_exists(get_parent_class(__CLASS__), __FUNCTION__))
-        {
-            $aPlugins = array_merge(parent::_getTinyExtPlugins(), $aPlugins);
-        }
+        $aPlugins = $this->_aTinyMCE_external_plugins;
         return $aPlugins;
     }
 
     protected function _getTinyCustConfig()
     {
-        $aConfig = oxRegistry::getConfig()->getConfigParam("aTinyMCE_config_override");
-        if (method_exists(get_parent_class(__CLASS__), __FUNCTION__))
-        {
-            $aConfig = array_merge(parent::_getTinyCustConfig(), $aConfig);
-        }
-        return $aConfig;
+        return false;
     }
 }
