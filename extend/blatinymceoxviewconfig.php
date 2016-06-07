@@ -102,7 +102,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
         }
         if ($blPlainCms)
         {
-            return oxLang::translateString("hdi_tinymce_plaincms");
+            return "this is a plain cms. nix gut html!";
         }
 
         // processind editor config & other stuff
