@@ -8,6 +8,7 @@
  * https://github.com/tinymce/tinymce/blob/master/js/tinymce/plugins/fullscreen/plugin.js
  */
 
+/*global tinymce:true */
 
 tinymce.PluginManager.add('oxfullscreen', function(editor) {
 	var fullscreenState = false, DOM = tinymce.DOM, iframeWidth, iframeHeight, resizeHandler;
