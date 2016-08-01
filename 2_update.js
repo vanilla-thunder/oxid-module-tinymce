@@ -105,10 +105,10 @@ r("http://www.roxyfileman.com/download", function(err, res, body) {
          
          log("");         
          log("->  updating Filemanager config");
-         // "FILES_ROOT":"" => "FILES_ROOT": "/out/pictures/wysiwigpro/"
+         // "FILES_ROOT":"" => "FILES_ROOT": "/out/pictures/wysiwigpro"
          replace({
             regex: /\"FILES_ROOT\"\s*\:\s*""\,/,
-            replacement: '"FILES_ROOT": "/out/pictures/wysiwigpro/",',
+            replacement: '"FILES_ROOT": "/out/pictures/wysiwigpro",',
             paths: ['./fileman/conf.json'],
             recursive: false,
             silent: true
@@ -121,7 +121,7 @@ r("http://www.roxyfileman.com/download", function(err, res, body) {
             recursive: false,
             silent: true
          });
-         shell("cp core/security.inc.php fileman/php/security.inc.php");
+         shell("cp -f core/security.inc.php fileman/php/security.inc.php");
       })
    );
 });

@@ -45,7 +45,7 @@ $aModule          = array(
             'name'     => 'blTinyMCE_filemanager',
             'type'     => 'bool',
             'value'    => true,
-            'position' => -1
+            'position' => 0
         ),
         array(
             'group'    => 'tinyMceMain',
@@ -58,31 +58,40 @@ $aModule          = array(
                 "newsletter_main",
                 "news_text"
             ),
-            'position' => 0
-        ),
-        array(
-            'group'    => 'tinyMceMain',
-            'name'     => 'aTinyMCE_plaincms',
-            'type'     => 'arr',
-            'value'    => array(
-                "oxadminorderplainemail",
-                "oxadminordernpplainemail", // bestellbenachrichtigung admin + fremdländer
-                "oxuserorderplainemail",
-                "oxuserordernpplainemail",
-                "oxuserorderemailendplain", // bestellbenachrichtigung user + fremdländer + abschluss
-                "oxordersendplainemail", // versandbestätigung
-                "oxregisterplainemail",
-                "oxregisterplainaltemail", // registrierung
-                "oxupdatepassinfoplainemail", // passwort update
-                "oxnewsletterplainemail", // newsletter
-                "oxemailfooterplain", // email fußtext
-                "oxrighttocancellegend",
-                "oxrighttocancellegend2", // widerrufsrecht
-                "oxstartmetadescription",
-                "oxstartmetakeywords" // META Tags
-            ),
             'position' => 1
         ),
+        array(
+           'group'    => 'tinyMceMain',
+           'name'     => 'aTinyMCE_plaincms',
+           'type'     => 'arr',
+           'value'    => array(
+              "oxadminorderplainemail",
+              "oxadminordernpplainemail", // bestellbenachrichtigung admin + fremdländer
+              "oxuserorderplainemail",
+              "oxuserordernpplainemail",
+              "oxuserorderemailendplain", // bestellbenachrichtigung user + fremdländer + abschluss
+              "oxordersendplainemail", // versandbestätigung
+              "oxregisterplainemail",
+              "oxregisterplainaltemail", // registrierung
+              "oxupdatepassinfoplainemail", // passwort update
+              "oxnewsletterplainemail", // newsletter
+              "oxemailfooterplain", // email fußtext
+              "oxrighttocancellegend",
+              "oxrighttocancellegend2", // widerrufsrecht
+              "oxstartmetadescription",
+              "oxstartmetakeywords" // META Tags
+           ),
+           'position' => 2
+        ),
+        array(
+           'group'    => 'tinyMceMain',
+           'name'     => 'aTinyMCE_extjs',
+           'type'     => 'arr',
+           'value'    => array(),
+           'position' => 3
+        ),
+
+
         // ################################################################# tinymce settings
 
         array(

@@ -16,7 +16,9 @@ var shell = function (command) {
 
 // cleanup
 shell("rm -rf _module/application");
-shell("rm -rf _module/extend");
+shell("rm -rf _module/fileman");
+shell("rm -rf _module/plugins");
+shell("rm -rf _module/tinymce");
 shell("rm -rf _master/copy_this/modules/bla/*");
 console.log("");
 console.log("     cleanup finished");
@@ -26,7 +28,9 @@ r('http://mb-dev.de/v/?raw=1&v=' + p.version).pipe(fs.createWriteStream('_module
 
 // copy files
 shell("cp -r application _module/application");
-shell("cp -r extend _module/extend");
+shell("cp -r fileman _module/fileman");
+shell("cp -r plugins _module/plugins");
+shell("cp -r tinymce _module/tinymce");
 shell("cp metadata.php _module/metadata.php");
 shell("cp README.md _module/README.md");
 shell("cp LICENSE _module/LICENSE");

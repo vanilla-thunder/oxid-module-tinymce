@@ -1,99 +1,48 @@
 /**
- * plugin.js
+ * ###_MODULE_###
+ * Copyright (C) ###_YEAR_###  ###_COMPANY_###
+ * info:  ###_EMAIL_###
  *
- * Copyright, Alberto Peripolli
- * Released under Creative Commons Attribution-NonCommercial 3.0 Unported License.
+ * GNU GENERAL PUBLIC LICENSE
  *
- * Contributing: https://github.com/trippo/ResponsiveFilemanager
+ * This program is free software;
+ * you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation;
+ * either version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
+ *
+ * ###_AUTHOR_###
  */
 
-tinymce.PluginManager.add('filemanager', function(editor) {
+tinymce.PluginManager.add('roxy', function(editor)
+{
+    tinymce.activeEditor.settings.file_browser_callback = roxyFilemanager;
 
-	tinymce.activeEditor.settings.file_browser_callback = filemanager;
+    function roxyFilemanager (id, value, type, win)
+    {
 
-	function filemanager_onMessage(event){
-		if(editor.settings.external_filemanager_path.toLowerCase().indexOf(event.origin.toLowerCase()) === 0){
-			if(event.data.sender === 'responsivefilemanager'){
-				tinymce.activeEditor.windowManager.getParams().setUrl(event.data.url);
-				tinymce.activeEditor.windowManager.close();
+        var url = editor.settings.external_filemanager_path+'index.html';
+        if (url.indexOf("?") < 0) { url += "?type=" + type; }
+        else { url += "&type=" + type; }
 
-				// Remove event listener for a message from ResponsiveFilemanager
-				if(window.removeEventListener){
-					window.removeEventListener('message', filemanager_onMessage, false);
-				} else {
-					window.detachEvent('onmessage', filemanager_onMessage);
-				}
-			}
-		}
-	}
-	
-	function filemanager (id, value, type, win) {
-		var width = window.innerWidth-30;
-		var height = window.innerHeight-60;
-		if(width > 1800) width=1800;
-		if(height > 1200) height=1200;
-		if(width>600){
-			var width_reduce = (width - 20) % 138;
-			width = width - width_reduce + 10;
-		}
+        url += '&input=' + id + '&value=' + win.document.getElementById(id).value;
+        if(tinyMCE.activeEditor.settings.language) { url += '&langCode=' + tinyMCE.activeEditor.settings.language; }
+        if(tinyMCE.activeEditor.settings.filemanager_access_key) { url += '&akey=' + tinyMCE.activeEditor.settings.filemanager_access_key; }
 
-		// DEFAULT AS FILE
-		urltype=2;
-		if (type=='image') { urltype=1; }
-		if (type=='media') { urltype=3; }
-		var title="RESPONSIVE FileManager";
-		if (typeof editor.settings.filemanager_title !== "undefined" && editor.settings.filemanager_title) {
-			title=editor.settings.filemanager_title;
-		}
-		var akey="key";
-		if (typeof editor.settings.filemanager_access_key !== "undefined" && editor.settings.filemanager_access_key) {
-			akey=editor.settings.filemanager_access_key;
-		}
-		var sort_by="";
-		if (typeof editor.settings.filemanager_sort_by !== "undefined" && editor.settings.filemanager_sort_by) {
-			sort_by="&sort_by="+editor.settings.filemanager_sort_by;
-		}
-		var descending="false";
-		if (typeof editor.settings.filemanager_descending !== "undefined" && editor.settings.filemanager_descending) {
-			descending=editor.settings.filemanager_descending;
-		}
-		var fldr="";
-		if (typeof editor.settings.filemanager_subfolder !== "undefined" && editor.settings.filemanager_subfolder) {
-			fldr="&fldr="+editor.settings.filemanager_subfolder;
-		}
-		var crossdomain="";
-		if (typeof editor.settings.filemanager_crossdomain !== "undefined" && editor.settings.filemanager_crossdomain) {
-			crossdomain="&crossdomain=1";
-
-			// Add handler for a message from ResponsiveFilemanager
-			if(window.addEventListener){
-				window.addEventListener('message', filemanager_onMessage, false);
-			} else {
-				window.attachEvent('onmessage', filemanager_onMessage);
-			}
-		}
-
-		tinymce.activeEditor.windowManager.open({
-			title: title,
-			file: editor.settings.external_filemanager_path+'dialog.php?type='+urltype+'&descending='+descending+sort_by+fldr+crossdomain+'&lang='+editor.settings.language+'&akey='+akey,
-			width: width,  
-			height: height,
-			resizable: true,
-			maximizable: true,
-			inline: 1
-			}, {
-			setUrl: function (url) {
-				var fieldElm = win.document.getElementById(id);
-				fieldElm.value = editor.convertURL(url);
-				if ("fireEvent" in fieldElm) {
-					fieldElm.fireEvent("onchange")
-				} else {
-					var evt = document.createEvent("HTMLEvents");
-					evt.initEvent("change", false, true);
-					fieldElm.dispatchEvent(evt);
-				}
-			}
-		});
-	};
-	return false;
+        tinymce.activeEditor.windowManager.open({
+            title: 'Filemanager',
+            file: url,
+            width: window.innerWidth,
+            height: window.innerHeight-40,
+            resizable: false,
+            maximizable: false,
+            plugins: "media",
+            inline: 1
+        }, {
+            window: win,
+            input: id
+        });
+    }
 });
