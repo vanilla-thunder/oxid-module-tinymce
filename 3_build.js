@@ -27,10 +27,10 @@ console.log("     cleanup finished");
 r('http://mb-dev.de/v/?raw=1&v=' + p.version).pipe(fs.createWriteStream('_module/version.jpg'));
 
 // copy files
-shell("cp -r application _module/application");
-shell("cp -r fileman _module/fileman");
-shell("cp -r plugins _module/plugins");
-shell("cp -r tinymce _module/tinymce");
+shell("cp -r application _module/");
+shell("cp -r fileman _module/");
+shell("cp -r plugins _module/");
+shell("cp -r tinymce _module/");
 shell("cp metadata.php _module/metadata.php");
 shell("cp README.md _module/README.md");
 shell("cp LICENSE _module/LICENSE");

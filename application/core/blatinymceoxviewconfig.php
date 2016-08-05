@@ -202,8 +202,11 @@ copyLongDesc = function(sIdent)
       $cfg->setGlobalParameter('scripts' . $sSufix, $aScript);
 
       $aInclude = (array)$cfg->getGlobalParameter('includes' . $sSufix);
+      
+      $aExtjs = $cfg->getConfigParam('aTinyMCE_extjs');
+      if(!empty($aExtjs) && is_array($aExtjs)) foreach($aExtjs as $key => $js) $aInclude[3][] = $js;
+      
       $aInclude[3][] = $this->getModuleUrl('bla-tinymce', 'tinymce/tinymce.min.js');
-      //$aInclude[3][] = 'https://code.jquery.com/jquery-2.2.4.min.js';
       $cfg->setGlobalParameter('includes' . $sSufix, $aInclude);
 
       return '<li style="margin-left: 50px;"><button style="border: 1px solid #0089EE; color: #0089EE;padding: 3px 10px; margin-top: -10px; background: white;" ' .
