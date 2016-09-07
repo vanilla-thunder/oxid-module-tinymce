@@ -24,7 +24,7 @@ $aModule          = array(
     'title'       => '<strong style="color:#95b900;font-size:125%;">best</strong><strong style="color:#c4ca77;font-size:125%;">life</strong> <strong>TinyMCE</strong>',
     'description' => 'TinyMCE Editor for OXID eShop CE 4.7 - 4.10<br/><b style="display:inline-block;float:left;line-height:18px;">newest version:</b><img src="' . $v . '"/><br/>(no need to update if you already have this version)',
     'thumbnail'   => 'tinymce.png',
-    'version'     => '2.0.0',
+    'version'     => '2.0.1',
     'author'      => 'Marat Bedoev, bestlife AG',
     'email'       => 'oxid@bestlife.ag',
     'url'         => 'https://github.com/vanilla-thunder/bla-tinymce',
