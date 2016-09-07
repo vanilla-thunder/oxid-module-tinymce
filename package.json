@@ -1,12 +1,12 @@
 {
   "name": "bla-tinymce-dev",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "TinyMCE Editor for OXID eShop CE",
   "author": "Marat Bedoev",
   "company": "bestlife AG",
   "email": "oxid@bestlife.ag",
   "url" : "https://github.com/vanilla-thunder/bla-tinymce",
-  "license": "GPL-3.0+",
+  "license": "GPL-3.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/vanilla-thunder/bla-tinymce.git"

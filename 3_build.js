@@ -19,7 +19,7 @@ shell("rm -rf _module/application");
 shell("rm -rf _module/fileman");
 shell("rm -rf _module/plugins");
 shell("rm -rf _module/tinymce");
-shell("rm -rf _master/copy_this/modules/bla/*");
+shell("rm -rf _master/copy_this/modules/bla/bla-tinymce");
 console.log("");
 console.log("     cleanup finished");
 
@@ -33,6 +33,7 @@ shell("cp -r plugins _module/");
 shell("cp -r tinymce _module/");
 shell("cp metadata.php _module/metadata.php");
 shell("cp README.md _module/README.md");
+shell("cp changelog _module/changelog");
 shell("cp LICENSE _module/LICENSE");
 console.log("     new files copied");
 

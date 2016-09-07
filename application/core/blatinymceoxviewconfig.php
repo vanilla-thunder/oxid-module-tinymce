@@ -43,33 +43,37 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
 
       // default config
       $aDefaultConfig = array(
-         'selector'                  => '"textarea:not(.mceNoEditor)"',
-         'language'                  => '"' . ( in_array($sLang, $aLang) ? $aLang[$sLang] : 'en' ) . '"',
+         'force_br_newlines'       => 'false',
+         'force_p_newlines'        => 'false',
+         'forced_root_block'       => '""',
+         'selector'                => '"textarea:not(.mceNoEditor)"',
+         'language'                => '"' . ( in_array($sLang, $aLang) ? $aLang[$sLang] : 'en' ) . '"',
          //'spellchecker_language'   => '"' . (in_array($sLang, $aLang) ? $aLang[$sLang] : 'en') . '"',
-         'nowrap'                    => 'false',
-         'entity_encoding'           => '"raw"', // http://www.tinymce.com/wiki.php/Configuration:entity_encoding
-         'height'                    => 300,
-         'menubar'                   => 'false',
-         'document_base_url'         => '"' . $this->getBaseDir() . '"', // http://www.tinymce.com/wiki.php/Configuration:document_base_url
-         'relative_urls'             => 'false', // http://www.tinymce.com/wiki.php/Configuration:relative_urls
-         'plugin_preview_width'      => 'window.innerWidth',
-         'plugin_preview_height'     => 'window.innerHeight-90',
-         'code_dialog_width'         => 'window.innerWidth-50',
-         'code_dialog_height'        => 'window.innerHeight-130',
-         'image_advtab'              => 'true',
-         'imagetools_toolbar'        => '"rotateleft rotateright | flipv fliph | editimage imageoptions"',
-         'moxiemanager_fullscreen'   => 'true',
-         'insertdatetime_formats'    => '[ "%d.%m.%Y", "%H:%M" ]',
-         'nonbreaking_force_tab'     => 'true', // http://www.tinymce.com/wiki.php/Plugin:nonbreaking
-         'autoresize_max_height'     => '400',
-         'filemanager_access_key'    => '"' . md5($_SERVER['HTTP_HOST']) . '"',
-         'tinymcehelper'             => '"' . $this->getSelfActionLink() . 'renderPartial=1"'
+         'nowrap'                  => 'false',
+         'entity_encoding'         => '"raw"', // http://www.tinymce.com/wiki.php/Configuration:entity_encoding
+         'height'                  => 300,
+         'menubar'                 => 'false',
+         'document_base_url'       => '"' . $this->getBaseDir() . '"', // http://www.tinymce.com/wiki.php/Configuration:document_base_url
+         'relative_urls'           => 'false', // http://www.tinymce.com/wiki.php/Configuration:relative_urls
+         'plugin_preview_width'    => 'window.innerWidth',
+         'plugin_preview_height'   => 'window.innerHeight-90',
+         'code_dialog_width'       => 'window.innerWidth-50',
+         'code_dialog_height'      => 'window.innerHeight-130',
+         'image_advtab'            => 'true',
+         'imagetools_toolbar'      => '"rotateleft rotateright | flipv fliph | editimage imageoptions"',
+         'moxiemanager_fullscreen' => 'true',
+         'insertdatetime_formats'  => '[ "%d.%m.%Y", "%H:%M" ]',
+         'nonbreaking_force_tab'   => 'true', // http://www.tinymce.com/wiki.php/Plugin:nonbreaking
+         'autoresize_max_height'   => '400',
+         'urlconverter_callback'   => '"urlconverter"',
+         'filemanager_access_key'  => '"' . md5($_SERVER['HTTP_HOST']) . '"',
+         'tinymcehelper'           => '"' . $this->getSelfActionLink() . 'renderPartial=1"'
       );
-      if($blFilemanager) $aDefaultConfig['external_filemanager_path'] = '"../modules/bla/bla-tinymce/fileman/"';
-      if($blFilemanager) $aDefaultConfig['filemanager_access_key']    = '"' . md5($_SERVER['HTTP_HOST']) . '"';
-      if($blFilemanager) $oUS = oxRegistry::get("oxUtilsServer");
-      if($blFilemanager) $oUS->setOxCookie("filemanagerkey", md5($_SERVER['HTTP_HOST'].$oUS->getOxCookie("admin_sid")));
-      
+      if ($blFilemanager) $aDefaultConfig['external_filemanager_path'] = '"../modules/bla/bla-tinymce/fileman/"';
+      if ($blFilemanager) $aDefaultConfig['filemanager_access_key'] = '"' . md5($_SERVER['HTTP_HOST']) . '"';
+      if ($blFilemanager) $oUS = oxRegistry::get("oxUtilsServer");
+      if ($blFilemanager) $oUS->setOxCookie("filemanagerkey", md5($_SERVER['HTTP_HOST'] . $oUS->getOxCookie("admin_sid")));
+
       //merging with onfig override
       $aConfig = ( $aOverrideConfig = $this->_getTinyCustConfig() ) ? array_merge($aDefaultConfig, $aOverrideConfig) : $aDefaultConfig;
 
@@ -101,6 +105,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
          //'visualchars'    => 'visualchars',
          'wordcount'      => '',
          'oxfullscreen'   => 'fullscreen', //custom fullscreen plugin
+         //'oxwidget'       => 'widget'
          //'oxgetseourl'    => 'yolo' //custom seo url plugin // wip
       );
 
@@ -122,6 +127,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
 
       // external plugins
       $aConfig['external_plugins'] = '{ "oxfullscreen":"' . $this->getModuleUrl('bla-tinymce', 'plugins/oxfullscreen/plugin.js') . '" ';
+      //$aConfig['external_plugins'] .= ', "oxwidget":"' . $this->getModuleUrl('bla-tinymce', 'plugins/oxwidget/plugin.js') . '" ';
       if ($blFilemanager) $aConfig['external_plugins'] .= ',"roxy":"' . $this->getModuleUrl('bla-tinymce', 'plugins/roxy/plugin.js') . '" ';
       //$aConfig['external_plugins'] .= ',"oxgetseourl":"' . $this->getModuleUrl('bla-tinymce', 'plugins/oxgetseourl/plugin.js') . '" ';
 
@@ -171,25 +177,27 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
       // add init script
       $sInit = 'tinymce.init({ ' . $sConfig . ' });';
 
-      $sCopyLongDescFromTinyMCE = 'function copyLongDescFromTinyMCE(sIdent) 
-{
-    var editor = tinymce.get("editor_"+sIdent);
-    if (editor && editor.isHidden() !== true)
-    {
-        console.log("copy content from tinymce");
-        var content = editor.getContent().replace(/\[{([^\]]*?)}\]/g, function(m) { return m.replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&amp;/g, "&") });
-        document.getElementsByName("editval[" + sIdent + "]").item(0).value = content;
-        return true;
-    }
-    return false;
+      $sCopyLongDescFromTinyMCE = 'function copyLongDescFromTinyMCE(sIdent) {
+   var editor = tinymce.get("editor_"+sIdent);
+   if (editor) { /*  && editor.isHidden() !== true */
+      if(editor.isHidden()) editor.show();
+      var content = editor.getContent().replace(/\[{([^\]]*?)}\]/g, function(m) { return m.replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&amp;/g, "&") });
+      document.getElementsByName("editval[" + sIdent + "]").item(0).value = content;
+      return true;
+   }
+   return false; 
 }
 
 var origCopyLongDesc = copyLongDesc;
-copyLongDesc = function(sIdent)
-{
+copyLongDesc = function(sIdent) {
     if ( copyLongDescFromTinyMCE( sIdent ) ) return;
     console.log("tinymce disabled, copy content from regular textarea");
     origCopyLongDesc( sIdent );
+}';
+      $sUrlConverter = 'function urlconverter(url, node, on_save) {
+      console.log(tinyMCE.activeEditor);
+      if(url.indexOf("[{") == 0) return url;
+      return (tinyMCE.activeEditor.settings.relative_urls) ? tinyMCE.activeEditor.documentBaseURI.toRelative(url) : tinyMCE.activeEditor.documentBaseURI.toAbsolute(url); 
 }';
 
       // adding scripts to template
@@ -198,14 +206,15 @@ copyLongDesc = function(sIdent)
 
       $aScript = (array)$cfg->getGlobalParameter('scripts' . $sSufix);
       $aScript[] = $sCopyLongDescFromTinyMCE;
+      $aScript[] = $sUrlConverter;
       $aScript[] = $sInit;
       $cfg->setGlobalParameter('scripts' . $sSufix, $aScript);
 
       $aInclude = (array)$cfg->getGlobalParameter('includes' . $sSufix);
-      
+
       $aExtjs = $cfg->getConfigParam('aTinyMCE_extjs');
-      if(!empty($aExtjs) && is_array($aExtjs)) foreach($aExtjs as $key => $js) $aInclude[3][] = $js;
-      
+      if (!empty( $aExtjs ) && is_array($aExtjs)) foreach ($aExtjs as $key => $js) $aInclude[3][] = $js;
+
       $aInclude[3][] = $this->getModuleUrl('bla-tinymce', 'tinymce/tinymce.min.js');
       $cfg->setGlobalParameter('includes' . $sSufix, $aInclude);
 

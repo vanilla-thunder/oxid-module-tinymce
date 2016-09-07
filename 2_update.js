@@ -121,7 +121,7 @@ r("http://www.roxyfileman.com/download", function(err, res, body) {
             recursive: false,
             silent: true
          });
-         shell("cp -f core/security.inc.php fileman/php/security.inc.php");
+         shell("cp -f application/core/security.inc.php fileman/php/security.inc.php");
       })
    );
 });
