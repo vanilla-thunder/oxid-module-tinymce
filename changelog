@@ -1,4 +1,5 @@
 # 2016-09-07 :: version 2.0.1
+- TinyMCE 4.4.3
 - link url conversion fixed. TinyMCE accepts smarty tags/variables as URL wirhout convertig them ti absolute URL.
 
 # 2016-09-07 :: version 2.0.0
