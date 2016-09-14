@@ -179,13 +179,9 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
 
       $sCopyLongDescFromTinyMCE = 'function copyLongDescFromTinyMCE(sIdent) {
    var editor = tinymce.get("editor_"+sIdent);
-   if (editor) { /*  && editor.isHidden() !== true */
-      if(editor.isHidden()) editor.show();
-      var content = editor.getContent().replace(/\[{([^\]]*?)}\]/g, function(m) { return m.replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&amp;/g, "&") });
-      document.getElementsByName("editval[" + sIdent + "]").item(0).value = content;
-      return true;
-   }
-   return false; 
+   var content = (editor && !editor.isHidden()) ? editor.getContent() : document.getElementById("editor_"+sIdent).value;
+   document.getElementsByName("editval[" + sIdent + "]").item(0).value = content.replace(/\[{([^\]]*?)}\]/g, function(m) { return m.replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&amp;/g, "&") });
+   return true;
 }
 
 var origCopyLongDesc = copyLongDesc;
