@@ -2,7 +2,7 @@
 
 /*
  * TinyMCE Editor for OXID eShop CE
- * Copyright (C) 2016  bestlife AG
+ * Copyright (C) 2017  bestlife AG
  * info:  oxid@bestlife.ag
  *
  * This program is free software;
@@ -16,15 +16,14 @@
  * Marat Bedoev
  */
 
-$v = "https://raw.githubusercontent.com/vanilla-thunder/bla-tinymce/master/copy_this/modules/bla/bla-tinymce/version.jpg";
 
 $sMetadataVersion = '1.1';
 $aModule          = array(
     'id'          => 'bla-tinymce',
     'title'       => '<strong style="color:#95b900;font-size:125%;">best</strong><strong style="color:#c4ca77;font-size:125%;">life</strong> <strong>TinyMCE</strong>',
-    'description' => 'TinyMCE Editor for OXID eShop CE 4.7 - 4.10<br/><b style="display:inline-block;float:left;line-height:18px;">newest version:</b><img src="' . $v . '"/><br/>(no need to update if you already have this version)',
+    'description' => 'TinyMCE Editor for OXID eShop CE',
     'thumbnail'   => 'tinymce.png',
-    'version'     => '2.0.1',
+    'version'     => '2.0.2 2017-1-11',
     'author'      => 'Marat Bedoev, bestlife AG',
     'email'       => 'oxid@bestlife.ag',
     'url'         => 'https://github.com/vanilla-thunder/bla-tinymce',

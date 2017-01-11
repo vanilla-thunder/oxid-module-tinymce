@@ -2,7 +2,7 @@
 
 /*
  * bestlife AG - TinyMCE Editor for OXID eShop CE
- * Copyright (C) 2016  bestlife AG
+ * Copyright (C) 2017  bestlife AG
  * info:  oxid@bestlife.ag
  *
  * GNU GENERAL PUBLIC LICENSE  
@@ -21,5 +21,5 @@ function checkAccess($action)
     //if(!session_id()) die("Access Denied!");
     //if(!session_id()) session_start();
     //if(isset($_GET['akey'])) $_SESSION['akey'] = strip_tags(preg_replace( "/[^a-zA-Z0-9\._-]/", '', $_GET['akey']));
-	if($_COOKIE['filemanagerkey'] !== md5($_SERVER['HTTP_HOST'].$_COOKIE['admin_sid'])) die('Access Denied!!');
+	if($_COOKIE['filemanagerkey'] !== md5($_SERVER['DOCUMENT_ROOT'].$_COOKIE['admin_sid'])) die('Access Denied!!');
 }
