@@ -1,3 +1,6 @@
+# 2017-01-11 :: version 2.0.2
+- TinyMCE 4.5.2
+
 # 2016-09-07 :: version 2.0.1
 - TinyMCE 4.4.3
 - link url conversion fixed. TinyMCE accepts smarty tags/variables as URL wirhout convertig them ti absolute URL.
@@ -15,11 +18,11 @@
 
 # 2014-09-04 :: version 1.3.1
 - TinyMCE v4.1.4
-- fix: fullpage Plugin für Newsletter hinzugefügt
+- fix: fullpage Plugin fÃ¼r Newsletter hinzugefÃ¼gt
 
 # 2014-08-20 :: version 1.3.0
 - TinyMCE v4.1.3
-- feature: Support für eigene Text-Felder hinzugefügt
+- feature: Support fÃ¼r eigene Text-Felder hinzugefÃ¼gt
 
 # 2014-04-23 :: version 1.2.2
 - TinyMCE 4.0.10

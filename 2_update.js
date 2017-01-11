@@ -69,7 +69,7 @@ r("http://www.tinymce.com/download/", function(err, res, body) {
       fs.createWriteStream('tmp_languages.zip')
       .on('close', function() {
          log("");
-         log("->  extracting lamguage files");
+         log("->  extracting language files");
          var languages = new AdmZip('tmp_languages.zip');
          languages.extractAllTo("tinymce/", true);
          fs.unlink('tmp_languages.zip');
@@ -100,7 +100,7 @@ r("http://www.roxyfileman.com/download", function(err, res, body) {
          log("");
          log("->  extracting Roxy Fileman");
          var zip = new AdmZip('tmp_fileman.zip');
-         zip.extractAllTo("./");
+         zip.extractAllTo("./", true);
          fs.unlink('tmp_fileman.zip');
          
          log("");         
