@@ -66,13 +66,13 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
          'nonbreaking_force_tab'   => 'true', // http://www.tinymce.com/wiki.php/Plugin:nonbreaking
          'autoresize_max_height'   => '400',
          'urlconverter_callback'   => '"urlconverter"',
-         'filemanager_access_key'  => '"' . md5($_SERVER['HTTP_HOST']) . '"',
+         'filemanager_access_key'  => '"' . md5($_SERVER['DOCUMENT_ROOT']) . '"',
          'tinymcehelper'           => '"' . $this->getSelfActionLink() . 'renderPartial=1"'
       );
       if ($blFilemanager) $aDefaultConfig['external_filemanager_path'] = '"../modules/bla/bla-tinymce/fileman/"';
       if ($blFilemanager) $aDefaultConfig['filemanager_access_key'] = '"' . md5($_SERVER['HTTP_HOST']) . '"';
       if ($blFilemanager) $oUS = oxRegistry::get("oxUtilsServer");
-      if ($blFilemanager) $oUS->setOxCookie("filemanagerkey", md5($_SERVER['HTTP_HOST'] . $oUS->getOxCookie("admin_sid")));
+      if ($blFilemanager) $oUS->setOxCookie("filemanagerkey", md5($_SERVER['DOCUMENT_ROOT'] . $oUS->getOxCookie("admin_sid")));
 
       //merging with onfig override
       $aConfig = ( $aOverrideConfig = $this->_getTinyCustConfig() ) ? array_merge($aDefaultConfig, $aOverrideConfig) : $aDefaultConfig;
