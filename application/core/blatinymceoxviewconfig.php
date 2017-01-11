@@ -1,9 +1,9 @@
 <?php
 
 /*
- * ###_MODULE_###
- * Copyright (C) ###_YEAR_###  ###_COMPANY_###
- * info:  ###_EMAIL_###
+ * ___MODULE___
+ * Copyright (C) ___YEAR___  ___COMPANY___
+ * info:  ___EMAIL___
  *
  * This program is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation;
@@ -13,7 +13,7 @@
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
  *
- * ###_AUTHOR_###
+ * ___AUTHOR___
  */
 
 class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
@@ -111,7 +111,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
 
       // plugins for newsletter emails
       if ($this->getActiveClassName() == "newsletter_main") {
-         $aDefaultPlugins["legacyoutput"] = false;
+         $aDefaultPlugins["legacyoutput"] = "false";
          $aDefaultPlugins["fullpage"] = "fullpage";
       }
 
@@ -119,7 +119,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
       $aOverridePlugins = $cfg->getConfigParam("aTinyMCE_plugins");
       $aPlugins = ( empty( $aOverridePlugins ) || !is_array($aOverridePlugins) ) ? $aDefaultPlugins : array_merge($aDefaultPlugins, $aOverridePlugins);
       $aPlugins = array_filter($aPlugins, function ( $value ) {
-         return $value !== false;
+         return $value !== "false";
       });
 
       // array keys von $aPlugins enthalten aktive plugins

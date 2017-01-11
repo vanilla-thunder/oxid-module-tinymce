@@ -1,9 +1,9 @@
 <?php
 
 /*
- * ###_MODULE_###
- * Copyright (C) ###_YEAR_###  ###_COMPANY_###
- * info:  ###_EMAIL_###
+ * ___MODULE___
+ * Copyright (C) ___YEAR___  ___COMPANY___
+ * info:  ___EMAIL___
  *
  * This program is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation;
@@ -13,21 +13,20 @@
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
  *
- * ###_AUTHOR_###
+ * ___AUTHOR___
  */
 
-$v = "https://raw.githubusercontent.com/vanilla-thunder/bla-tinymce/master/copy_this/modules/bla/bla-tinymce/version.jpg";
 
 $sMetadataVersion = '1.1';
 $aModule          = array(
     'id'          => 'bla-tinymce',
     'title'       => '<strong style="color:#95b900;font-size:125%;">best</strong><strong style="color:#c4ca77;font-size:125%;">life</strong> <strong>TinyMCE</strong>',
-    'description' => '###_MODULE_### 4.7 - 4.10<br/><b style="display:inline-block;float:left;line-height:18px;">newest version:</b><img src="' . $v . '"/><br/>(no need to update if you already have this version)',
+    'description' => '___MODULE___',
     'thumbnail'   => 'tinymce.png',
-    'version'     => '###_VERSION_###',
-    'author'      => '###_AUTHOR_###, ###_COMPANY_###',
-    'email'       => '###_EMAIL_###',
-    'url'         => '###_URL_###',
+    'version'     => '___VERSION___',
+    'author'      => '___AUTHOR___, ___COMPANY___',
+    'email'       => '___EMAIL___',
+    'url'         => '___URL___',
     'extend'      => array( 'oxviewconfig'      => 'bla/bla-tinymce/application/core/blatinymceoxviewconfig'),
     'files'       => array( 'tinymcehelper'     => 'bla/bla-tinymce/application/controllers/admin/tinymcehelper.php' ),
     'templates'   => array( 'tinymcehelper.tpl' => 'bla/bla-tinymce/application/views/admin/tinymcehelper.tpl' ),

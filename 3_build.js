@@ -24,7 +24,7 @@ console.log("");
 console.log("     cleanup finished");
 
 // oxversion
-r('http://mb-dev.de/v/?raw=1&v=' + p.version).pipe(fs.createWriteStream('_module/version.jpg'));
+//r('http://mb-dev.de/v/?raw=1&v=' + p.version).pipe(fs.createWriteStream('_module/version.jpg'));
 
 // copy files
 shell("cp -r application _module/");
@@ -33,14 +33,14 @@ shell("cp -r plugins _module/");
 shell("cp -r tinymce _module/");
 shell("cp metadata.php _module/metadata.php");
 shell("cp README.md _module/README.md");
-shell("cp changelog _module/changelog");
+shell("cp changelog.md _module/changelog.md");
 shell("cp LICENSE _module/LICENSE");
 console.log("     new files copied");
 
 // compile some files
 var replaces = {
     'MODULE': p.description,
-    'VERSION': p.version,
+    'VERSION': p.version+' '+new Date().toLocaleDateString(),
     'AUTHOR': p.author,
     'COMPANY': p.company,
     'EMAIL': p.email,
@@ -51,15 +51,13 @@ var replaces = {
 for(var x in replaces)
 {
     replace({
-        regex: "###_"+x+"_###",
+        regex: "___"+x+"___",
         replacement: replaces[x],
         paths: ['./_module'],
         recursive: true,
         silent: true
     });
 }
-
-
 
 process.on('exit', function (code) {
     console.log("     replacing complete");

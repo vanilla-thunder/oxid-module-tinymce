@@ -1,7 +1,7 @@
 /**
- * ###_MODULE_###
- * Copyright (C) ###_YEAR_###  ###_COMPANY_###
- * info:  ###_EMAIL_###
+ * ___MODULE___
+ * Copyright (C) ___YEAR___  ___COMPANY___
+ * info:  ___EMAIL___
  *
  * GNU GENERAL PUBLIC LICENSE
  *
@@ -13,7 +13,7 @@
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
  *
- * ###_AUTHOR_###
+ * ___AUTHOR___
  */
 
 tinymce.PluginManager.add('roxy', function(editor)

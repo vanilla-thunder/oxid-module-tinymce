@@ -1,9 +1,9 @@
 <?php
 
 /*
- * ###_MODULE_###
- * Copyright (C) ###_YEAR_###  ###_COMPANY_###
- * info:  ###_EMAIL_###
+ * ___MODULE___
+ * Copyright (C) ___YEAR___  ___COMPANY___
+ * info:  ___EMAIL___
  *
  * This program is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation;
@@ -13,7 +13,7 @@
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
  *
- * ###_AUTHOR_###
+ * ___AUTHOR___
  */
 
 $sLangName = 'English';
@@ -32,7 +32,7 @@ $aLang = array(
    'HELP_SHOP_MODULE_aTinyMCE_extjs'        => 'full URL with http:// or https:// if your shop runs with HTTPS.',
    'SHOP_MODULE_GROUP_tinyMceSettings'      => 'TinyMCE Settings &amp; Plugins',
    'SHOP_MODULE_aTinyMCE_config'            => '<h3>custom TinyMCE configuration <a href="https://www.tinymce.com/docs/configure/" target="_blank" title="more info">(?)</a></h3>here you can add custom config params for external plugins or overwrite default params<br/><b>param => "value"</b> (with quotes, if required!)',
-   'SHOP_MODULE_aTinyMCE_plugins'           => '<h3>enable/overwrite TinyMCE Plugins <a href="https://www.tinymce.com/docs/configure/integration-and-setup/#plugins" target="_blank">(?)</a></h3><b>add plugin:</b>&nbsp;<i>plugin => "plugin buttons"</i><br/><b>add plugin without buttons:</b>&nbsp;<i>plugin => ""</i><br/><b>disable plugin:</b>&nbsp;<i>plugin => false</i>',
-   'SHOP_MODULE_aTinyMCE_external_plugins'  => '<h3>externaö plugins <a href="https://www.tinymce.com/docs/configure/integration-and-setup/#external_plugins" target="_blank">(?)</a></h3>example:<br/>pluginname => path/to/file.js <b>|</b> plugin buttons',
+   'SHOP_MODULE_aTinyMCE_plugins'           => '<h3>enable/overwrite TinyMCE Plugins <a href="https://www.tinymce.com/docs/configure/integration-and-setup/#plugins" target="_blank">(?)</a></h3><b>add plugin:</b>&nbsp;<i>plugin => plugin buttons</i><br/><b>add plugin without buttons:</b>&nbsp;<i>plugin => |</i><br/><b>disable plugin:</b>&nbsp;<i>plugin => false</i>',
+   'SHOP_MODULE_aTinyMCE_external_plugins'  => '<h3>external plugins <a href="https://www.tinymce.com/docs/configure/integration-and-setup/#external_plugins" target="_blank">(?)</a></h3>example:<br/>pluginname => path/to/file.js <b>|</b> plugin buttons',
    'SHOP_MODULE_aTinyMCE_buttons'           => '<h3>Toolbar Buttons <a href="https://www.tinymce.com/docs/advanced/editor-control-identifiers/#toolbarcontrols" target="_blank">(?)</a></h3><b style="color:#ff3600;">only for core toolbar controls and buttons for custom and external plugins!</b><br/>default buttons:' . "<textarea rows='7' cols='55'>undo redo\nbold italic underline strikethrough\nalignleft aligncenter alignright alignjustify\nbullist numlist\noutdent indent\nblockquote\nremoveformat\nsubscript\nsuperscript\nformatselect\nfontselect\nfontsizeselect\nsubscript superscript</textarea>"
 );

@@ -1,6 +1,6 @@
 /**
- * ###_MODULE_###
- * info:  ###_EMAIL_### *
+ * ___MODULE___
+ * info:  ___EMAIL___ *
  * fullscreen plugin adapted for oxids f*cking framesets
  *
  * Released under LGPL License.

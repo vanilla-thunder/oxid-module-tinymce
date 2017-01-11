@@ -1,9 +1,9 @@
 <?php
 
 /*
- * ###_COMPANY_### - ###_MODULE_###
- * Copyright (C) ###_YEAR_###  ###_COMPANY_###
- * info:  ###_EMAIL_###
+ * ___COMPANY___ - ___MODULE___
+ * Copyright (C) ___YEAR___  ___COMPANY___
+ * info:  ___EMAIL___
  *
  * GNU GENERAL PUBLIC LICENSE  
  *
