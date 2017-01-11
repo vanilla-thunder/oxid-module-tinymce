@@ -2,7 +2,7 @@
 
 /*
  * TinyMCE Editor for OXID eShop CE
- * Copyright (C) 2016  bestlife AG
+ * Copyright (C) 2017  bestlife AG
  * info:  oxid@bestlife.ag
  *
  * This program is free software;
@@ -66,13 +66,13 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
          'nonbreaking_force_tab'   => 'true', // http://www.tinymce.com/wiki.php/Plugin:nonbreaking
          'autoresize_max_height'   => '400',
          'urlconverter_callback'   => '"urlconverter"',
-         'filemanager_access_key'  => '"' . md5($_SERVER['HTTP_HOST']) . '"',
+         'filemanager_access_key'  => '"' . md5($_SERVER['DOCUMENT_ROOT']) . '"',
          'tinymcehelper'           => '"' . $this->getSelfActionLink() . 'renderPartial=1"'
       );
       if ($blFilemanager) $aDefaultConfig['external_filemanager_path'] = '"../modules/bla/bla-tinymce/fileman/"';
       if ($blFilemanager) $aDefaultConfig['filemanager_access_key'] = '"' . md5($_SERVER['HTTP_HOST']) . '"';
       if ($blFilemanager) $oUS = oxRegistry::get("oxUtilsServer");
-      if ($blFilemanager) $oUS->setOxCookie("filemanagerkey", md5($_SERVER['HTTP_HOST'] . $oUS->getOxCookie("admin_sid")));
+      if ($blFilemanager) $oUS->setOxCookie("filemanagerkey", md5($_SERVER['DOCUMENT_ROOT'] . $oUS->getOxCookie("admin_sid")));
 
       //merging with onfig override
       $aConfig = ( $aOverrideConfig = $this->_getTinyCustConfig() ) ? array_merge($aDefaultConfig, $aOverrideConfig) : $aDefaultConfig;
@@ -111,7 +111,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
 
       // plugins for newsletter emails
       if ($this->getActiveClassName() == "newsletter_main") {
-         $aDefaultPlugins["legacyoutput"] = false;
+         $aDefaultPlugins["legacyoutput"] = "false";
          $aDefaultPlugins["fullpage"] = "fullpage";
       }
 
@@ -119,7 +119,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
       $aOverridePlugins = $cfg->getConfigParam("aTinyMCE_plugins");
       $aPlugins = ( empty( $aOverridePlugins ) || !is_array($aOverridePlugins) ) ? $aDefaultPlugins : array_merge($aDefaultPlugins, $aOverridePlugins);
       $aPlugins = array_filter($aPlugins, function ( $value ) {
-         return $value !== false;
+         return $value !== "false";
       });
 
       // array keys von $aPlugins enthalten aktive plugins
