@@ -153,8 +153,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
          "formatselect",
          "removeformat",
          "fontselect",
-         "fontsizeselect",
-         "subscript superscript"
+         "fontsizeselect"
       );
       $aOverrideButtons = oxRegistry::getConfig()->getConfigParam("aTinyMCE_buttons");
       $aButtons = ( empty( $aOverrideButtons ) || !is_array($aOverrideButtons) ) ? $aDefaultButtons : $aOverrideButtons;
