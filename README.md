@@ -11,15 +11,6 @@ and here: https://github.com/tinymce
 ### upload over ftp/ssh:
 copy the content of the "copy_this" folder into the shop root directory  
 **if you are uploading files via ftp, switch to the binary transfer mode**  
-### ssh shell + git client:
-navigate into the modules directory and create a "hdi" directory with a "vendormetadata.php" file inside it (can be empty yet)  
-clone remote git repo and switch to the "module" branch.  
-this commands works for debian and centos:
-<pre>mkdir hdi
-cd hdi/
-wget https://raw.github.com/vanilla-thunder/hdi-tinymce/master/copy_this/modules/hdi/vendormetadata.php
-git clone -b module git://github.com/vanilla-thunder/hdi-tinymce.git
-</pre>
 
 
 ## LICENSE AGREEMENT 
