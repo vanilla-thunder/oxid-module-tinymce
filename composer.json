@@ -1,7 +1,17 @@
 {
     "name": "bla/bla-tinymce",
-    "type": "oxid-module",
-    "require": {
-        "composer/installers": "^1.0"
+    "description": "TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor control released as Open Source under LGPL."
+    "type": "oxideshop-module",
+    "keywords": ["oxid", "eShop", "WYSIWYG", "content editor"],
+    "homepage": "http://www.bestlife-shop.de",
+    "support": {
+        "email": "oxid@bestlife.ag",
+        "issues": "https://github.com/vanilla-thunder/bla-tinymce/issues",
+        "source": "https://github.com/vanilla-thunder/bla-tinymce/"
+    },
+    "extra": {
+        "oxideshop": {
+            "target-directory": "bla/bla-tinymce"
+        }
     }
 }
