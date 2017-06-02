@@ -1,6 +1,6 @@
 {
     "name": "bla/bla-tinymce",
-    "description": "TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor control released as Open Source under LGPL."
+    "description": "TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor control released as Open Source under LGPL.",
     "type": "oxideshop-module",
     "keywords": ["oxid", "eShop", "WYSIWYG", "content editor"],
     "homepage": "http://www.bestlife-shop.de",
