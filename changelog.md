@@ -1,3 +1,6 @@
+## 2017-06-20 :: version 2.0.3
+- TinyMCE 4.6.4
+
 ## 2017-01-11 :: version 2.0.2
 - TinyMCE 4.5.2
 - fullscreen editing plugin 

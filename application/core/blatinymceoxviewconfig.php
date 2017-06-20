@@ -25,7 +25,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
       $blPlainCms = in_array($cfg->getActiveView()->getViewDataElement("edit")->oxcontents__oxloadid->value, $cfg->getConfigParam("aTinyMCE_plaincms"));
       $blFilemanager = $cfg->getConfigParam("blTinyMCE_filemanager");
 
-      if (!$blEnabled) return;
+      if (!$blEnabled) return false;
       if ($blPlainCms) return oxRegistry::getLang()->translateString("BLA_TINYMCE_PLAINCMS");
 
       // processing editor config & other stuff
@@ -69,11 +69,12 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
          'filemanager_access_key'  => '"' . md5($_SERVER['DOCUMENT_ROOT']) . '"',
          'tinymcehelper'           => '"' . $this->getSelfActionLink() . 'renderPartial=1"'
       );
-      if ($blFilemanager) $aDefaultConfig['external_filemanager_path'] = '"../modules/bla/bla-tinymce/fileman/"';
-      if ($blFilemanager) $aDefaultConfig['filemanager_access_key'] = '"' . md5($_SERVER['HTTP_HOST']) . '"';
-      if ($blFilemanager) $oUS = oxRegistry::get("oxUtilsServer");
-      if ($blFilemanager) $oUS->setOxCookie("filemanagerkey", md5($_SERVER['DOCUMENT_ROOT'] . $oUS->getOxCookie("admin_sid")));
-
+      if ($blFilemanager) {
+          $aDefaultConfig['external_filemanager_path'] = '"../modules/bla/bla-tinymce/fileman/"';
+          $aDefaultConfig['filemanager_access_key'] = '"' . md5($_SERVER['HTTP_HOST']) . '"';
+          $oUS = oxRegistry::get("oxUtilsServer");
+          $oUS->setOxCookie("filemanagerkey", md5($_SERVER['DOCUMENT_ROOT'] . $oUS->getOxCookie("admin_sid")));
+      }
       //merging with onfig override
       $aConfig = ( $aOverrideConfig = $this->_getTinyCustConfig() ) ? array_merge($aDefaultConfig, $aOverrideConfig) : $aDefaultConfig;
 
@@ -152,8 +153,7 @@ class blaTinyMceOxViewConfig extends blaTinyMceOxViewConfig_parent
          "formatselect",
          "removeformat",
          "fontselect",
-         "fontsizeselect",
-         "subscript superscript"
+         "fontsizeselect"
       );
       $aOverrideButtons = oxRegistry::getConfig()->getConfigParam("aTinyMCE_buttons");
       $aButtons = ( empty( $aOverrideButtons ) || !is_array($aOverrideButtons) ) ? $aDefaultButtons : $aOverrideButtons;
