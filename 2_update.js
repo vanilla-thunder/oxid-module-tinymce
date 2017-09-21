@@ -124,6 +124,22 @@ r("http://www.roxyfileman.com/download", function (err, res, body) {
                     recursive: false,
                     silent: true
                 });
+                // "MAX_IMAGE_WIDTH":"1000" => "MAX_IMAGE_WIDTH":"2000",
+                replace({
+                    regex: /\"MAX_IMAGE_WIDTH\"\s*\:\s*"1000"\,/,
+                    replacement: '"MAX_IMAGE_WIDTH": "2000",',
+                    paths: ['./fileman/conf.json'],
+                    recursive: false,
+                    silent: true
+                });
+                // "MAX_IMAGE_HEIGHT":"1000" => "MAX_IMAGE_HEIGHT":"2000",
+                replace({
+                    regex: /\"MAX_IMAGE_HEIGHT\"\s*\:\s*"1000"\,/,
+                    replacement: '"MAX_IMAGE_HEIGHT": "2000",',
+                    paths: ['./fileman/conf.json'],
+                    recursive: false,
+                    silent: true
+                });
                 shell("cp -f application/core/security.inc.php fileman/php/security.inc.php");
             })
     );
