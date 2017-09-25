@@ -1,3 +1,6 @@
+/*jslint node:true, curly:false */
+"use strict";
+
 var fs = require('fs'),
     p = require('./package.json'),
     r = require("request"),
@@ -40,7 +43,7 @@ console.log("     new files copied");
 // compile some files
 var replaces = {
     'MODULE': p.description,
-    'VERSION': p.version+' '+new Date().toLocaleDateString(),
+    'VERSION': p.version+' '+new Date().toISOString().split('T')[0],
     'AUTHOR': p.author,
     'COMPANY': p.company,
     'EMAIL': p.email,
@@ -50,6 +53,7 @@ var replaces = {
 
 for(var x in replaces)
 {
+    if(!replaces.hasOwnProperty(x)) continue;
     replace({
         regex: "___"+x+"___",
         replacement: replaces[x],
