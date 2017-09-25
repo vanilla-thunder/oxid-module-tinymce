@@ -1,11 +1,11 @@
 /*jslint node:true, curly:false */
 "use strict";
 
-var r = require('request'),
+var fs = require('fs'),
+    r = require('request'),
     c = require('cheerio'),
-    fs = require('fs'),
-    replace = require('replace'),
     AdmZip = require('adm-zip'),
+    replace = require('replace'),
     runner = require('child_process');
 
 

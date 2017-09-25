@@ -1,3 +1,6 @@
+/*jslint node:true, curly:false */
+"use strict";
+
 var runner = require('child_process');
 
 var msg = ( process.argv[2] ? process.argv[2] : "updates");
