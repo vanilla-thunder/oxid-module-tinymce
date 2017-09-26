@@ -4,7 +4,8 @@
 var runner = require('child_process');
 
 var msg = ( process.argv[2] ? process.argv[2] : "updates");
-    
+
+console.log("");
 runner.exec("git add . && git commit -m '"+msg+"' && git push", {cwd: './_master/'},
     function (err, stdout, stderr) {
         if(err) console.log(err);
