@@ -1,6 +1,6 @@
 <?php
 /*
- * TinyMCE Editor for OXID eShop CE
+ * bla-tinymce
  * Copyright (C) 2017  bestlife AG
  * info:  oxid@bestlife.ag
  *

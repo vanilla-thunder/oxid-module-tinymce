@@ -1,7 +1,7 @@
 ## TinyMCE Editor for OXID eShop CE
 by Marat Bedoev, bestlife AG <oxid@bestlife.ag>  
 https://github.com/vanilla-thunder/bla-tinymce
-### module version 2.0.3 2017-06-20
+### module version 2.1.0 ( 2017-09-26 )
 
 TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor control released as Open Source under LGPL.
 More information here: http://www.tinymce.com/  
@@ -17,10 +17,40 @@ and here: https://github.com/tinymce
   * remove modules/bla/bla-tinymce
   * clear tmp/
 
-## more info here: [http:/marat.ws/bla-tinymce/](http:/marat.ws/bla-tinymce/)
+## more info here: [https://marat.ws/bla-tinymce/](http:/marat.ws/bla-tinymce/)
+
+### changelog
+- **2017-09-25 :: version 2.1.0**
+   - TinyMCE 4.6.7
+   - increased maximum image size for upload via filemanager 
+- **2017-06-20 :: version 2.0.3**
+   - TinyMCE 4.6.4
+- **2017-01-11 :: version 2.0.2**
+   - TinyMCE 4.5.2
+   - fullscreen editing plugin 
+- **2016-09-07 :: version 2.0.1**
+   - TinyMCE 4.4.3
+   - link url conversion fixed. TinyMCE accepts smarty tags/variables as URL wirhout convertig them to absolute URL.
+- **2016-09-07 :: version 2.0.0**
+   - TinyMCE 4.4.1
+   - eingebauter Filemanager "Roxy Fileman"
+- **2015-07-29 :: version 1.5.0**
+   - TinyMCE 4.2.2
+- **2015-05-06 :: version 1.4.0**
+   - TinyMCE 4.1.10
+   - fix: data-mce attributes removed from html output
+- **2014-09-04 :: version 1.3.1**
+   - TinyMCE v4.1.4
+   - fix: fullpage Plugin für Newsletter hinzugefügt
+- **2014-08-20 :: version 1.3.0**
+   - TinyMCE v4.1.3
+   - feature: Support für eigene Text-Felder hinzugefügt
+- **2014-04-23 :: version 1.2.2**
+   - TinyMCE 4.0.10
+   - fix: iframes werden nicht mehr ersetzt
 
 ### LICENSE AGREEMENT
-   TinyMCE Editor for OXID eShop CE  
+   ___MODULE___  
    Copyright (C) 2017 bestlife AG  
    info:  oxid@bestlife.ag  
   

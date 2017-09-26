@@ -1,5 +1,5 @@
 /**
- * TinyMCE Editor for OXID eShop CE
+ * ___MODULE___
  * info:  oxid@bestlife.ag *
  * fullscreen plugin adapted for oxids f*cking framesets
  *
