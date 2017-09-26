@@ -50,7 +50,7 @@ and here: https://github.com/tinymce
    - fix: iframes werden nicht mehr ersetzt
 
 ### LICENSE AGREEMENT
-   ___MODULE___  
+   ___NAME___  
    Copyright (C) ___YEAR___ ___COMPANY___  
    info:  ___EMAIL___  
   
