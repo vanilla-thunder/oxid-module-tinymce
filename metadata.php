@@ -1,7 +1,7 @@
 <?php
 
 /*
- * ___MODULE___
+ * ___NAME___
  * Copyright (C) ___YEAR___  ___COMPANY___
  * info:  ___EMAIL___
  *
@@ -18,108 +18,108 @@
 
 
 $sMetadataVersion = '1.1';
-$aModule          = array(
-    'id'          => 'bla-tinymce',
-    'title'       => '<strong style="color:#95b900;font-size:125%;">best</strong><strong style="color:#c4ca77;font-size:125%;">life</strong> <strong>TinyMCE</strong>',
-    'description' => '___MODULE___',
-    'thumbnail'   => 'tinymce.png',
-    'version'     => '___VERSION___',
-    'author'      => '___AUTHOR___, ___COMPANY___',
-    'email'       => '___EMAIL___',
-    'url'         => '___URL___',
-    'extend'      => array( 'oxviewconfig'      => 'bla/bla-tinymce/application/core/blatinymceoxviewconfig'),
-    'files'       => array( 'tinymcehelper'     => 'bla/bla-tinymce/application/controllers/admin/tinymcehelper.php' ),
-    'templates'   => array( 'tinymcehelper.tpl' => 'bla/bla-tinymce/application/views/admin/tinymcehelper.tpl' ),
-    'blocks'      => array(
-        array(
-            'template' => 'bottomnaviitem.tpl',
-            'block'    => 'admin_bottomnaviitem',
-            'file'     => '/application/views/blocks/admin/bottomnaviitem_admin_bottomnaviitem.tpl'
-        )
-    ),
-    'settings'    => array(
-        /* enabling tinyMCE for these classes */
-        array(
-            'group'    => 'tinyMceMain',
-            'name'     => 'blTinyMCE_filemanager',
-            'type'     => 'bool',
-            'value'    => true,
-            'position' => 0
-        ),
-        array(
-            'group'    => 'tinyMceMain',
-            'name'     => 'aTinyMCE_classes',
-            'type'     => 'arr',
-            'value'    => array(
-                "article_main",
-                "category_text",
-                "content_main",
-                "newsletter_main",
-                "news_text"
-            ),
-            'position' => 1
-        ),
-        array(
-           'group'    => 'tinyMceMain',
-           'name'     => 'aTinyMCE_plaincms',
-           'type'     => 'arr',
-           'value'    => array(
-              "oxadminorderplainemail",
-              "oxadminordernpplainemail", // bestellbenachrichtigung admin + fremdländer
-              "oxuserorderplainemail",
-              "oxuserordernpplainemail",
-              "oxuserorderemailendplain", // bestellbenachrichtigung user + fremdländer + abschluss
-              "oxordersendplainemail", // versandbestätigung
-              "oxregisterplainemail",
-              "oxregisterplainaltemail", // registrierung
-              "oxupdatepassinfoplainemail", // passwort update
-              "oxnewsletterplainemail", // newsletter
-              "oxemailfooterplain", // email fußtext
-              "oxrighttocancellegend",
-              "oxrighttocancellegend2", // widerrufsrecht
-              "oxstartmetadescription",
-              "oxstartmetakeywords" // META Tags
-           ),
-           'position' => 2
-        ),
-        array(
-           'group'    => 'tinyMceMain',
-           'name'     => 'aTinyMCE_extjs',
-           'type'     => 'arr',
-           'value'    => array(),
-           'position' => 3
-        ),
+$aModule = [
+   'id'          => 'bla-tinymce',
+   'title'       => '<strong style="color:#95b900;font-size:125%;">best</strong><strong style="color:#c4ca77;font-size:125%;">life</strong> <strong>TinyMCE</strong>',
+   'description' => '___DESCRIPTION___',
+   'thumbnail'   => 'tinymce.png',
+   'version'     => '___VERSION___',
+   'author'      => '___AUTHOR___, ___COMPANY___',
+   'email'       => '___EMAIL___',
+   'url'         => '___URL___',
+   'extend'      => ['oxviewconfig' => 'bla/bla-tinymce/application/core/blatinymceoxviewconfig'],
+   'files'       => ['tinymcehelper' => 'bla/bla-tinymce/application/controllers/admin/tinymcehelper.php'],
+   'templates'   => ['tinymcehelper.tpl' => 'bla/bla-tinymce/application/views/admin/tinymcehelper.tpl'],
+   'blocks'      => [
+      [
+         'template' => 'bottomnaviitem.tpl',
+         'block'    => 'admin_bottomnaviitem',
+         'file'     => '/application/views/blocks/admin/bottomnaviitem_admin_bottomnaviitem.tpl'
+      ]
+   ],
+   'settings'    => [
+      /* enabling tinyMCE for these classes */
+      [
+         'group'    => 'tinyMceMain',
+         'name'     => 'blTinyMCE_filemanager',
+         'type'     => 'bool',
+         'value'    => true,
+         'position' => 0
+      ],
+      [
+         'group'    => 'tinyMceMain',
+         'name'     => 'aTinyMCE_classes',
+         'type'     => 'arr',
+         'value'    => [
+            "article_main",
+            "category_text",
+            "content_main",
+            "newsletter_main",
+            "news_text"
+         ],
+         'position' => 1
+      ],
+      [
+         'group'    => 'tinyMceMain',
+         'name'     => 'aTinyMCE_plaincms',
+         'type'     => 'arr',
+         'value'    => [
+            "oxadminorderplainemail",
+            "oxadminordernpplainemail", // bestellbenachrichtigung admin + fremdländer
+            "oxuserorderplainemail",
+            "oxuserordernpplainemail",
+            "oxuserorderemailendplain", // bestellbenachrichtigung user + fremdländer + abschluss
+            "oxordersendplainemail", // versandbestätigung
+            "oxregisterplainemail",
+            "oxregisterplainaltemail", // registrierung
+            "oxupdatepassinfoplainemail", // passwort update
+            "oxnewsletterplainemail", // newsletter
+            "oxemailfooterplain", // email fußtext
+            "oxrighttocancellegend",
+            "oxrighttocancellegend2", // widerrufsrecht
+            "oxstartmetadescription",
+            "oxstartmetakeywords" // META Tags
+         ],
+         'position' => 2
+      ],
+      [
+         'group'    => 'tinyMceMain',
+         'name'     => 'aTinyMCE_extjs',
+         'type'     => 'arr',
+         'value'    => [],
+         'position' => 3
+      ],
 
 
-        // ################################################################# tinymce settings
+      // ################################################################# tinymce settings
 
-        array(
-            'group'    => 'tinyMceSettings',
-            'name'     => 'aTinyMCE_config',
-            'type'     => 'aarr',
-            'value'    => array(),
-            'position' => 0
-        ),
-        array(
-            'group'    => 'tinyMceSettings',
-            'name'     => 'aTinyMCE_plugins',
-            'type'     => 'aarr',
-            'value'    => array(),
-            'position' => 1
-        ),
-        array(
-            'group'    => 'tinyMceSettings',
-            'name'     => 'aTinyMCE_external_plugins',
-            'type'     => 'aarr',
-            'value'    => array(),
-            'position' => 2
-        ),
-        array(
-            'group'    => 'tinyMceSettings',
-            'name'     => 'aTinyMCE_buttons',
-            'type'     => 'arr',
-            'value'    => array(),
-            'position' => 3
-        )
-    )
-);
+      [
+         'group'    => 'tinyMceSettings',
+         'name'     => 'aTinyMCE_config',
+         'type'     => 'aarr',
+         'value'    => [],
+         'position' => 0
+      ],
+      [
+         'group'    => 'tinyMceSettings',
+         'name'     => 'aTinyMCE_plugins',
+         'type'     => 'aarr',
+         'value'    => [],
+         'position' => 1
+      ],
+      [
+         'group'    => 'tinyMceSettings',
+         'name'     => 'aTinyMCE_external_plugins',
+         'type'     => 'aarr',
+         'value'    => [],
+         'position' => 2
+      ],
+      [
+         'group'    => 'tinyMceSettings',
+         'name'     => 'aTinyMCE_buttons',
+         'type'     => 'arr',
+         'value'    => [],
+         'position' => 3
+      ]
+   ]
+];

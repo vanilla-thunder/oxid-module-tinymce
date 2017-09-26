@@ -1,4 +1,4 @@
-## ___MODULE___
+## ___DESCRIPTION___
 by ___AUTHOR___, ___COMPANY___ <___EMAIL___>  
 ___URL___
 ### module version ___VERSION___

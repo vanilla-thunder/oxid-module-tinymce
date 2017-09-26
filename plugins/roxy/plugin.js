@@ -1,5 +1,5 @@
 /**
- * ___MODULE___
+ * ___NAME___
  * Copyright (C) ___YEAR___  ___COMPANY___
  * info:  ___EMAIL___
  *
