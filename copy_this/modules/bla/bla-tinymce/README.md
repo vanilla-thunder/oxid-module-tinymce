@@ -50,7 +50,7 @@ and here: https://github.com/tinymce
    - fix: iframes werden nicht mehr ersetzt
 
 ### LICENSE AGREEMENT
-   ___MODULE___  
+   bla-tinymce  
    Copyright (C) 2017 bestlife AG  
    info:  oxid@bestlife.ag  
   
