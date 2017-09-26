@@ -6,7 +6,7 @@
   "email": "oxid@bestlife.ag",
   "company": "bestlife AG",
   "vendor": "bla",
-  "url" : "https://github.com/vanilla-thunder/bla-tinymce",
+  "url": "https://github.com/vanilla-thunder/bla-tinymce",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "dependencies": {
     "adm-zip": "*",
     "cheerio": "*",
+    "fs-extra": "^4.0.2",
     "replace": "*",
     "request": "*"
   }
