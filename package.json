@@ -1,11 +1,11 @@
 {
   "name": "bla-tinymce",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "TinyMCE Editor for OXID eShop CE",
   "author": "Marat Bedoev",
   "email": "oxid@bestlife.ag",
-  "company": "bestlife AG",
   "vendor": "bla",
+  "company": "bestlife AG",
   "url": "https://github.com/vanilla-thunder/bla-tinymce",
   "license": "GPL-3.0",
   "repository": {
@@ -24,7 +24,7 @@
   "dependencies": {
     "adm-zip": "*",
     "cheerio": "*",
-    "fs-extra": "^4.0.2",
+    "fs-extra": "*",
     "replace": "*",
     "request": "*"
   }

@@ -12,7 +12,7 @@ fs.moveSync('_module','__module');
 fs.mkdirSync('_module');
 fs.moveSync('__module/.git','_module/.git');
 fs.removeSync('__module');
-fs.emptyDirSync('_master/copy_this/modules/');
+fs.emptyDirSync('_master/copy_this/modules/'+ oxmodule.vendor + '/' + oxmodule.name);
 
 console.log("");
 console.log("     cleanup finished");
