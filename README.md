@@ -1,7 +1,7 @@
 ## TinyMCE Editor for OXID eShop CE
 by Marat Bedoev, bestlife AG <oxid@bestlife.ag>  
 https://github.com/vanilla-thunder/bla-tinymce
-### module version 2.1.0 ( 2017-09-26 )
+### module version 2.1.1 ( 2017-10-02 )
 
 TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor control released as Open Source under LGPL.
 More information here: http://www.tinymce.com/  
@@ -20,6 +20,8 @@ and here: https://github.com/tinymce
 ## more info here: [https://marat.ws/bla-tinymce/](http:/marat.ws/bla-tinymce/)
 
 ### changelog
+- **2017-10-02 :: version 2.1.1**
+   - rollback to TinyMCE 4.6.6, because of issues with filemanager
 - **2017-09-25 :: version 2.1.0**
    - TinyMCE 4.6.7
    - increased maximum image size for upload via filemanager 
