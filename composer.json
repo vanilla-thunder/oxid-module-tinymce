@@ -1,0 +1,17 @@
+{
+    "name": "vanilla-thunder/bla-tinymce",
+    "type": "oxideshop-module",
+    "description": "TinyMCE Editor for OXID eShop CE. TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor control released as Open Source under LGPL.",
+    "license": "MIT",
+    "require": {},
+    "extra": {
+        "oxideshop": {
+            "target-directory": "bla/tinymce"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "bla\\tinymce\\": "../../../source/modules/bla/tinymce"
+        }
+    }
+}
