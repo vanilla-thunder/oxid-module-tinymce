@@ -6,12 +6,12 @@
     "require": {},
     "extra": {
         "oxideshop": {
-            "target-directory": "bla/tinymce"
+            "target-directory": "bla/bla-tinymce"
         }
     },
     "autoload": {
         "psr-4": {
-            "bla\\tinymce\\": "../../../source/modules/bla/tinymce"
+            "bla\\tinymce\\": "../../../source/modules/bla/bla-tinymce"
         }
     }
 }
