@@ -1,2 +1,2 @@
 <?php
-include("../en/module_options.php");
+include(__DIR__ . "/../en/module_options.php");
