@@ -1,0 +1,35 @@
+{
+  "name": "vanilla-thunder/oxid-module-tinymce",
+  "version": "3.0",
+  "description": "TinyMCE 5 Integration for OXID eShop V6.2",
+  "type": "oxideshop-module",
+  "homepage": "https://github.com/vanilla-thunder/oxid-module-tinymce",
+  "license": [
+    "GPL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "Marat Bedoev",
+      "email": "hello@mb-dev.pro"
+    }
+  ],
+  "extra": {
+    "oxideshop": {
+      "target-directory": "vt/tinymce"
+    }
+  },
+  "archive": {
+    "exclude": ["/build"]
+  },
+  "require": {
+    "php": ">=5.6",
+    "oxid-esales/oxideshop-ce": "^v6.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "VanillaThunder\\TinymceModule\\": "../../../source/modules/vt/tinymce"
+    }
+  }
+}
+
+

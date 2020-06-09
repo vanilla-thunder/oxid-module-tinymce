@@ -1,0 +1,31 @@
+{
+  "name": "oxid-module-tinymce",
+  "version": "3.0.0",
+  "description": "TinyMCE 5 Integration for OXID eShop V6.2",
+  "author": "Marat Bedoev",
+  "url": "https://github.com/vanilla-thunder/oxid-module-tinymce",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vanilla-thunder/oxid-module-tinymce.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vanilla-thunder/oxid-module-tinymce/issues"
+  },
+  "keywords": [
+    "tinymce",
+    "oxid",
+    "editor",
+    "wysiwyg"
+  ],
+  "dependencies": {
+    "node-fetch": "*",
+    "unzipper": "*",
+    "cheerio": "*",
+    "fs-extra": "*",
+    "replace": "*"
+  },
+  "scripts": {
+    "build": "node --harmony update.js"
+  }
+}

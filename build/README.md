@@ -1,7 +1,7 @@
-## TinyMCE Editor for OXID eShop CE
-by Marat Bedoev, bestlife AG <oxid@bestlife.ag>  
-https://github.com/vanilla-thunder/bla-tinymce
-### module version 2.1.1 ( 2017-10-02 )
+## ___DESCRIPTION___
+by ___AUTHOR___, ___COMPANY___ <___EMAIL___>  
+___URL___
+### module version ___VERSION___
 
 TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor control released as Open Source under LGPL.
 More information here: http://www.tinymce.com/  
@@ -52,9 +52,9 @@ and here: https://github.com/tinymce
    - fix: iframes werden nicht mehr ersetzt
 
 ### LICENSE AGREEMENT
-   bla-tinymce  
-   Copyright (C) 2017 bestlife AG  
-   info:  oxid@bestlife.ag  
+   ___NAME___  
+   Copyright (C) ___YEAR___ ___COMPANY___  
+   info:  ___EMAIL___  
   
    This program is free software;  
    you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation;
