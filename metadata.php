@@ -17,17 +17,24 @@
 $sMetadataVersion = '2.1';
 $aModule = [
     'id' => 'vt-tinymce',
-    'title' => '[VT] TinyMCE',
-    'description' => 'TinyMCE 5 Integration for OXID eShop V6.2',
+    'title' => '[vt] TinyMCE',
+    'description' => 'TinyMCE 5 Integration for OXID eShop ≥ V6.2',
     'thumbnail' => 'tinymce.png',
-    'version' => '3.0.0 ( 2020-06-06 )',
+    'version' => '3.1.0 ( 2021-10-20 )',
     'author' => 'Marat Bedoev',
     'email' => openssl_decrypt("Az6pE7kPbtnTzjHlPhPCa4ktJLphZ/w9gKgo5vA//p4=", str_rot13("nrf-128-pop"), str_rot13("gvalzpr")),
     'url' => 'https://github.com/vanilla-thunder/oxid-module-tinymce',
     'extend' => [
-        \OxidEsales\Eshop\Core\ViewConfig::class => \VanillaThunder\TinymceModule\Application\Core\ViewConfig::class
+        OxidEsales\Eshop\Core\ViewConfig::class => VanillaThunder\TinyMCE\Application\Core\ViewConfig::class
     ],
-    'templates' => ['tinymcehelper.tpl' => 'vt/tinymce/application/views/admin/tinymcehelper.tpl'],
+    'controllers' => [
+        'tinyfilemanager' => VanillaThunder\TinyMCE\Application\Controller\Admin\TinyFileManager::class,
+        'tinyhelper' => VanillaThunder\TinyMCE\Application\Controller\Admin\TinyHelper::class
+    ],
+    'templates' => [
+        'tiny/filemanager.tpl' => 'vt/TinyMCE/Application/views/admin/filemanager.tpl',
+        'tiny/helper.tpl' => 'vt/TinyMCE/Application/views/admin/helper.tpl'
+    ],
     'blocks' => [
         [
             'template' => 'bottomnaviitem.tpl',
@@ -39,13 +46,6 @@ $aModule = [
         /* enabling tinyMCE for these classes */
         [
             'group' => 'tinyMceMain',
-            'name' => 'blTinyMCE_filemanager',
-            'type' => 'bool',
-            'value' => true,
-            'position' => 0
-        ],
-        [
-            'group' => 'tinyMceMain',
             'name' => 'aTinyMCE_classes',
             'type' => 'arr',
             'value' => [
@@ -55,7 +55,7 @@ $aModule = [
                 "newsletter_main",
                 "news_text"
             ],
-            'position' => 1
+            'position' => 0
         ],
         [
             'group' => 'tinyMceMain',
@@ -78,6 +78,13 @@ $aModule = [
                 "oxstartmetadescription",
                 "oxstartmetakeywords" // META Tags
             ],
+            'position' => 1
+        ],
+        [
+            'group' => 'tinyMceMain',
+            'name' => 'blTinyMCE_filemanager',
+            'type' => 'bool',
+            'value' => true,
             'position' => 2
         ],
         [

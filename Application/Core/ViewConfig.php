@@ -13,8 +13,16 @@
  * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
  */
 
-namespace VanillaThunder\TinymceModule\Application\Core;
+namespace VanillaThunder\TinyMCE\Application\Core;
 use \OxidEsales\Eshop\Core\Registry;
+use OxidEsales\Eshop\Core\UtilsServer;
+
+/** funtion for adding quotes to config variables
+ * @param $string
+ * @return string
+ */
+function q($string) { return '"'.addslashes($string).'"'; }
+
 /**
  * ViewConfig class wrapper for TinyMCE module.
  *
@@ -25,73 +33,96 @@ class ViewConfig extends ViewConfig_parent
     public function loadTinyMce()
     {
         $cfg = Registry::getConfig();
-        $oLang = Registry::getLang();
-        if (!in_array($this->getActiveClassName(), $cfg->getConfigParam("aTinyMCE_classes"))) {
-            return false;
-        }
 
-        $aPlainCmsPages = $cfg->getConfigParam("aTinyMCE_plaincms");
+        // is tinymce enabled for current controller?
+        $aEnabledClasses = $cfg->getConfigParam("aTinyMCE_classes") ?? [];
+        if (!in_array($this->getActiveClassName(), $aEnabledClasses)) return '';
+
+        $oLang = Registry::getLang();
+
+        // filter plain cms pages
         $oEditObject = $cfg->getActiveView()->getViewDataElement("edit");
         $sCoreTableName = $oEditObject->getCoreTableName();
-        if ($sCoreTableName === "oxcontents" && !in_array($oEditObject->getLoadUd(), $aPlainCmsPages)) {
+        $aPlainCmsPages = $cfg->getConfigParam("aTinyMCE_plaincms") ?? [];
+        if ($sCoreTableName === "oxcontents" && in_array($oEditObject->getLoadId(), $aPlainCmsPages)) {
             return $oLang->translateString("BLA_TINYMCE_PLAINCMS");
         }
 
-        $blFilemanager = false; //$cfg->getConfigParam("blTinyMCE_filemanager");
-        // @todo: $blFilemanager wiederherstellen
+        // ******************** TinyMCE Config ********************
 
-        // processing editor config & other stuff
-        $sLang = $oLang->getLanguageAbbr($oLang->getTplLanguage());
-        // array to assign shop lang abbreviations to lang file names of tinymce: shopLang => langfile (without .js )
+        // array to assign shop lang abbreviations to lang files of tinymce: shopLang => langfile (without .js )
         $aLang = array(
             "cs" => "cs",
             "da" => "da",
             "de" => "de",
+            "es" => "es_419",
             "fr" => "fr_FR",
-            "it" => "it",
+            "it" => "it_IT",
             "nl" => "nl",
             "ru" => "ru"
         );
+        $sLang = $aLang[$oLang->getLanguageAbbr($oLang->getTplLanguage())] ?? "en";
 
-        // default config
+
+        // processing editor config & other stuff
+
+        // default config, updated on 2021-10-10 according to
         $aConfig = array(
-            'force_br_newlines' => 'false',
-            'force_p_newlines' => 'false',
-            'forced_root_block' => '""',
+            // integration options https://www.tiny.cloud/docs/configure/integration-and-setup/
+            // 'auto_focus' => '', // don't think we need me, maybe for cms pages?
+            'base_url' => q($this->getBaseDir().'modules/vt/TinyMCE/out/tinymce/'),
+            'cache_suffix' => q('?v=20211010'),
             'selector' => '"textarea:not(.mceNoEditor)"',
-            'language' => '"' . (in_array($sLang, $aLang) ? $aLang[$sLang] : 'en') . '"',
+
+            // gui options https://www.tiny.cloud/docs/configure/editor-appearance/
+            'contextmenu' => 'false', q("link linkchecker  image imagetools table"),
+            'min_height' => 350,
+            'max_height' => q('90%'),
+            'max_width' => q('90%'),
+            'menubar' => 'false',
+            'toolbar_sticky' => 'true',
+
+            // content appearance https://www.tiny.cloud/docs/configure/content-appearance/
+            'content_css' => q('/out/wave/src/css/styles.min.css'), // hardcoded, for testing purposes
+
+            // content filtering https://www.tiny.cloud/docs/configure/content-filtering/
+            'entity_encoding' => q('raw'),
+            'protect' => '[ /\[\{((?!\}\]).)+\}\]/gm ]', // holy shit, this is like Weihnachten and Geburtstag all at once
+
+            // content formatting https://www.tiny.cloud/docs/configure/content-formatting/
+
+            // localization https://www.tiny.cloud/docs/configure/localization/
+            'language' => q($sLang),
+
+            // URL handling https://www.tiny.cloud/docs/configure/url-handling/
+            'document_base_url' => q($this->getBaseDir()),
+            'relative_urls' => 'true',
+
+            // plugins
+            'image_advtab' => 'true'
+
+
+/*
+            // old
             //'spellchecker_language'   => '"' . (in_array($sLang, $aLang) ? $aLang[$sLang] : 'en') . '"',
             'nowrap' => 'false',
-            'entity_encoding' => '"raw"',
             // http://www.tinymce.com/wiki.php/Configuration:entity_encoding
-            'height' => 300,
-            'menubar' => 'false',
-            'document_base_url' => '"' . $this->getBaseDir() . '"',
             // http://www.tinymce.com/wiki.php/Configuration:document_base_url
-            'relative_urls' => 'false',
             // http://www.tinymce.com/wiki.php/Configuration:relative_urls
             'plugin_preview_width' => 'window.innerWidth',
             'plugin_preview_height' => 'window.innerHeight-90',
             'code_dialog_width' => 'window.innerWidth-50',
             'code_dialog_height' => 'window.innerHeight-130',
-            'image_advtab' => 'true',
             'imagetools_toolbar' => '"rotateleft rotateright | flipv fliph | editimage imageoptions"',
             'moxiemanager_fullscreen' => 'true',
             'insertdatetime_formats' => '[ "%d.%m.%Y", "%H:%M" ]',
             'nonbreaking_force_tab' => 'true',
             // http://www.tinymce.com/wiki.php/Plugin:nonbreaking
-            'autoresize_max_height' => '400',
             'urlconverter_callback' => '"urlconverter"',
             'filemanager_access_key' => '"' . md5($_SERVER['DOCUMENT_ROOT']) . '"',
             'tinymcehelper' => '"' . $this->getSelfActionLink() . 'renderPartial=1"'
+            */
         );
-
-        if ($blFilemanager) {
-            $aDefaultConfig['external_filemanager_path'] = '"../modules/bla/bla-tinymce/fileman/"';
-            $aDefaultConfig['filemanager_access_key'] = '"' . md5($_SERVER['HTTP_HOST']) . '"';
-            $oUS = Registry::get("oxUtilsServer");
-            $oUS->setOxCookie("filemanagerkey", md5($_SERVER['DOCUMENT_ROOT'] . $oUS->getOxCookie("admin_sid")));
-        }
 
         //merging with onfig override
         $aOverrideCfg = $this->_getTinyCustConfig();
@@ -102,17 +133,15 @@ class ViewConfig extends ViewConfig_parent
 
         // default plugins and their buttons
         $aPlugins = array(
-            'advlist' => '', // '' = plugin has no buttons
+            //'advlist' => '', // '' = plugin has no buttons
             'anchor' => 'anchor',
             'autolink' => '',
             'autoresize' => '',
             'charmap' => 'charmap',
             'code' => 'code',
-            'colorpicker' => '',
             'hr' => 'hr',
             'image' => 'image',
-            'imagetools' => '',
-            'insertdatetime' => 'insertdatetime',
+            // 'imagetools' => '', // das hier klingt sehr kompliziert
             'link' => 'link unlink',
             'lists' => '',
             'media' => 'media',
@@ -120,11 +149,10 @@ class ViewConfig extends ViewConfig_parent
             'pagebreak' => 'pagebreak',
             'paste' => 'pastetext',
             'preview' => 'preview',
+            'quickbars' => '',//'quicklink quickimage quicktable',
             'searchreplace' => 'searchreplace',
             'table' => 'table',
-            'textcolor' => 'forecolor backcolor',
-            'visualblocks' => '',
-            //'visualchars'    => 'visualchars',
+            'visualblocks' => 'visualblocks',
             'wordcount' => '',
             'oxfullscreen' => 'fullscreen', //custom fullscreen plugin
             //'oxwidget'       => 'widget'
@@ -132,8 +160,8 @@ class ViewConfig extends ViewConfig_parent
         );
 
         // plugins for newsletter emails
-        if ($this->getActiveClassName() == "newsletter_main") {
-            $aPlugins["legacyoutput"] = "false";
+        if ($this->getActiveClassName() === "newsletter_main") {
+            $aPlugins["legacyoutput"] = "";
             $aPlugins["fullpage"] = "fullpage";
         }
 
@@ -156,20 +184,21 @@ class ViewConfig extends ViewConfig_parent
                 'out/plugins/oxfullscreen/plugin.js'
             ) . '" ';
         //$aConfig['external_plugins'] .= ', "oxwidget":"' . $this->getModuleUrl('bla-tinymce', 'plugins/oxwidget/plugin.js') . '" ';
-        if ($blFilemanager) {
-            $aConfig['external_plugins'] .= ',"roxy":"' . $this->getModuleUrl(
+
+
+        $blFilemanager = $cfg->getConfigParam("blTinyMCE_filemanager");
+        // @todo: $blFilemanager wiederherstellen
+        if ($blFilemanager)
+        {
+            $aConfig['filemanager_url'] = q(str_replace('&amp;','&',$this->getSslSelfLink())."cl=tinyfilemanager");
+            $sFilemanagerKey = md5_file(Registry::getConfig()->getConfigParam("sShopDir")."/config.inc.php");
+            //$aConfig['filemanager_access_key'] = q($sFilemanagerKey);
+            Registry::get(UtilsServer::class)->setOxCookie("filemanagerkey", $sFilemanagerKey);
+
+            $aConfig['external_plugins'] .= ',"roxy":' . q($this->getModuleUrl(
                     'vt-tinymce',
                     'out/plugins/roxy/plugin.js'
-                ) . '" ';
-        }
-
-        $blN1ED = false;
-        if ($blN1ED) {
-            $aConfig['apiKey'] = "'MK2RDFLT'";
-            $aConfig['external_plugins'] .= ',"n1ed":"' . $this->getModuleUrl(
-                    'vt-tinymce',
-                    'out/plugins/n1ed/plugin.js'
-                ) . '" ';
+                ));
         }
 
         //$aConfig['external_plugins'] .= ',"oxgetseourl":"' . $this->getModuleUrl('bla-tinymce', 'plugins/oxgetseourl/plugin.js') . '" ';
@@ -184,8 +213,9 @@ class ViewConfig extends ViewConfig_parent
 
         // default toolbar buttons
         $aDefaultButtons = array(
-            "undo redo |",
+            "undo redo",
             //"cut copy paste",
+            "forecolor backcolor",
             "bold italic underline strikethrough",
             "alignleft aligncenter alignright alignjustify",
             "bullist numlist",
@@ -195,10 +225,10 @@ class ViewConfig extends ViewConfig_parent
             "superscript",
             "formatselect",
             //"fontselect",
-            "fontsizeselect",
+            //"fontsizeselect",
             "removeformat"
         );
-        $aOverrideButtons = Registry::getConfig()->getConfigParam("aTinyMCE_buttons");
+        $aOverrideButtons = $cfg->getConfigParam("aTinyMCE_buttons");
         $aButtons = (empty($aOverrideButtons) || !is_array($aOverrideButtons)) ? $aDefaultButtons : $aOverrideButtons;
 
         // plugin buttons
@@ -208,7 +238,7 @@ class ViewConfig extends ViewConfig_parent
         $aCustomButtons = $this->_getTinyToolbarControls();
 
         $aButtons = array_merge(array_filter($aButtons), [" | "], array_filter($aPluginButtons), array_filter($aCustomButtons));
-        $aConfig['toolbar'] = '["' . implode(" ", $aButtons) . '"]';
+        $aConfig['toolbar'] = '["' . implode(" | ", $aButtons) . '"]';
 
 
         // compile the whole config stuff

@@ -13,31 +13,33 @@
 
 /*global tinymce:true */
 
-tinymce.PluginManager.add('oxfullscreen', function (editor, url)
-{
-    editor.ui.registry.addToggleButton('fullscreen', {
-        tooltip: 'Fullscreen',
-        icon: 'fullscreen',
-        shortcut: 'Meta+Alt+F',
-        active: false,
-        onAction: (api) =>
-        {
-            const topframeset = top.document.getElementsByTagName("frameset");
-            topframeset[0].setAttribute("cols", (topframeset[0].getAttribute("cols") === "200,*" ? "1px,*" : "200,*"));
-            topframeset[1].setAttribute("rows", (topframeset[1].getAttribute("rows") === "54,*" ? "1px,*" : "54,*"));
-            const parentframeset = parent.document.getElementsByTagName("frameset");
-            parentframeset[0].setAttribute("rows", (parentframeset[0].getAttribute("rows") === "40%,*" ? "1px,*" : "40%,*"));
-            api.setActive(!api.isActive());
-        }
-    });
+(function () {
+    'use strict';
+    var PM = tinymce.util.Tools.resolve('tinymce.PluginManager');
 
-    return {
-        getMetadata: () =>
-        {
-            return {
-                name: "TinyMCE Fullscreen Editing Plugin for OXID eShop",
-                url: "https://github.com/vanilla-thunder/oxid-module-tinymce"
-            };
-        }
-    };
-});
+    PM.add('oxfullscreen', function (editor) {
+        editor.ui.registry.addToggleButton('fullscreen', {
+            tooltip: 'Fullscreen',
+            icon: 'fullscreen',
+            shortcut: 'Meta+Alt+F',
+            active: false,
+            onAction: (api) => {
+                const topframeset = top.document.getElementsByTagName("frameset");
+                topframeset[0].setAttribute("cols", (topframeset[0].getAttribute("cols") === "200,*" ? "1px,*" : "200,*"));
+                topframeset[1].setAttribute("rows", (topframeset[1].getAttribute("rows") === "54,*" ? "1px,*" : "54,*"));
+                const parentframeset = parent.document.getElementsByTagName("frameset");
+                parentframeset[0].setAttribute("rows", (parentframeset[0].getAttribute("rows") === "40%,*" ? "1px,*" : "40%,*"));
+                api.setActive(!api.isActive());
+            }
+        });
+
+        return {
+            getMetadata: () => {
+                return {
+                    name: "TinyMCE Fullscreen Editing Plugin for OXID eShop",
+                    url: "https://github.com/vanilla-thunder/oxid-module-tinymce"
+                };
+            }
+        };
+    });
+}());

@@ -1,9 +1,6 @@
 /**
- * bla-tinymce
- * Copyright (C) 2017  bestlife AG
- * info:  oxid@bestlife.ag
- *
- * GNU GENERAL PUBLIC LICENSE
+ * vanilla-thunder/oxid-module-tinymce
+ * TinyMCE 5 Integration for OXID eShop V6.2
  *
  * This program is free software;
  * you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation;
@@ -12,37 +9,42 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
  *  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License along with this program; if not, see <http://www.gnu.org/licenses/>
- *
- * Marat Bedoev
  */
 
-tinymce.PluginManager.add('roxy', function(editor)
-{
-    tinymce.activeEditor.settings.file_browser_callback = roxyFilemanager;
+/*global tinymce:true */
 
-    function roxyFilemanager (id, value, type, win)
-    {
+(function () {
+    'use strict';
+    var PluginManager = tinymce.util.Tools.resolve('tinymce.PluginManager');
+    PluginManager.add('roxy', function (editor) {
 
-        var url = editor.settings.external_filemanager_path+'index.html';
-        if (url.indexOf("?") < 0) { url += "?type=" + type; }
-        else { url += "&type=" + type; }
+        editor.settings.file_picker_callback = function ($callback, $value, $meta) {
+            console.log($callback);
+            console.log($value);
+            console.log($meta);
+            //var selectedimage =
 
-        url += '&input=' + id + '&value=' + win.document.getElementById(id).value;
-        if(tinyMCE.activeEditor.settings.language) { url += '&langCode=' + tinyMCE.activeEditor.settings.language; }
-        if(tinyMCE.activeEditor.settings.filemanager_access_key) { url += '&akey=' + tinyMCE.activeEditor.settings.filemanager_access_key; }
+            var url = editor.settings.filemanager_url
+                + "&type=" + $meta.filetype
+                + '&value=' + $value
+                + '&selected=' + $value;
 
-        tinymce.activeEditor.windowManager.open({
-            title: 'Filemanager',
-            file: url,
-            width: window.innerWidth,
-            height: window.innerHeight-40,
-            resizable: false,
-            maximizable: false,
-            plugins: "media",
-            inline: 1
-        }, {
-            window: win,
-            input: id
-        });
-    }
-});
+
+            if (editor.settings.language) {
+                url += '&langCode=' + editor.settings.language;
+            }
+            if (editor.settings.filemanager_access_key) {
+                url += '&akey=' + editor.settings.filemanager_access_key;
+            }
+
+            editor.windowManager.openUrl({
+                title: 'Filemanager',
+                url: url,
+                width: window.innerWidth,
+                height: window.innerHeight - 40
+            });
+
+            //$callback('myimage.jpg', {alt: 'My alt text'});
+        };
+    });
+}());
